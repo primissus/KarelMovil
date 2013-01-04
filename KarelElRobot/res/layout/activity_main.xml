@@ -3,13 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Main" >
-    <Button 
-        android:layout_height="100dp"
-        android:layout_width="match_parent"
-        android:text="Poodle pudo hacerlo ;)"/>
-    
+      
     <poodleDeveloper.karel.KWorld
         android:id="@+id/surface"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"/>
+    
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+    <Button android:id="@+id/addWall" 
+              android:layout_width="wrap_content" 
+              android:layout_height="wrap_content" 
+              android:text="Agregar\npared" 
+              android:textColor="#FFFFFF"
+              android:background="#000000"
+              android:padding="5dip" 
+              android:layout_margin="5dip" 
+              android:layout_gravity="right|bottom" />
+    
+    <Button android:id="@+id/addBeeper" 
+              android:layout_width="wrap_content" 
+              android:layout_height="wrap_content" 
+              android:text="Agregar\nzumbador" 
+              android:padding="5dip"
+              android:textColor="#FFFFFF"
+              android:background="#000000" 
+              android:layout_margin="5dip" 
+              android:layout_gravity="right|bottom" />
+    <Button android:id="@+id/openWorld" 
+              android:layout_width="wrap_content" 
+              android:layout_height="wrap_content" 
+              android:text="Agregar\nzumbador" 
+              android:padding="5dip"
+              android:textColor="#FFFFFF"
+              android:background="#000000" 
+              android:layout_margin="5dip" 
+              android:layout_gravity="right|bottom" />
+    </LinearLayout> 
 </RelativeLayout>
