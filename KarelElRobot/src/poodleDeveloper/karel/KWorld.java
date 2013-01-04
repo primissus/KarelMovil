@@ -22,7 +22,9 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.Display;
+import android.view.DragEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -51,8 +53,8 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private ArrayList<KCasilla> casillas;
 	private Karel karel;
 	private Context context;
-	
-	
+	private int lastX,lastY;
+	private boolean estoyArrastrando = false;
 	@SuppressLint("NewApi")
 	public void init(Context context, ArrayList<KCasilla> result, Karel karel) {
 		//super(context);
@@ -131,6 +133,35 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			for(float j = 0; j < size.x+54; j+=54)
 					canvas.drawBitmap(world, j, i, paint);
 		
+		if(karel.fila < maxScreenXY.y && karel.fila > minScreenXY.y && karel.columna < maxScreenXY.x && karel.columna > minScreenXY.x)
+			switch (karel.orientacion) {
+			case NORTE:
+				canvas.drawBitmap(karelN,
+						(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						paint);
+				break;
+			case ESTE:
+				canvas.drawBitmap(karelE,
+						(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						paint);
+				break;
+			case SUR:
+				canvas.drawBitmap(karelS,
+						(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						paint);
+				break;
+			case OESTE:
+				canvas.drawBitmap(karelO,
+						(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+1122,
+						paint);
+				break;
+			default:
+				break;
+			}
 		for(KCasilla c: casillas){ 
 			if(c.getFila() < maxScreenXY.y && c.getFila() > minScreenXY.y && c.getColumna() < maxScreenXY.x && c.getColumna() > minScreenXY.x){
 				if(c.getParedes().length > 0){
@@ -152,11 +183,11 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 						}
 				}
 				if(c.getZumbadores() > 0 ){
-					paint.setColor(Color.GREEN);
-					paint.setStrokeWidth(5);
+					paint.setColor(Color.GREEN); 
+					paint.setStrokeWidth(18);
 					canvas.drawCircle((c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+31,
 									 (maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+34,
-									 16, paint);
+									 8, paint);
 					paint.setColor(Color.DKGRAY);
 					paint.setStrokeWidth(1);
 					if(c.getZumbadores() > 9)
@@ -169,10 +200,10 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 								(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+37, paint);
 				}else if(c.getZumbadores() == -1){
 					paint.setColor(Color.GREEN);
-					paint.setStrokeWidth(5);
+					paint.setStrokeWidth(18);
 					canvas.drawCircle((c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+31,
 									 (maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+34,
-									 16, paint);
+									 8, paint);
 					paint.setColor(Color.DKGRAY);
 					paint.setStrokeWidth(1);
 					canvas.drawText("-1",
@@ -182,34 +213,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			}
 		}
 		
-		switch (karel.orientacion) {
-		case NORTE:
-			canvas.drawBitmap(karelN,
-					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
-					paint);
-			break;
-		case ESTE:
-			canvas.drawBitmap(karelE,
-					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
-					paint);
-			break;
-		case SUR:
-			canvas.drawBitmap(karelS,
-					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
-					paint);
-			break;
-		case OESTE:
-			canvas.drawBitmap(karelO,
-					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+1122,
-					paint);
-			break;
-		default:
-			break;
-		}
+		
 				
 	}
 
@@ -241,5 +245,40 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		}
 		
 	}
+	
+	public boolean onTouchEvent(MotionEvent event){
+		int evento = event.getAction();
+		switch (evento) {
+		case MotionEvent.ACTION_DOWN:
+			estoyArrastrando = true;
+			lastX = (int)event.getX();
+			lastY = (int)event.getY();
+			//	 System.out.println(lastX+"  "+lastY);
+			System.out.println("Max: "+maxScreenXY.x+"x"+maxScreenXY.y+"     Min: "+minScreenXY.x+"x"+minScreenXY.y);
+			break;
+		case MotionEvent.ACTION_MOVE:
+			if(estoyArrastrando){
+				int dx = ((int)(event.getX()) - lastX);
+				int dy = ((int)(event.getY()) - lastY);
+				//System.out.println(dx+"  "+dy);
+					maxScreenXY.x = (maxScreenXY.x+dx)%54;
+					maxScreenXY.y = (maxScreenXY.y+dy)%54;
+					minScreenXY.x = (minScreenXY.x+dx)%54;
+					minScreenXY.y = (minScreenXY.y+dy)%54;
+				//maxScreenXY.set(maxScreenXY.x+dx, maxScreenXY.y+dy);
+				//minScreenXY.set(minScreenXY.x+dx, minScreenXY.y+dy);
+				lastX = (int)event.getX();
+				lastY = (int)event.getY();
+			}
+			break;
+		case MotionEvent.ACTION_UP:
+			estoyArrastrando = false;
+		default:
+			break;
+		}
+		invalidate();
+		return true;
+	}
 
+	
 }
