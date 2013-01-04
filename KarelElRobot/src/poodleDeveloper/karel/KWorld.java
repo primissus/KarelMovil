@@ -25,6 +25,7 @@ import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -72,7 +73,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		maxScreenXY = new Point();
 		minScreenXY = new Point();
 		size = getDisplaySize(display);
-		maxScreenXY.set(size.x/36, size.y/36-2);
+		maxScreenXY.set(size.x/54, size.y/54-2);
 		minScreenXY.set(0, 0);
 		
 		Toast.makeText(context, maxScreenXY.x+"x"+maxScreenXY.y, Toast.LENGTH_SHORT).show();
@@ -93,6 +94,31 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	}
 	
 	private void initMenuItems(){
+		Button addWall = (Button)((SherlockActivity)context).findViewById(R.id.addWall);
+		addWall.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(context, "Toca la pantalla para agregar un muro", Toast.LENGTH_SHORT).show();
+			}
+		});
+		Button addBeeper = (Button)((SherlockActivity)context).findViewById(R.id.addBeeper);
+		addBeeper.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(context, "Toca la pantalla para agregar un zumador", Toast.LENGTH_SHORT).show();
+			}
+		});
+		Button openWorld = (Button)((SherlockActivity)context).findViewById(R.id.openWorld);
+		openWorld.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				
+			}
+		});
 	}
 	@Override
 	public void onDraw(Canvas canvas){ 
@@ -101,8 +127,8 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		paint.setColor(Color.BLACK);
 		paint.setAntiAlias(true);
 		
-		for(float i = size.y; i > -36; i-=36)
-			for(float j = 0; j < size.x+36; j+=36)
+		for(float i = size.y; i > -54; i-=54)
+			for(float j = 0; j < size.x+54; j+=54)
 					canvas.drawBitmap(world, j, i, paint);
 		
 		for(KCasilla c: casillas){ 
@@ -112,46 +138,46 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 					paint.setStrokeWidth(6);
 					for(String p : c.getParedes())
 						if(p.equals("norte")){ 
-							canvas.drawLine((c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*36, 
-											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*36+76, 
-											(c.getColumna()%(maxScreenXY.x-minScreenXY.x))*36, 
-											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*36+76,
+							canvas.drawLine((c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+3, 
+											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+120, 
+											(c.getColumna()%(maxScreenXY.x-minScreenXY.x))*54+3, 
+											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+120,
 											paint); 
 						}else if(p.equals("este")){
-							canvas.drawLine((c.getColumna()%(maxScreenXY.x-minScreenXY.x))*36+4,
-											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*36+76,
-											(c.getColumna()%(maxScreenXY.x-minScreenXY.x))*36+4,
-											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*36+76+36,
+							canvas.drawLine((c.getColumna()%(maxScreenXY.x-minScreenXY.x))*54+5,
+											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+120,
+											(c.getColumna()%(maxScreenXY.x-minScreenXY.x))*54+5,
+											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+120+54,
 											paint);
 						}
 				}
 				if(c.getZumbadores() > 0 ){
 					paint.setColor(Color.GREEN);
 					paint.setStrokeWidth(5);
-					canvas.drawCircle((c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*36+22,
-									 (maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*36+76+19,
-									 12, paint);
+					canvas.drawCircle((c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+31,
+									 (maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+34,
+									 16, paint);
 					paint.setColor(Color.DKGRAY);
 					paint.setStrokeWidth(1);
 					if(c.getZumbadores() > 9)
 						canvas.drawText(String.valueOf(c.getZumbadores()),
-							(c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*36+16,
-							(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*36+76+23, paint);
+							(c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+24,
+							(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+37, paint);
 					else
 						canvas.drawText(String.valueOf(c.getZumbadores()),
-								(c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*36+19,
-								(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*36+76+23, paint);
+								(c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+27,
+								(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+37, paint);
 				}else if(c.getZumbadores() == -1){
 					paint.setColor(Color.GREEN);
 					paint.setStrokeWidth(5);
-					canvas.drawCircle((c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*36+22,
-									 (maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*36+76+19,
-									 12, paint);
+					canvas.drawCircle((c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+31,
+									 (maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+34,
+									 16, paint);
 					paint.setColor(Color.DKGRAY);
 					paint.setStrokeWidth(1);
 					canvas.drawText("-1",
-							(c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*36+17,
-							(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*36+76+23, paint);
+							(c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+24,
+							(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+37, paint);
 				}
 			}
 		}
@@ -159,26 +185,26 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		switch (karel.orientacion) {
 		case NORTE:
 			canvas.drawBitmap(karelN,
-					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*36+2,
-					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*36+78,
+					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
 					paint);
 			break;
 		case ESTE:
 			canvas.drawBitmap(karelE,
-					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*36+2,
-					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*36+78,
+					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
 					paint);
 			break;
 		case SUR:
 			canvas.drawBitmap(karelS,
-					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*36+2,
-					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*36+78,
+					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
 					paint);
 			break;
 		case OESTE:
 			canvas.drawBitmap(karelO,
-					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*36+2,
-					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*36+78,
+					(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+					(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+1122,
 					paint);
 			break;
 		default:
