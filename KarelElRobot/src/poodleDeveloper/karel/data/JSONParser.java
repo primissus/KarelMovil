@@ -14,6 +14,9 @@ import org.json.JSONObject;
 import com.actionbarsherlock.app.SherlockActivity;
 
 import poodleDeveloper.karel.KWorld;
+import poodleDeveloper.karel.R;
+import android.annotation.SuppressLint;
+import android.app.ActionBar.LayoutParams;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -30,6 +33,7 @@ public class JSONParser {
 	private static final String TAG_PAREDES = "paredes";
 	private static final String TAG_KAREL = "karel";
 	private static final String TAG_POSICION = "posicion";
+	private static final String TAG_ORIENTACION = "orientacion";
 	private static final String TAG_MOCHILA = "mochila";
 	
     static InputStream is = null;
@@ -72,7 +76,7 @@ public class JSONParser {
 	        return bundle;
 		}
 		
-		@Override
+		@SuppressLint("NewApi") @Override
 		protected void onPostExecute(Bundle result) {
 			try {
 	            jObj = new JSONObject(result.getString("JSON"));
@@ -84,9 +88,19 @@ public class JSONParser {
 				casillas = jObj.getJSONArray(TAG_CASILLAS);
 				ArrayList<KCasilla> arregloCasillas = new ArrayList<KCasilla>();
 				karel = new Karel();
-				karel.fila = jsonKarel.getInt(TAG_FILA);
-				karel.columna = jsonKarel.getInt(TAG_COLUMNA);
-				karel.orientacion = jsonKarel.getInt(TAG_POSICION);
+				JSONArray posicion = jsonKarel.getJSONArray(TAG_POSICION);
+				karel.fila = (Integer)posicion.get(0);
+				karel.columna = (Integer)posicion.get(1);
+				String orientacion = jsonKarel.getString(TAG_ORIENTACION);
+				if(orientacion.equals("norte"))
+					karel.orientacion = KWorld.NORTE;
+				else if(orientacion.equals("este"))
+					karel.orientacion = KWorld.ESTE;
+				else if(orientacion.equals("sur"))
+					karel.orientacion = KWorld.SUR;
+				else if(orientacion.equals("oeste"))
+					karel.orientacion = KWorld.OESTE;
+				
 				karel.mochila = jsonKarel.getInt(TAG_MOCHILA);
 				
 				for(int i = 0; i < casillas.length(); i++){
@@ -102,7 +116,9 @@ public class JSONParser {
 					casilla.setParedes(paredes);
 					arregloCasillas.add(casilla);
 				}
-				((SherlockActivity)context).setContentView(new KWorld(context, arregloCasillas, karel));
+				((SherlockActivity)context).setContentView(R.layout.activity_main);
+				KWorld k = (KWorld)((SherlockActivity)context).findViewById(R.id.surface);
+				k.init(context,arregloCasillas,karel);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}

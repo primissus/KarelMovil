@@ -3,4 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Main" >
+    <Button 
+        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:text="Poodle pudo hacerlo ;)"/>
+    
+    <poodleDeveloper.karel.KWorld
+        android:id="@+id/surface"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"/>
 </RelativeLayout>
