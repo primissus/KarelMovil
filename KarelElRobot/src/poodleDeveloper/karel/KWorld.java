@@ -75,7 +75,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		maxScreenXY = new Point();
 		minScreenXY = new Point();
 		size = getDisplaySize(display);
-		maxScreenXY.set(size.x/54, size.y/54-2);
+		maxScreenXY.set(size.x/54+1, size.y/54);
 		minScreenXY.set(0, 0);
 		
 		Toast.makeText(context, maxScreenXY.x+"x"+maxScreenXY.y, Toast.LENGTH_SHORT).show();
@@ -90,7 +90,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	        display.getSize(point);
 	    } catch (java.lang.NoSuchMethodError ignore) {
 	        point.x = display.getWidth();
-	        point.y = display.getHeight();
+	        point.y = display.getHeight(); 
 	    }
 	    return point;
 	}
@@ -133,7 +133,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			for(float j = 0; j < size.x+54; j+=54)
 					canvas.drawBitmap(world, j, i, paint);
 		
-		if(karel.fila < maxScreenXY.y && karel.fila > minScreenXY.y && karel.columna < maxScreenXY.x && karel.columna > minScreenXY.x)
+		if(karel.fila < maxScreenXY.y+2 && karel.fila > minScreenXY.y && karel.columna < maxScreenXY.x+3 && karel.columna > minScreenXY.x)
 			switch (karel.orientacion) {
 			case NORTE:
 				canvas.drawBitmap(karelN,
@@ -163,7 +163,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				break;
 			}
 		for(KCasilla c: casillas){ 
-			if(c.getFila() < maxScreenXY.y && c.getFila() > minScreenXY.y && c.getColumna() < maxScreenXY.x && c.getColumna() > minScreenXY.x){
+			if(c.getFila() < maxScreenXY.y+2 && c.getFila() > minScreenXY.y && c.getColumna() < maxScreenXY.x+3 && c.getColumna() > minScreenXY.x){
 				if(c.getParedes().length > 0){
 					paint.setColor(Color.BLACK);
 					paint.setStrokeWidth(6);
@@ -260,15 +260,12 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			if(estoyArrastrando){
 				int dx = ((int)(event.getX()) - lastX);
 				int dy = ((int)(event.getY()) - lastY);
-				//System.out.println(dx+"  "+dy);
 					maxScreenXY.x = (maxScreenXY.x+dx)%54;
 					maxScreenXY.y = (maxScreenXY.y+dy)%54;
 					minScreenXY.x = (minScreenXY.x+dx)%54;
 					minScreenXY.y = (minScreenXY.y+dy)%54;
-				//maxScreenXY.set(maxScreenXY.x+dx, maxScreenXY.y+dy);
-				//minScreenXY.set(minScreenXY.x+dx, minScreenXY.y+dy);
-				lastX = (int)event.getX();
-				lastY = (int)event.getY();
+					lastX = (int)event.getX();
+					lastY = (int)event.getY();
 			}
 			break;
 		case MotionEvent.ACTION_UP:
