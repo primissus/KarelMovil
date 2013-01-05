@@ -343,7 +343,7 @@ public class KWorld {
     	return paredes;
     }
     
-    public JSONObject exporta_mundo (boolean expandir) throws JSONException{
+    public JSONObject exporta_mundo () throws JSONException{
         /* Exporta las condiciones actuales del mundo usando algun
         lenguaje de marcado */
     	JSONObject mundo = new JSONObject();

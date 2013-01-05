@@ -32,25 +32,25 @@ public class Ejecutable{
     		RunStruct instruccion=this.lista.get(i);
 	        if(EndStruct.class.isInstance(instruccion)){
 	        	EndStruct fin = (EndStruct)instruccion;
-	        	result += "FIN "+fin.estructura+" >"+fin.inicio+"\n";
+	        	result += i+">FIN ("+fin.inicio+")\n";
 	        } else if(instruccion.estructura == Struct.ESTRUCTURA_INSTRUCCION){
 	        	//Es una instruccion predefinida de Karel
 	        	RStructInstruccion instruccionPredefinida = (RStructInstruccion)instruccion;
-	        	result += ">"+instruccionPredefinida.instruccion+"\n";
+	        	result += i+">"+instruccionPredefinida.instruccion+"\n";
 	        }else if (instruccion.estructura == Struct.ESTRUCTURA_SI){ //Se trata de una estructura de control o una funcion definida
 	        	RStructSi si = (RStructSi)instruccion;
-	            result += "SI "+si.argumentoLogico+"\n";
+	            result += i+">SI "+si.argumentoLogico+"\n";
 	        } else if (instruccion.estructura == Struct.ESTRUCTURA_SINO) //Llegamos a un sino, procedemos, no hay de otra
-	            result += "SINO\n";
+	            result += i+">SINO\n";
 	        else if (instruccion.estructura == Struct.ESTRUCTURA_REPITE){
 	        	RStructRepite repite = (RStructRepite)instruccion;
-	        	result += "REPITE "+repite.argumento+"\n";
+	        	result += i+">REPITE "+repite.argumento+"\n";
 	        } else if (instruccion.estructura == Struct.ESTRUCTURA_MIENTRAS){
 	        	RStructMientras mientras = (RStructMientras)instruccion;
-	        	result += "MIENTRAS "+mientras.argumentoLogico+"\n";
+	        	result += i+">MIENTRAS "+mientras.finEstructura+"\n";
 	        } else { //Se trata la llamada a una función
 	            RStructFuncion funcion = (RStructFuncion)instruccion;
-	            result += ">"+funcion.nombre+"\n";
+	            result += i+">"+funcion.nombre+"\n";
 	        }
     	}
     	return result;

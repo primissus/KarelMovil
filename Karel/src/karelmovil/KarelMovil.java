@@ -13,6 +13,9 @@ import grammar.Ejecutable;
 
 import java.io.*;
 
+import json.JSONException;
+import json.JSONObject;
+
 public class KarelMovil {
 
     /**
@@ -39,13 +42,26 @@ public class KarelMovil {
                 k.verificar_sintaxis();
                 System.out.println("Sintaxis correcta");
                 Ejecutable exe = k.expandir_arbol();
-                System.out.println(exe);
-                KRunner runner = new KRunner(exe, new KWorld());
+                KRunner runner = new KRunner(exe, new KWorld(), 200, 200, 200);
                 runner.run();
                 if(runner.estado == KRunner.ESTADO_OK){
                 	System.out.println("Programa ejecutado");
                 } else {
                 	System.out.print("ERROR: "+runner.mensaje);
+                }
+                try{
+                	JSONObject cosa = runner.getMundo().exporta_mundo();
+                	String res = cosa.toString();
+                	
+                	File f = new File("resultado.json");
+                	FileWriter fw = new FileWriter(f);
+                	fw.write(res);
+                	fw.close();
+                	System.out.println("ok");
+                } catch (JSONException e){
+                	System.out.println(e.getMessage());
+                } catch (IOException e){
+                	System.out.println(e.getMessage());
                 }
             }catch(KarelException e){
                 System.out.println(e.getMessage()+" en la línea "+k.token_actual.linea+" columna "+k.token_actual.columna);

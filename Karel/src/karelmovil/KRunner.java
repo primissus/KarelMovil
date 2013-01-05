@@ -47,6 +47,15 @@ public class KRunner {
 	
 	private Ejecutable ejecutable;
 	private KWorld mundo;
+	
+	public KWorld getMundo() {
+		return mundo;
+	}
+
+	public void setMundo(KWorld mundo) {
+		this.mundo = mundo;
+	}
+
 	public int limiteRecursion=65000;
 	public int limiteIteracion=65000;
 	public int limiteEjecucion=200000;
@@ -174,20 +183,21 @@ public class KRunner {
             int ejecucion = 0;
             HashMap<String, Integer> diccionario_variables = new HashMap<String, Integer>();
             while (true){
-                if (ejecucion >= this.limiteEjecucion)
+                if (ejecucion >= this.limiteEjecucion){
                     throw new KarelException("HanoiTowerException: Tu programa nunca termina ¿Usaste 'apagate'?");
+                }
                 //Hay que ejecutar la función en turno en el índice actual
                 RunStruct instruccion = this.ejecutable.lista.get(indice); //TODO cuidar esta líneas
                 if(EndStruct.class.isInstance(instruccion)){
                 	EndStruct fin = (EndStruct)instruccion;
                 	int bucles[] = {Struct.ESTRUCTURA_MIENTRAS, Struct.ESTRUCTURA_REPITE};
-                	if(KGrammar.in_array(fin.estructura, bucles))
+                	if(KGrammar.in_array(fin.estructura, bucles)){
                 		indice = fin.inicio;
-                    else if (fin.estructura == Struct.ESTRUCTURA_SI)
+                	} else if (fin.estructura == Struct.ESTRUCTURA_SI){
                     	indice = fin.finEstructura;
-                    else if (instruccion.estructura == Struct.ESTRUCTURA_SINO)
+                	} else if (instruccion.estructura == Struct.ESTRUCTURA_SINO){
                         indice ++;
-                    else{//fin de una funcion
+                	} else{//fin de una funcion
                         Nota nota = this.pilaFunciones.pop(); //Obtenemos la nota de donde nos hemos quedado
                         indice = nota.posicion+1;
                         diccionario_variables = nota.diccionarioVariables;
@@ -199,34 +209,38 @@ public class KRunner {
                         if (! this.mundo.avanza())
                             throw new KarelException("Karel se ha estrellado con una pared!");
                         indice ++;
-                    }else if (instruccionPredefinida.instruccion.equals("coge-zumbador")){
+                    } else if (instruccionPredefinida.instruccion.equals("gira-izquierda")){
+                    	this.mundo.gira_izquierda();
+                    	indice ++;
+                    } else if (instruccionPredefinida.instruccion.equals("coge-zumbador")){
                         if (! this.mundo.coge_zumbador())
                         	throw new KarelException("Karel quizo coger un zumbador pero no habia en su posicion");
                         indice ++;
-                    }else if (instruccionPredefinida.instruccion.equals("deja-zumbador")){
+                    } else if (instruccionPredefinida.instruccion.equals("deja-zumbador")){
                         if (! this.mundo.deja_zumbador())
                             throw new KarelException("Karel quizo dejar un zumbador pero su mochila estaba vacia");
                         indice ++;
-                    }else if (instruccionPredefinida.instruccion.equals("apagate"))
+                    } else if (instruccionPredefinida.instruccion.equals("apagate"))
                         break; //Fin de la ejecución
                     else if (instruccionPredefinida.instruccion.equals("sal-de-instruccion")){
                         Nota nota = this.pilaFunciones.pop();//Obtenemos la nota de donde nos hemos quedado
                         indice = nota.posicion+1;
                         diccionario_variables = nota.diccionarioVariables;
-                    }else if (instruccionPredefinida.instruccion.equals("sal-de-bucle")){
+                    } else if (instruccionPredefinida.instruccion.equals("sal-de-bucle")){
                         RStructBucle bucle = this.pilaEstructuras.pop();
                         indice = bucle.finEstructura+1;
-                    } else //FIN
+                    } else { //FIN
                         throw new KarelException("HanoiTowerException: Tu programa excede el límite de ejecución ¿Usaste 'apagate'?");
-                }else if (instruccion.estructura == Struct.ESTRUCTURA_SI){ //Se trata de una estructura de control o una funcion definida
+                    }
+                } else if (instruccion.estructura == Struct.ESTRUCTURA_SI){ //Se trata de una estructura de control o una funcion definida
                 	RStructSi si = (RStructSi)instruccion;
                     if (this.terminoLogico(si.argumentoLogico, diccionario_variables))
                         indice ++; //Avanzamos a la siguiente posicion en la cinta
                     else//nos saltamos el si, vamos a la siguiente casilla, que debe ser un sino o la siguiente instruccion
                         indice = si.finEstructura+1;
-                } else if (instruccion.estructura == Struct.ESTRUCTURA_SINO) //Llegamos a un sino, procedemos, no hay de otra
+                } else if (instruccion.estructura == Struct.ESTRUCTURA_SINO){ //Llegamos a un sino, procedemos, no hay de otra
                     indice ++;
-                else if (instruccion.estructura == Struct.ESTRUCTURA_REPITE){
+                } else if (instruccion.estructura == Struct.ESTRUCTURA_REPITE){
                 	RStructRepite repite = (RStructRepite)instruccion;
                     if (this.pilaEstructuras.enTope(repite.id)){//Se está llegando a la estructura al menos por segunda vez
                         if (((RStructRepite)this.pilaEstructuras.getLast()).argumento.valorDecimal>0){
@@ -255,8 +269,7 @@ public class KRunner {
                             indice ++;
                             this.pilaEstructuras.getLast().cuenta ++;
                         }else{ //nos vamos al final
-                            indice = this.pilaEstructuras.getLast().finEstructura+1;
-                            this.pilaEstructuras.pop();
+                            indice = this.pilaEstructuras.pop().finEstructura+1;
                         }
                     }else{ //primera llamada de la estructura, no movemos el cabezal, solo la agregamos a la pila
                         this.pilaEstructuras.push(mientras);
