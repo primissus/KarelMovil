@@ -323,11 +323,11 @@ public class KGrammar {
         }
         */
         LogicY retornar_valor = new LogicY();
-        retornar_valor.argumento.push(this.clausula_no(lista_variables));
+        retornar_valor.argumento.add(this.clausula_no(lista_variables));
 
         while (this.token_actual.token.equals("y")){
             this.avanza_token();
-            retornar_valor.argumento.push(this.clausula_no(lista_variables));
+            retornar_valor.argumento.add(this.clausula_no(lista_variables));
         }
 
         return retornar_valor;
@@ -379,7 +379,7 @@ public class KGrammar {
                         LinkedList<IntExpr> params = this.funciones.get(nombre_funcion);
                         IntExpr param = new IntExpr();
                         param.crearIdentificador(this.token_actual.token);
-                        params.push(param);
+                        params.add(param);
                         this.funciones.put(nombre_funcion, params);
                         this.avanza_token();
                     }
@@ -461,7 +461,7 @@ public class KGrammar {
                         throw new KarelException("El prototipo de función '"+nombre_funcion+"' ya tiene un parámetro con el nombre '"+this.token_actual+"'");
                     else{
                         LinkedList<String> funcion = this.prototipoFunciones.get(nombre_funcion);
-                        funcion.push(this.token_actual.token);
+                        funcion.add(this.token_actual.token);
                         this.prototipoFunciones.put(nombre_funcion, funcion);
                         this.avanza_token();
                     }
@@ -524,28 +524,28 @@ public class KGrammar {
             if (this.token_actual.token.equals("sal-de-instruccion")){
                 if (c_funcion){
                     StructInstruccion ins = new StructInstruccion(this.token_actual.token);
-                    retornar_valor.push(ins);
+                    retornar_valor.add(ins);
                     this.avanza_token();
                 }else
                     throw new KarelException("No es posible usar 'sal-de-instruccion' fuera de una instruccion :)");
             }else if (this.token_actual.token.equals("sal-de-bucle")){
                 if (c_bucle){
                     StructInstruccion ins = new StructInstruccion(this.token_actual.token);
-                    retornar_valor.push(ins);
+                    retornar_valor.add(ins);
                     this.avanza_token();
                 }else
                     throw new KarelException("No es posible usar 'sal-de-bucle' fuera de un bucle :)");
             }else{
                 StructInstruccion ins = new StructInstruccion(this.token_actual.token);
-                retornar_valor.push(ins);
+                retornar_valor.add(ins);
                 this.avanza_token();
             }
         }else if (this.token_actual.token.equals("si"))
-            retornar_valor.push(this.expresion_si(lista_variables, c_funcion, c_bucle));
+            retornar_valor.add(this.expresion_si(lista_variables, c_funcion, c_bucle));
         else if (this.token_actual.token.equals("mientras"))
-            retornar_valor.push(this.expresion_mientras(lista_variables, c_funcion));
+            retornar_valor.add(this.expresion_mientras(lista_variables, c_funcion));
         else if (this.token_actual.token.equals("repite") || this.token_actual.token.equals("repetir"))
-            retornar_valor.push(this.expresion_repite(lista_variables, c_funcion));
+            retornar_valor.add(this.expresion_repite(lista_variables, c_funcion));
         else if (this.token_actual.token.equals("inicio")){
             this.avanza_token();
             retornar_valor = this.expresion_general(lista_variables, c_funcion, c_bucle);
@@ -560,14 +560,14 @@ public class KGrammar {
                 
                 StructFuncion funcion = new StructFuncion(nombre_funcion, new LinkedList<IntExpr>(), new LinkedList<Struct>());
                 
-                retornar_valor.push(funcion);
+                retornar_valor.add(funcion);
                 this.avanza_token();
                 int num_parametros = 0;
                 if (this.token_actual.token.equals("(")){
                     this.avanza_token();
                     while (true){
                         StructFuncion elemento = (StructFuncion)retornar_valor.get(0);
-                        elemento.argumentoFuncion.push(this.expresion_entera(lista_variables));
+                        elemento.argumentoFuncion.add(this.expresion_entera(lista_variables));
                         retornar_valor.set(0, elemento);
                         num_parametros ++;
                         if (this.token_actual.token.equals(")"))
@@ -790,11 +790,11 @@ public class KGrammar {
         Se usan dentro de los condicionales "si" y el bucle "mientras"
         */
         LogicO retornar_valor = new LogicO();
-        retornar_valor.argumento.push(this.clausula_y(lista_variables));
+        retornar_valor.argumento.add(this.clausula_y(lista_variables));
 
         while (this.token_actual.token.equals("o")){
             this.avanza_token();
-            retornar_valor.argumento.push(this.clausula_y(lista_variables));
+            retornar_valor.argumento.add(this.clausula_y(lista_variables));
         }
 
         return retornar_valor;
@@ -861,7 +861,7 @@ public class KGrammar {
             RStructFuncion def_funcion = new RStructFuncion(this.arbol.funciones.get(funcion).params, funcion);
             
             int posicion_inicio = this.listaPrograma.size();
-            this.listaPrograma.push(def_funcion);
+            this.listaPrograma.add(def_funcion);
 
             this.ejecutable.indiceFunciones.put(funcion, posicion_inicio);
             this.expandir_arbol_recursivo(this.arbol.funciones.get(funcion).cola);
@@ -869,11 +869,11 @@ public class KGrammar {
             EndStruct fin = new EndStruct(Struct.ESTRUCTURA_INSTRUCCION_DEFINIDA);
             fin.inicio = posicion_inicio;
             
-            this.listaPrograma.push(fin);
+            this.listaPrograma.add(fin);
         }
         this.ejecutable.main = this.listaPrograma.size();
         this.expandir_arbol_recursivo(this.arbol.main);
-        this.listaPrograma.push(new RStructInstruccion("fin")); //Marca de fin del programa
+        this.listaPrograma.add(new RStructInstruccion("fin")); //Marca de fin del programa
         this.ejecutable.lista = this.listaPrograma;
         return this.ejecutable;
     }
@@ -914,19 +914,19 @@ public class KGrammar {
             elemento = iterador.next();
             if(elemento.estructura == Struct.ESTRUCTURA_INSTRUCCION){
             	RStructInstruccion instruccion = new RStructInstruccion(((StructInstruccion)elemento).nombre);
-            	this.listaPrograma.push(instruccion);
+            	this.listaPrograma.add(instruccion);
             } else if(elemento.estructura == Struct.ESTRUCTURA_MIENTRAS){
                 int posicion_inicio = this.listaPrograma.size();
                 RStructMientras estructura = new RStructMientras(((StructMientras)elemento).argumentoLogico, posicion_inicio);
                 
-                this.listaPrograma.push(estructura);
+                this.listaPrograma.add(estructura);
                 this.expandir_arbol_recursivo(((StructMientras)elemento).cola);
                 
                 int posicion_fin = this.listaPrograma.size();
                 
                 EndStruct fin = new EndStruct(Struct.ESTRUCTURA_MIENTRAS);
                 fin.inicio = posicion_inicio;
-                this.listaPrograma.push(fin);
+                this.listaPrograma.add(fin);
                 
                 estructura.finEstructura = posicion_fin;
                 this.listaPrograma.set(posicion_inicio, estructura);
@@ -934,14 +934,14 @@ public class KGrammar {
             	int posicion_inicio = this.listaPrograma.size();
                 RStructRepite estructura = new RStructRepite(((StructRepite)elemento).argumentoEntero, posicion_inicio);
                 
-                this.listaPrograma.push(estructura);
+                this.listaPrograma.add(estructura);
                 this.expandir_arbol_recursivo(((StructRepite)elemento).cola);
                 
                 int posicion_fin = this.listaPrograma.size();
                 
                 EndStruct fin = new EndStruct(Struct.ESTRUCTURA_REPITE);
                 fin.inicio = posicion_inicio;
-                this.listaPrograma.push(fin);
+                this.listaPrograma.add(fin);
                 
                 estructura.finEstructura = posicion_fin;
                 this.listaPrograma.set(posicion_inicio, estructura);
@@ -949,14 +949,14 @@ public class KGrammar {
                 int posicion_inicio = this.listaPrograma.size();
                 RStructSi estructura = new RStructSi(((StructSi)elemento).argumentoLogico);
 
-                this.listaPrograma.push(estructura);
+                this.listaPrograma.add(estructura);
                 this.expandir_arbol_recursivo(((StructSi)elemento).cola);
                 int posicion_fin = this.listaPrograma.size();
                 
                 EndStruct fin_def = new EndStruct(Struct.ESTRUCTURA_SI);
                 fin_def.inicio = posicion_inicio;
                 fin_def.finEstructura = posicion_fin+1;
-                this.listaPrograma.push(fin_def);
+                this.listaPrograma.add(fin_def);
                 
                 estructura.finEstructura = posicion_fin;
                 this.listaPrograma.set(posicion_inicio, estructura);
@@ -964,19 +964,19 @@ public class KGrammar {
                 if (((StructSi)elemento).tieneSino){
                     RStructSino nueva_estructura = new RStructSino();
                     
-                    this.listaPrograma.push(nueva_estructura);
+                    this.listaPrograma.add(nueva_estructura);
                     this.expandir_arbol_recursivo(((StructSi)elemento).colaSino);
                     int fin_sino = this.listaPrograma.size();
                     
                     EndStruct fin = new EndStruct(Struct.ESTRUCTURA_SINO);
-                    this.listaPrograma.push(fin);
+                    this.listaPrograma.add(fin);
                     
                     fin_def.finEstructura = fin_sino;
                     this.listaPrograma.set(posicion_fin, fin_def);
                 }
             }else{//Se trata de la llamada a una función
                 RStructFuncion element = new RStructFuncion(((StructFuncion)elemento).argumentoFuncion, ((StructFuncion)elemento).nombre);
-                this.listaPrograma.push(element);
+                this.listaPrograma.add(element);
             }
         }
     }
