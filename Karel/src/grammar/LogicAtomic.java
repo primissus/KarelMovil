@@ -2,8 +2,8 @@ package grammar;
 
 public class LogicAtomic{
     public static final int EXPRESION_ENTERA=0x1; //si-es-cero
-    public static final int EXPRESION_BOOLEANA=0x2;
-    public static final int EXPRESION_TERMINO=0x3;
+    public static final int EXPRESION_BOOLEANA=0x2; //expresion normal
+    public static final int EXPRESION_TERMINO=0x3; //un termino anidado
     
     public IntExpr argumentoEntero;
     public String funcionBooleana;
