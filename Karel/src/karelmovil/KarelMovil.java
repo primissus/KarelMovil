@@ -9,6 +9,8 @@ package karelmovil;
  * @author abraham
  */
 
+import grammar.Ejecutable;
+
 import java.io.*;
 
 public class KarelMovil {
@@ -36,12 +38,20 @@ public class KarelMovil {
             try{
                 k.verificar_sintaxis();
                 System.out.println("Sintaxis correcta");
-                k.expandir_arbol();
+                Ejecutable exe = k.expandir_arbol();
+                System.out.println(exe);
+                KRunner runner = new KRunner(exe, new KWorld());
+                runner.run();
+                if(runner.estado == KRunner.ESTADO_OK){
+                	System.out.println("Programa ejecutado");
+                } else {
+                	System.out.print("ERROR: "+runner.mensaje);
+                }
             }catch(KarelException e){
                 System.out.println(e.getMessage()+" en la línea "+k.token_actual.linea+" columna "+k.token_actual.columna);
             }
         } catch(FileNotFoundException e){
-            
+            System.out.println("Archivo no encontrado");
         }
     }
 }
