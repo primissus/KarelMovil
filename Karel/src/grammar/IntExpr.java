@@ -12,6 +12,10 @@ public class IntExpr{
 	public IntExpr argumento;
 	public int tipo;
 	
+	public IntExpr(){
+		
+	}
+	
 	public IntExpr(int num){
 		this.tipo = IntExpr.VALOR_DECIMAL;
 		this.valorDecimal = num;
@@ -32,5 +36,19 @@ public class IntExpr{
 	public void crearSucede(IntExpr arg){
 		this.tipo = IntExpr.VALOR_SUCEDE;
 		this.argumento = arg;
+	}
+	
+	public String toString(){
+		switch(this.tipo){
+			case IntExpr.VALOR_DECIMAL:
+				return ""+this.valorDecimal;
+			case IntExpr.VALOR_IDENTIFICADOR:
+				return this.valorIdentificador;
+			case IntExpr.VALOR_PRECEDE:
+				return "precede("+this.argumento+")";
+			case IntExpr.VALOR_SUCEDE:
+				return "sucede("+this.argumento+")";
+		}
+		return "";
 	}
 }
