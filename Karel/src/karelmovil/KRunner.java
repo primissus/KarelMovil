@@ -139,18 +139,10 @@ public class KRunner {
 	            else if(clausula.funcionBooleana.equals("ningun-zumbador-en-la-mochila"))
 	                return ! this.mundo.algun_zumbador_en_la_mochila();
 	            else if(clausula.funcionBooleana.startsWith("orientado-al-")){
-	            	return this.mundo.orientado_al(
-	            		KWorld.convierteOrientacion(
-	            			clausula.funcionBooleana.substring(
-	            				13,
-	            				clausula.funcionBooleana.length()
-	            			)
-	            		)
-	            	);
+	            	return this.mundo.orientado_al(KWorld.convierteOrientacion(clausula.funcionBooleana.substring(13,clausula.funcionBooleana.length())));
 	            } else if(clausula.funcionBooleana.startsWith("no-orientado-al-")){
 	            	return ! this.mundo.orientado_al(KWorld.convierteOrientacion(clausula.funcionBooleana.substring(16, clausula.funcionBooleana.length())));
 	            }
-	            return true;
 			case LogicAtomic.EXPRESION_ENTERA:
 				return this.expresionEntera(clausula.argumentoEntero, vars)==0;
 			case LogicAtomic.EXPRESION_TERMINO:
