@@ -34,6 +34,7 @@ class PilaEstructuras extends LinkedList<RStructBucle>{
 		if(this.size() == 0)
 			return false;
 		RStructBucle ultimoValor = this.pop();
+		this.push(ultimoValor);
 		if(ultimoValor.id == id)
 			return true;
 		return false;
@@ -59,6 +60,7 @@ public class KRunner {
 	        mundo, tambien establece el limite para la recursion sobre una
 	        funcion antes de botar un error stack_overflow.*/
 	        this.ejecutable = programa_compilado;
+	        this.mundo = mundo;
 	        this.limiteRecursion = limite_recursion;
 	        this.limiteIteracion = limiteIteracion;
 	        this.limiteEjecucion = limite_ejecucion;
@@ -73,6 +75,7 @@ public class KRunner {
         mundo, tambien establece el limite para la recursion sobre una
         funcion antes de botar un error stack_overflow.*/
         this.ejecutable = programa_compilado;
+        this.mundo = mundo;
         this.pilaFunciones = new LinkedList<Nota>(); //La pila de llamadas a funciones
         this.pilaEstructuras = new PilaEstructuras(); //pila de llamadas a estructuras
         this.estado = KRunner.ESTADO_OK; //El estado en que se encuentra
@@ -135,6 +138,19 @@ public class KRunner {
 	                return this.mundo.algun_zumbador_en_la_mochila();
 	            else if(clausula.funcionBooleana.equals("ningun-zumbador-en-la-mochila"))
 	                return ! this.mundo.algun_zumbador_en_la_mochila();
+	            else if(clausula.funcionBooleana.startsWith("orientado-al-")){
+	            	return this.mundo.orientado_al(
+	            		KWorld.convierteOrientacion(
+	            			clausula.funcionBooleana.substring(
+	            				13,
+	            				clausula.funcionBooleana.length()
+	            			)
+	            		)
+	            	);
+	            } else if(clausula.funcionBooleana.startsWith("no-orientado-al-")){
+	            	return ! this.mundo.orientado_al(KWorld.convierteOrientacion(clausula.funcionBooleana.substring(16, clausula.funcionBooleana.length())));
+	            }
+	            return true;
 			case LogicAtomic.EXPRESION_ENTERA:
 				return this.expresionEntera(clausula.argumentoEntero, vars)==0;
 			case LogicAtomic.EXPRESION_TERMINO:

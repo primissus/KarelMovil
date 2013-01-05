@@ -317,9 +317,9 @@ public class KWorld {
     public static int convierteOrientacion(String orientacion){
     	if(orientacion.equals("norte"))
     		return KWorld.NORTE;
-    	else if(orientacion.endsWith("este"))
+    	else if(orientacion.equals("este"))
     		return KWorld.ESTE;
-    	else if(orientacion.endsWith("sur"))
+    	else if(orientacion.equals("sur"))
     		return KWorld.SUR;
     	else
     		return KWorld.OESTE;
