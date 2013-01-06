@@ -18,7 +18,7 @@ public class KWorld {
 	public Karel karel;
 	private int filas;
 	private int columnas;
-	private HashMap<KPosition, KCasilla> casillas;
+	public HashMap<KPosition, KCasilla> casillas;
 	
 	public int contrario (int cardinal){
 	    /* Suena ridículo, pero obtiene el punto cardinal contrario al
