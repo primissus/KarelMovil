@@ -36,7 +36,7 @@ public class KarelMovil {
                 
                 KWorld mundo = new KWorld();
                 mundo.conmuta_pared(new KPosition(1, 1), KWorld.NORTE);
-                System.out.println(mundo.casillas.containsKey(new KPosition(1, 1)));
+                System.out.println(mundo.casillas.containsKey(new KPosition(1, 1).toString()));
                 
                 KRunner runner = new KRunner(exe, mundo, 200, 200, 200);
                 runner.run();

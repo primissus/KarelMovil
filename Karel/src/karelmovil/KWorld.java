@@ -18,7 +18,7 @@ public class KWorld {
 	public Karel karel;
 	private int filas;
 	private int columnas;
-	public HashMap<KPosition, KCasilla> casillas;
+	public HashMap<String, KCasilla> casillas;
 	
 	public int contrario (int cardinal){
 	    /* Suena ridículo, pero obtiene el punto cardinal contrario al
@@ -56,7 +56,7 @@ public class KWorld {
 	    }
 	}
 
-    public KWorld(int filas, int columnas, Karel karel, HashMap<KPosition, KCasilla> casillas){
+    public KWorld(int filas, int columnas, Karel karel, HashMap<String, KCasilla> casillas){
     	this.karel = karel;
     	this.filas = filas;
     	this.columnas = columnas;
@@ -67,7 +67,7 @@ public class KWorld {
     	this.karel = new Karel();
     	this.filas = 100;
     	this.columnas = 100;
-    	this.casillas = new HashMap<KPosition, KCasilla>();
+    	this.casillas = new HashMap<String, KCasilla>();
     }
     
     public void conmuta_pared (KPosition coordenadas, int orientacion){
@@ -77,23 +77,23 @@ public class KWorld {
         arriba, abajo, a la izquierda o a la derecha. */
     	if(0<coordenadas.fila && coordenadas.fila<this.filas+1 && 0<coordenadas.columna && coordenadas.columna<this.columnas+1){
             boolean agregar = true; //Indica si agregamos o quitamos la pared
-            if(this.casillas.containsKey(coordenadas)){
+            if(this.casillas.containsKey(coordenadas.toString())){
                 //Puede existir una pared
-            	KCasilla casilla = this.casillas.get(coordenadas);
-            	if(this.casillas.get(coordenadas).paredes.contains(orientacion)){
+            	KCasilla casilla = this.casillas.get(coordenadas.toString());
+            	if(this.casillas.get(coordenadas.toString()).paredes.contains(orientacion)){
                     //Ya existe la pared, la quitamos
                     casilla.paredes.remove(orientacion);
-                    this.casillas.put(coordenadas, casilla);
+                    this.casillas.put(coordenadas.toString(), casilla);
                     agregar = false;
             	} else{ //no existe la pared, la agregamos
                     casilla.paredes.add(orientacion);
-                    this.casillas.put(coordenadas, casilla);
+                    this.casillas.put(coordenadas.toString(), casilla);
             	}
             } else{
                 //No existe el indice, tampoco la pared, asi que se agrega
             	KCasilla nueva_casilla = new KCasilla(coordenadas);
             	nueva_casilla.paredes.add(orientacion);
-            	this.casillas.put(coordenadas, nueva_casilla);
+            	this.casillas.put(coordenadas.toString(), nueva_casilla);
             }
             //Debemos conmutar la pared en la casilla opuesta
             KPosition casilla_opuesta = this.obten_casilla_avance(coordenadas, orientacion);
@@ -102,48 +102,48 @@ public class KWorld {
                 //no es una casilla en los bordes
                 if (agregar){
                     //Agregamos una pared
-                	if(this.casillas.containsKey(casilla_opuesta)){
+                	if(this.casillas.containsKey(casilla_opuesta.toString())){
                         //Del otro lado si existe registro
-                		KCasilla casilla = this.casillas.get(casilla_opuesta);
+                		KCasilla casilla = this.casillas.get(casilla_opuesta.toString());
                 		casilla.paredes.add(posicion_opuesta);
-                		this.casillas.put(casilla_opuesta, casilla);
+                		this.casillas.put(casilla_opuesta.toString(), casilla);
                 	} else {
                         //Tampoco hay registro del otro lado
                 		KCasilla nueva_casilla = new KCasilla(casilla_opuesta);
                 		nueva_casilla.paredes.add(posicion_opuesta);
-                		this.casillas.put(casilla_opuesta, nueva_casilla);
+                		this.casillas.put(casilla_opuesta.toString(), nueva_casilla);
                 	}
                 } else{
                     //quitamos una pared, asumimos que existe el registro
                     //del lado opuesto
-                	KCasilla casilla = this.casillas.get(casilla_opuesta);
-                	casilla.paredes.remove(casilla_opuesta);
-                	this.casillas.put(casilla_opuesta, casilla);
+                	KCasilla casilla = this.casillas.get(casilla_opuesta.toString());
+                	casilla.paredes.remove(casilla_opuesta.toString());
+                	this.casillas.put(casilla_opuesta.toString(), casilla);
                 }
             }
             //Operaciones de limpieza para ahorrar memoria
-            if (! (this.casillas.get(coordenadas).paredes.size()>0 || this.casillas.get(coordenadas).zumbadores>0))
-            	this.casillas.remove(coordenadas);
-            if (! (this.casillas.get(casilla_opuesta).paredes.size()>0 || this.casillas.get(casilla_opuesta).zumbadores>0))
-            	this.casillas.remove(casilla_opuesta);
+            if (! (this.casillas.get(coordenadas.toString()).paredes.size()>0 || this.casillas.get(coordenadas.toString()).zumbadores>0))
+            	this.casillas.remove(coordenadas.toString());
+            if (! (this.casillas.get(casilla_opuesta.toString()).paredes.size()>0 || this.casillas.get(casilla_opuesta.toString()).zumbadores>0))
+            	this.casillas.remove(casilla_opuesta.toString());
     	}
     }
 
     public void pon_zumbadores (KPosition posicion, int cantidad){
         /* Agrega zumbadores al mundo en la posicion dada */
         if (0<posicion.fila && posicion.fila <(this.filas+1) && 0<posicion.columna && posicion.columna<(this.columnas+1)) {
-            if (this.casillas.containsKey(posicion)){
-                KCasilla casilla = this.casillas.get(posicion);
+            if (this.casillas.containsKey(posicion.toString())){
+                KCasilla casilla = this.casillas.get(posicion.toString());
                 casilla.zumbadores = cantidad;
-                this.casillas.put(posicion, casilla);
+                this.casillas.put(posicion.toString(), casilla);
             } else {
             	KCasilla casilla = new KCasilla(posicion);
             	casilla.zumbadores = cantidad;
-            	this.casillas.put(posicion, casilla);
+            	this.casillas.put(posicion.toString(), casilla);
             }
             //Limpiamos la memoria si es necesario
-            if (! (this.casillas.get(posicion).paredes.size()>0 || this.casillas.get(posicion).zumbadores>0))
-            	this.casillas.remove(posicion);
+            if (! (this.casillas.get(posicion.toString()).paredes.size()>0 || this.casillas.get(posicion.toString()).zumbadores>0))
+            	this.casillas.remove(posicion.toString());
         }
     }
 
@@ -171,19 +171,19 @@ public class KWorld {
         verdadero solo ensaya. */
         KPosition posicion = this.karel.posicion;
         if (this.junto_a_zumbador()){
-            if (this.casillas.get(posicion).zumbadores == -1){
+            if (this.casillas.get(posicion.toString()).zumbadores == -1){
                 if (this.karel.mochila != -1)
                     this.karel.mochila += 1;
-            } else if (this.casillas.get(posicion).zumbadores>0){
+            } else if (this.casillas.get(posicion.toString()).zumbadores>0){
                 if (this.karel.mochila != -1)
                     this.karel.mochila += 1;
-                KCasilla casilla = this.casillas.get(posicion);
+                KCasilla casilla = this.casillas.get(posicion.toString());
                 casilla.zumbadores -= 1;
-                this.casillas.put(posicion, casilla);
+                this.casillas.put(posicion.toString(), casilla);
             }
             //Limpiamos la memoria si es necesario
-            if (! (this.casillas.get(posicion).paredes.size()>0 || this.casillas.get(posicion).zumbadores>0))
-                this.casillas.remove(posicion);
+            if (! (this.casillas.get(posicion.toString()).paredes.size()>0 || this.casillas.get(posicion.toString()).zumbadores>0))
+                this.casillas.remove(posicion.toString());
             return true;
         }else
             return false;
@@ -195,14 +195,14 @@ public class KWorld {
         solo ensaya  */
         KPosition posicion = this.karel.posicion;
         if (this.algun_zumbador_en_la_mochila()){
-            if( this.casillas.containsKey(posicion)){
-                if (this.casillas.get(posicion).zumbadores != -1){
-                    this.casillas.get(posicion).zumbadores += 1;
+            if( this.casillas.containsKey(posicion.toString())){
+                if (this.casillas.get(posicion.toString()).zumbadores != -1){
+                    this.casillas.get(posicion.toString()).zumbadores += 1;
                 }
             }else{
             	KCasilla casilla = new KCasilla(posicion);
             	casilla.zumbadores = 1;
-            	this.casillas.put(posicion, casilla);
+            	this.casillas.put(posicion.toString(), casilla);
             }
             if (this.karel.mochila != -1)
                 this.karel.mochila -= 1;
@@ -229,10 +229,10 @@ public class KWorld {
         		if(posicion.columna == 1) return false;
         		break;
         }
-        if (! this.casillas.containsKey(posicion)){
+        if (! this.casillas.containsKey(posicion.toString())){
             return true; //No hay un registro para esta casilla, no hay paredes
         } else {
-            if (this.casillas.get(posicion).paredes.contains(direccion)){
+            if (this.casillas.get(posicion.toString()).paredes.contains(direccion)){
                 return false;
             } else {
                 return true;
@@ -252,10 +252,10 @@ public class KWorld {
 	    	case KWorld.OESTE: if(posicion.fila == 1) return false;
 	    }
         
-        if (! this.casillas.containsKey(posicion))
+        if (! this.casillas.containsKey(posicion.toString()))
             return true; //No hay un registro para esta casilla, no hay paredes
         else{
-            if (this.casillas.get(posicion).paredes.contains(rotado(direccion)))
+            if (this.casillas.get(posicion.toString()).paredes.contains(rotado(direccion)))
                 return false;
             else
                 return true;
@@ -274,10 +274,10 @@ public class KWorld {
 	    	case KWorld.OESTE: if(posicion.fila == this.filas) return false;
 	    }
         
-        if (! this.casillas.containsKey(posicion))
+        if (! this.casillas.containsKey(posicion.toString()))
             return true; //No hay un registro para esta casilla, no hay paredes extra
         else{
-            if (this.casillas.get(posicion).paredes.contains(rotado(rotado(rotado(direccion)))))
+            if (this.casillas.get(posicion.toString()).paredes.contains(rotado(rotado(rotado(direccion)))))
                 return false;
             else
                 return true;
@@ -286,10 +286,10 @@ public class KWorld {
 
     public boolean junto_a_zumbador (){
         /* Determina si Karel esta junto a un zumbador. */
-        if (this.casillas.containsKey(this.karel.posicion)){
-            if (this.casillas.get(this.karel.posicion).zumbadores == -1)
+        if (this.casillas.containsKey(this.karel.posicion.toString())){
+            if (this.casillas.get(this.karel.posicion.toString()).zumbadores == -1)
                 return true;
-            else if (this.casillas.get(this.karel.posicion).zumbadores > 0)
+            else if (this.casillas.get(this.karel.posicion.toString()).zumbadores > 0)
                 return true;
             else
                 return false;
@@ -371,10 +371,11 @@ public class KWorld {
     	
     	ArrayList<JSONObject> casillas = new ArrayList<JSONObject>();
     	
-    	for(KPosition llave:this.casillas.keySet()){
+    	for(String llave:this.casillas.keySet()){
+    		KCasilla valor = this.casillas.get(llave);
     		JSONObject casilla = new JSONObject();
-    		casilla.put("fila", llave.fila);
-    		casilla.put("columna", llave.columna);
+    		casilla.put("fila", valor.fila);
+    		casilla.put("columna", valor.columna);
     		casilla.put("zumbadores", this.casillas.get(llave).zumbadores);
     		casilla.put("paredes", KWorld.convierteParedes(this.casillas.get(llave).paredes));
     		
@@ -389,7 +390,7 @@ public class KWorld {
    
     public void carga_casillas (JSONArray casillas) throws JSONException{
         /* Carga las casillas de un diccionario dado. */
-        this.casillas = new HashMap<KPosition, KCasilla>();
+        this.casillas.clear();
         for(int i=0;i<casillas.length(); i++){
         	JSONObject casillaObj = casillas.getJSONObject(i);
         	
@@ -398,7 +399,7 @@ public class KWorld {
         	casilla.zumbadores = casillaObj.getInt("zumbadores");
         	casilla.paredes = KWorld.convierteParedes(casillaObj.getJSONArray("paredes"));
         	
-        	this.casillas.put(llave, casilla);
+        	this.casillas.put(llave.toString(), casilla);
         }
     }
 
@@ -420,7 +421,7 @@ public class KWorld {
     public void limpiar (){
         /* Limpia el mundo y lo lleva a un estado inicial */
     	this.karel = new Karel();
-    	this.casillas = new HashMap<KPosition, KCasilla>();
+    	this.casillas.clear();
     }
 
     /*
