@@ -97,8 +97,9 @@ public class KRunner {
         recibe una lista con los terminos a evaluar
         */
         for (LogicY termino:args.argumento){
-            if (this.clausula_y(termino, vars))
+            if (this.clausula_y(termino, vars)){
                 return true;
+            }
         }
         return false;
 	}
@@ -107,8 +108,9 @@ public class KRunner {
 		/* Obtiene el resultado de una comparación "y" entre terminos
         logicos */
         for (LogicNo termino:expresion.argumento){
-            if (!this.clausula_no(termino, vars))
+            if (!this.clausula_no(termino, vars)){
                 return false; //El resultado de una evaluacion "y" es falso si uno de los terminos es falso
+            }
         }
         return true;
 	}
@@ -116,7 +118,11 @@ public class KRunner {
 	private boolean clausula_no(LogicNo termino, HashMap<String, Integer> vars) {
 		/* Obtiene el resultado de una negacion "no" o de un termino
         logico */
-        return termino.valor && clausula_atomica(termino.clausula, vars);
+		if(termino.valor){
+			return clausula_atomica(termino.clausula, vars);
+		} else {
+			return ! clausula_atomica(termino.clausula, vars);
+		}
 	}
 
 	private boolean clausula_atomica(LogicAtomic clausula,
@@ -127,9 +133,9 @@ public class KRunner {
 	                return true;
 	            else if(clausula.funcionBooleana.equals("falso"))
 	                return false;
-	            else if(clausula.funcionBooleana.equals("frente-libre"))
+	            else if(clausula.funcionBooleana.equals("frente-libre")){
 	                return this.mundo.frente_libre();
-	            else if(clausula.funcionBooleana.equals("frente-bloqueado"))
+	            } else if(clausula.funcionBooleana.equals("frente-bloqueado"))
 	                return ! this.mundo.frente_libre();
 	            else if(clausula.funcionBooleana.equals("izquierda-libre"))
 	                return this.mundo.izquierda_libre();
@@ -220,9 +226,9 @@ public class KRunner {
                         if (! this.mundo.deja_zumbador())
                             throw new KarelException("Karel quizo dejar un zumbador pero su mochila estaba vacia");
                         indice ++;
-                    } else if (instruccionPredefinida.instruccion.equals("apagate"))
+                    } else if (instruccionPredefinida.instruccion.equals("apagate")){
                         break; //Fin de la ejecución
-                    else if (instruccionPredefinida.instruccion.equals("sal-de-instruccion")){
+                    } else if (instruccionPredefinida.instruccion.equals("sal-de-instruccion")){
                         Nota nota = this.pilaFunciones.pop();//Obtenemos la nota de donde nos hemos quedado
                         indice = nota.posicion+1;
                         diccionario_variables = nota.diccionarioVariables;
@@ -232,14 +238,17 @@ public class KRunner {
                     } else { //FIN
                         throw new KarelException("HanoiTowerException: Tu programa excede el límite de ejecución ¿Usaste 'apagate'?");
                     }
+                    ejecucion ++;
                 } else if (instruccion.estructura == Struct.ESTRUCTURA_SI){ //Se trata de una estructura de control o una funcion definida
                 	RStructSi si = (RStructSi)instruccion;
                     if (this.terminoLogico(si.argumentoLogico, diccionario_variables))
                         indice ++; //Avanzamos a la siguiente posicion en la cinta
                     else//nos saltamos el si, vamos a la siguiente casilla, que debe ser un sino o la siguiente instruccion
                         indice = si.finEstructura+1;
+                    ejecucion ++;
                 } else if (instruccion.estructura == Struct.ESTRUCTURA_SINO){ //Llegamos a un sino, procedemos, no hay de otra
                     indice ++;
+                    ejecucion ++;
                 } else if (instruccion.estructura == Struct.ESTRUCTURA_REPITE){
                 	RStructRepite repite = (RStructRepite)instruccion;
                     if (this.pilaEstructuras.enTope(repite.id)){//Se está llegando a la estructura al menos por segunda vez
@@ -253,6 +262,7 @@ public class KRunner {
                             indice = this.pilaEstructuras.getLast().finEstructura+1;
                             this.pilaEstructuras.pop();
                         }
+                        ejecucion ++;
                     }else{//primera llamada de la estructura, no movemos el cabezal, solo la agregamos a la pila
                         int argumento = this.expresionEntera(repite.argumento, diccionario_variables);
                         if (argumento < 0)
@@ -268,9 +278,10 @@ public class KRunner {
                                 throw new KarelException("LoopLimitExceded: hay un bucle que se cicla");
                             indice ++;
                             this.pilaEstructuras.getLast().cuenta ++;
-                        }else{ //nos vamos al final
+                        } else { //nos vamos al final
                             indice = this.pilaEstructuras.pop().finEstructura+1;
                         }
+                        ejecucion ++;
                     }else{ //primera llamada de la estructura, no movemos el cabezal, solo la agregamos a la pila
                         this.pilaEstructuras.push(mientras);
                     }
@@ -290,8 +301,8 @@ public class KRunner {
                         ((RStructFuncion)this.ejecutable.lista.get(indice-1)).params,
                         valores
                     );
+                    ejecucion ++;
                 }
-                ejecucion ++;
             }
             this.estado = KRunner.ESTADO_OK;
             this.mensaje = "Ejecucion terminada";
