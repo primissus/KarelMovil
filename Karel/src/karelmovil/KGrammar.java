@@ -877,34 +877,6 @@ public class KGrammar {
         this.ejecutable.lista = this.listaPrograma;
         return this.ejecutable;
     }
-
-    /*public void var_dump(){
-    	Iterator<RunStruct> cosa = this.listaPrograma.iterator();
-    	int cont=0;
-    	while(cosa.hasNext()){
-    		RunStruct valor = cosa.next();
-    		switch(valor.estructura){
-    			case Struct.ESTRUCTURA_INSTRUCCION:
-    				RStructInstruccion des = (RStructInstruccion)valor;
-    				System.out.println("*>"+des.instruccion+" "+cont);
-    				break;
-    			case Struct.ESTRUCTURA_REPITE:
-    				System.out.println("*>repite "+cont);
-    				break;
-    			case Struct.ESTRUCTURA_INSTRUCCION_DEFINIDA:
-    				try{
-    					EndStruct verfe = (EndStruct)valor;
-    					System.out.println("*>FIN");
-    				} catch(ClassCastException e){
-    					RStructFuncion desd = (RStructFuncion)valor;
-	    				System.out.println("*>"+desd.nombre+" "+cont);
-	    				break;
-    				}
-    		}
-    		cont++;
-    	}
-    	System.out.println("------");
-    }*/
     
     private void expandir_arbol_recursivo(LinkedList<Struct> cola){
         /*Toma un arbol y lo expande*/
@@ -960,7 +932,6 @@ public class KGrammar {
                 
                 estructura.finEstructura = posicion_fin;
                 this.listaPrograma.set(posicion_inicio, estructura);
-                
                 if (((StructSi)elemento).tieneSino){
                     RStructSino nueva_estructura = new RStructSino();
                     
