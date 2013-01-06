@@ -241,10 +241,11 @@ public class KRunner {
                     ejecucion ++;
                 } else if (instruccion.estructura == Struct.ESTRUCTURA_SI){ //Se trata de una estructura de control o una funcion definida
                 	RStructSi si = (RStructSi)instruccion;
-                    if (this.terminoLogico(si.argumentoLogico, diccionario_variables))
+                    if (this.terminoLogico(si.argumentoLogico, diccionario_variables)){
                         indice ++; //Avanzamos a la siguiente posicion en la cinta
-                    else//nos saltamos el si, vamos a la siguiente casilla, que debe ser un sino o la siguiente instruccion
+                    } else {//nos saltamos el si, vamos a la siguiente casilla, que debe ser un sino o la siguiente instruccion
                         indice = si.finEstructura+1;
+                    }
                     ejecucion ++;
                 } else if (instruccion.estructura == Struct.ESTRUCTURA_SINO){ //Llegamos a un sino, procedemos, no hay de otra
                     indice ++;
