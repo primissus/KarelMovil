@@ -15,7 +15,7 @@ public class KWorld {
 	public static final int SUR=0x3;
 	public static final int OESTE=0x4;
 	
-	private Karel karel;
+	public Karel karel;
 	private int filas;
 	private int columnas;
 	private HashMap<KPosition, KCasilla> casillas;
@@ -136,7 +136,7 @@ public class KWorld {
                 KCasilla casilla = this.casillas.get(posicion);
                 casilla.zumbadores = cantidad;
                 this.casillas.put(posicion, casilla);
-            }else{
+            } else {
             	KCasilla casilla = new KCasilla(posicion);
             	casilla.zumbadores = cantidad;
             	this.casillas.put(posicion, casilla);
@@ -216,18 +216,27 @@ public class KWorld {
         int direccion = this.karel.orientacion;
         KPosition posicion = this.karel.posicion;
         switch(direccion){
-        	case KWorld.NORTE: if (posicion.fila == this.filas) return false;
-        	case KWorld.SUR: if(posicion.fila == 1) return false;
-        	case KWorld.ESTE: if(posicion.columna == this.columnas) return false;
-        	case KWorld.OESTE: if(posicion.columna == 1) return false;
+        	case KWorld.NORTE:
+        		if (posicion.fila == this.filas) return false;
+        		break;
+        	case KWorld.SUR:
+        		if(posicion.fila == 1) return false;
+        		break;
+        	case KWorld.ESTE:
+        		if(posicion.columna == this.columnas) return false;
+        		break;
+        	case KWorld.OESTE:
+        		if(posicion.columna == 1) return false;
+        		break;
         }
-        if (! this.casillas.containsKey(posicion))
+        if (! this.casillas.containsKey(posicion)){
             return true; //No hay un registro para esta casilla, no hay paredes
-        else{
-            if (this.casillas.get(posicion).paredes.contains(direccion))
+        } else {
+            if (this.casillas.get(posicion).paredes.contains(direccion)){
                 return false;
-            else
+            } else {
                 return true;
+            }
         }
     }
 
