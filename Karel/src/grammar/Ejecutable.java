@@ -37,9 +37,9 @@ public class Ejecutable{
 	        	//Es una instruccion predefinida de Karel
 	        	RStructInstruccion instruccionPredefinida = (RStructInstruccion)instruccion;
 	        	result += i+">"+instruccionPredefinida.instruccion+"\n";
-	        }else if (instruccion.estructura == Struct.ESTRUCTURA_SI){ //Se trata de una estructura de control o una funcion definida
+	        } else if (instruccion.estructura == Struct.ESTRUCTURA_SI){ //Se trata de una estructura de control o una funcion definida
 	        	RStructSi si = (RStructSi)instruccion;
-	            result += i+">SI "+si.argumentoLogico+"\n";
+	            result += i+">SI ("+si.finEstructura+")\n";
 	        } else if (instruccion.estructura == Struct.ESTRUCTURA_SINO) //Llegamos a un sino, procedemos, no hay de otra
 	            result += i+">SINO\n";
 	        else if (instruccion.estructura == Struct.ESTRUCTURA_REPITE){
