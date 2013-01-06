@@ -42,7 +42,11 @@ public class KarelMovil {
                 k.verificar_sintaxis();
                 System.out.println("Sintaxis correcta");
                 Ejecutable exe = k.expandir_arbol();
-                KRunner runner = new KRunner(exe, new KWorld(), 200, 200, 200);
+                
+                KWorld mundo = new KWorld();
+                mundo.conmuta_pared(new KPosition(1, 1), KWorld.NORTE);
+                
+                KRunner runner = new KRunner(exe, mundo, 200, 200, 200);
                 runner.run();
                 if(runner.estado == KRunner.ESTADO_OK){
                 	System.out.println("Programa ejecutado");
@@ -53,11 +57,11 @@ public class KarelMovil {
                 	JSONObject cosa = runner.getMundo().exporta_mundo();
                 	String res = cosa.toString();
                 	
-                	File f = new File("resultado.json");
+                	File f = new File("/home/abraham/resultado.json");
                 	FileWriter fw = new FileWriter(f);
                 	fw.write(res);
                 	fw.close();
-                	System.out.println("ok");
+                	System.out.println("Mundo exportado");
                 } catch (JSONException e){
                 	System.out.println(e.getMessage());
                 } catch (IOException e){
