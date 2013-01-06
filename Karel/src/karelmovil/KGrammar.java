@@ -735,6 +735,7 @@ public class KGrammar {
 
         if (this.token_actual.token.equals("sino")){
             this.avanza_token();
+            retornar_valor.tieneSino = true;
             retornar_valor.colaSino = this.expresion(lista_variables, c_funcion, c_bucle);
         }
 

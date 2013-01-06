@@ -35,15 +35,13 @@ public class KarelMovil {
                 Ejecutable exe = k.expandir_arbol();
                 
                 KWorld mundo = new KWorld();
-                mundo.conmuta_pared(new KPosition(1, 1), KWorld.NORTE);
-                System.out.println(mundo.casillas.containsKey(new KPosition(1, 1).toString()));
                 
                 KRunner runner = new KRunner(exe, mundo, 200, 200, 200);
                 runner.run();
                 if(runner.estado == KRunner.ESTADO_OK){
                 	System.out.println("Programa ejecutado");
                 } else {
-                	System.out.print("ERROR: "+runner.mensaje);
+                	System.out.println("ERROR: "+runner.mensaje);
                 }
                 try{
                 	JSONObject cosa = runner.getMundo().exporta_mundo();
