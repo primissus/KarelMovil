@@ -22,16 +22,7 @@ public class KarelMovil {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        InputStreamReader isr = new InputStreamReader(System.in);
-        BufferedReader br = new BufferedReader(isr);
-        
-        System.out.println("Escribe la ruta del archivo:");
-        String nombre_archivo = "";
-        try{
-            nombre_archivo = br.readLine();
-        } catch(IOException e){
-            System.out.println("Un pinchi error raro");
-        }
+        String nombre_archivo = "/home/abraham/codigo.karel";
         File archivo = new File(nombre_archivo);
         KGrammar k;
         try{
@@ -45,6 +36,7 @@ public class KarelMovil {
                 
                 KWorld mundo = new KWorld();
                 mundo.conmuta_pared(new KPosition(1, 1), KWorld.NORTE);
+                System.out.println(mundo.casillas.containsKey(new KPosition(1, 1)));
                 
                 KRunner runner = new KRunner(exe, mundo, 200, 200, 200);
                 runner.run();
