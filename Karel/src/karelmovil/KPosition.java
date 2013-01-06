@@ -8,4 +8,7 @@ public class KPosition {
 		this.fila = fila;
 		this.columna = columna;
 	}
+	public String toString(){
+		return "("+this.fila+","+this.columna+")";
+	}
 }
