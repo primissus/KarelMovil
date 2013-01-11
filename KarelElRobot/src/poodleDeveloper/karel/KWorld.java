@@ -20,7 +20,9 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 
 	public KWorld(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		this.init(context);
 	}
+	
 	
 	private KThread thread;
 	private Bitmap world,karelN,karelE,karelS,karelO;
@@ -105,7 +107,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			case poodleDeveloper.karel.data.karelmovil.KWorld.OESTE:
 				canvas.drawBitmap(karelO,
 						(Main.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-Main.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+1122,
+						(maxScreenXY.y-Main.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
 						paint);
 				break;
 			default:
@@ -164,7 +166,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				}
 			}
 		}
-		
+		canvas.drawBitmap(karelS,100,-25,paint);
 		
 				
 	}
