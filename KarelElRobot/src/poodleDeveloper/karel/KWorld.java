@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 
+	private static final int TAM_CAS = 54;
 	public KWorld(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		this.init(context);
@@ -32,7 +33,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private Point minScreenXY;
 	private int lastX,lastY;
 	private boolean estoyArrastrando = false;	
-	
+	private CasillaMaestra casilla;
 	@SuppressLint("NewApi")
 	public void init(Context context) {
 		//super(context);
@@ -52,6 +53,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		maxScreenXY.set(size.x/54+1, size.y/54);
 		minScreenXY.set(0, 0);
 		
+		casilla = new CasillaMaestra();
 		Toast.makeText(context, maxScreenXY.x+"x"+maxScreenXY.y, Toast.LENGTH_SHORT).show();
 		initMenuItems();
 	}
@@ -79,10 +81,19 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		paint.setColor(Color.BLACK);
 		paint.setAntiAlias(true);
 		
-		for(float i = size.y; i > -54; i-=54)
-			for(float j = 0; j < size.x+54; j+=54)
-					canvas.drawBitmap(world, j, i, paint);
 		
+		/*for(float i = 0; i < size.x+54; i+=54)
+			for(float j = size.y-28; j > -54 ; j-=54)
+					canvas.drawBitmap(world, i, j, paint);*/
+		int num_filas = size.y/TAM_CAS+1;
+		int num_columnas = size.x/TAM_CAS+1;
+		for(int i = casilla.fila+num_filas; i >= casilla.fila; i--){
+			int fila_actual = 0;
+			for(int j = casilla.columna; j <= casilla.columna+num_columnas; j++)
+				canvas.drawBitmap(world, (j-casilla.columna)*TAM_CAS-casilla.backX, fila_actual*TAM_CAS+(TAM_CAS-size.y%TAM_CAS)+casilla.forwY,paint);
+			fila_actual++;
+		}
+				
 		if(Main.kworld.karel.posicion.fila < maxScreenXY.y+2 && Main.kworld.karel.posicion.fila > minScreenXY.y && 
 				Main.kworld.karel.posicion.columna < maxScreenXY.x+3 && Main.kworld.karel.posicion.columna > minScreenXY.x)
 			switch (Main.kworld.karel.orientacion) {
@@ -166,7 +177,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				}
 			}
 		}
-		canvas.drawBitmap(karelS,100,-25,paint);
+		canvas.drawBitmap(karelS,100,25,paint);
 		
 				
 	}
@@ -230,5 +241,17 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		return true;
 	}
 
+	class CasillaMaestra{
+		public int fila, columna, backX, forwY;
+		public CasillaMaestra(){
+			fila = columna = 1;
+			backX = forwY = 0;
+		}
+		public CasillaMaestra(int fila, int columna){
+			this.fila = fila;
+			this.columna = columna;
+			backX = forwY = 0;
+		}
+	}
 	
 }
