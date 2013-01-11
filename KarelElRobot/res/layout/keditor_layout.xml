@@ -5,7 +5,7 @@
     android:orientation="vertical" >
     
     <fragment 
-        android:name="poodleDeveloper.karel.fragments.KWorldFragment"
+        android:name="poodleDeveloper.karel.fragments.KEditorFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/keditor"/>
