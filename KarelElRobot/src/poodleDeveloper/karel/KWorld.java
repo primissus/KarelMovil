@@ -38,11 +38,6 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	public KWorld(Context context, AttributeSet attrs) {
 		super(context, attrs);
 	}
-
-	public static final int NORTE = 1;
-	public static final int ESTE = 2;
-	public static final int SUR = 3;
-	public static final int OESTE = 4;
 	
 	private KThread thread;
 	private Bitmap world,karelN,karelE,karelS,karelO;
@@ -50,13 +45,12 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	
 	private Point maxScreenXY;
 	private Point minScreenXY;
-	private ArrayList<KCasilla> casillas;
-	private Karel karel;
 	private Context context;
 	private int lastX,lastY;
-	private boolean estoyArrastrando = false;
+	private boolean estoyArrastrando = false;	
+	
 	@SuppressLint("NewApi")
-	public void init(Context context, ArrayList<KCasilla> result, Karel karel) {
+	public void init(Context context) {
 		//super(context);
 		this.context = context;
 		WindowManager wm = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
@@ -69,9 +63,6 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		karelO = BitmapFactory.decodeResource(getResources(), R.drawable.koeste);
 		
 		getHolder().addCallback(this);
-		
-		casillas = result;
-		this.karel = karel;
 		maxScreenXY = new Point();
 		minScreenXY = new Point();
 		size = getDisplaySize(display);
@@ -96,31 +87,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	}
 	
 	private void initMenuItems(){
-		Button addWall = (Button)((SherlockActivity)context).findViewById(R.id.addWall);
-		addWall.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(context, "Toca la pantalla para agregar un muro", Toast.LENGTH_SHORT).show();
-			}
-		});
-		Button addBeeper = (Button)((SherlockActivity)context).findViewById(R.id.addBeeper);
-		addBeeper.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(context, "Toca la pantalla para agregar un zumador", Toast.LENGTH_SHORT).show();
-			}
-		});
-		Button openWorld = (Button)((SherlockActivity)context).findViewById(R.id.openWorld);
-		openWorld.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				
-				
-			}
-		});
+		
 	}
 	@Override
 	public void onDraw(Canvas canvas){ 
@@ -133,82 +100,86 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			for(float j = 0; j < size.x+54; j+=54)
 					canvas.drawBitmap(world, j, i, paint);
 		
-		if(karel.fila < maxScreenXY.y+2 && karel.fila > minScreenXY.y && karel.columna < maxScreenXY.x+3 && karel.columna > minScreenXY.x)
-			switch (karel.orientacion) {
-			case NORTE:
+		if(Main.kworld.karel.posicion.fila < maxScreenXY.y+2 && Main.kworld.karel.posicion.fila > minScreenXY.y && 
+				Main.kworld.karel.posicion.columna < maxScreenXY.x+3 && Main.kworld.karel.posicion.columna > minScreenXY.x)
+			switch (Main.kworld.karel.orientacion) {
+			case poodleDeveloper.karel.data.karelmovil.KWorld.NORTE:
 				canvas.drawBitmap(karelN,
-						(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						(Main.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-Main.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
 						paint);
 				break;
-			case ESTE:
+			case poodleDeveloper.karel.data.karelmovil.KWorld.ESTE:
 				canvas.drawBitmap(karelE,
-						(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						(Main.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-Main.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
 						paint);
-				break;
-			case SUR:
+				break; 
+			case poodleDeveloper.karel.data.karelmovil.KWorld.SUR:
 				canvas.drawBitmap(karelS,
-						(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						(Main.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-Main.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
 						paint);
 				break;
-			case OESTE:
+			case poodleDeveloper.karel.data.karelmovil.KWorld.OESTE:
 				canvas.drawBitmap(karelO,
-						(karel.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-karel.fila%(maxScreenXY.y-minScreenXY.y))*54+1122,
+						(Main.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-Main.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+1122,
 						paint);
 				break;
 			default:
 				break;
 			}
-		for(KCasilla c: casillas){ 
-			if(c.getFila() < maxScreenXY.y+2 && c.getFila() > minScreenXY.y && c.getColumna() < maxScreenXY.x+3 && c.getColumna() > minScreenXY.x){
-				if(c.getParedes().length > 0){
+		for(poodleDeveloper.karel.data.karelmovil.KCasilla c: Main.kworld.casillas.values()){ 
+			if(c.fila < maxScreenXY.y+2 && c.fila > minScreenXY.y && c.columna < maxScreenXY.x+3 && c.columna > minScreenXY.x){
+				if(c.paredes.size() > 0){
 					paint.setColor(Color.BLACK);
 					paint.setStrokeWidth(6);
-					for(String p : c.getParedes())
-						if(p.equals("norte")){ 
-							canvas.drawLine((c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+3, 
-											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+120, 
-											(c.getColumna()%(maxScreenXY.x-minScreenXY.x))*54+3, 
-											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+120,
+					for(int p : c.paredes)
+						switch(p){
+						case poodleDeveloper.karel.data.karelmovil.KWorld.NORTE: 
+							canvas.drawLine((c.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+3, 
+											(maxScreenXY.y-c.fila%(maxScreenXY.y-minScreenXY.y))*54+120, 
+											(c.columna%(maxScreenXY.x-minScreenXY.x))*54+3, 
+											(maxScreenXY.y-c.fila%(maxScreenXY.y-minScreenXY.y))*54+120,
 											paint); 
-						}else if(p.equals("este")){
-							canvas.drawLine((c.getColumna()%(maxScreenXY.x-minScreenXY.x))*54+5,
-											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+120,
-											(c.getColumna()%(maxScreenXY.x-minScreenXY.x))*54+5,
-											(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+120+54,
+							break;
+						case poodleDeveloper.karel.data.karelmovil.KWorld.ESTE:
+							canvas.drawLine((c.columna%(maxScreenXY.x-minScreenXY.x))*54+5,
+											(maxScreenXY.y-c.fila%(maxScreenXY.y-minScreenXY.y))*54+120,
+											(c.columna%(maxScreenXY.x-minScreenXY.x))*54+5,
+											(maxScreenXY.y-c.fila%(maxScreenXY.y-minScreenXY.y))*54+120+54,
 											paint);
+							break;
 						}
 				}
-				if(c.getZumbadores() > 0 ){
+				if(c.zumbadores > 0 ){
 					paint.setColor(Color.GREEN); 
 					paint.setStrokeWidth(18);
-					canvas.drawCircle((c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+31,
-									 (maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+34,
+					canvas.drawCircle((c.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+31,
+									 (maxScreenXY.y-c.fila%(maxScreenXY.y-minScreenXY.y))*54+112+34,
 									 8, paint);
 					paint.setColor(Color.DKGRAY);
 					paint.setStrokeWidth(1);
-					if(c.getZumbadores() > 9)
-						canvas.drawText(String.valueOf(c.getZumbadores()),
-							(c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+24,
-							(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+37, paint);
+					if(c.zumbadores > 9)
+						canvas.drawText(String.valueOf(c.zumbadores),
+							(c.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+24,
+							(maxScreenXY.y-c.fila%(maxScreenXY.y-minScreenXY.y))*54+112+37, paint);
 					else
-						canvas.drawText(String.valueOf(c.getZumbadores()),
-								(c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+27,
-								(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+37, paint);
-				}else if(c.getZumbadores() == -1){
+						canvas.drawText(String.valueOf(c.zumbadores),
+								(c.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+27,
+								(maxScreenXY.y-c.fila%(maxScreenXY.y-minScreenXY.y))*54+112+37, paint);
+				}else if(c.zumbadores == -1){
 					paint.setColor(Color.GREEN);
 					paint.setStrokeWidth(18);
-					canvas.drawCircle((c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+31,
-									 (maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+34,
+					canvas.drawCircle((c.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+31,
+									 (maxScreenXY.y-c.fila%(maxScreenXY.y-minScreenXY.y))*54+112+34,
 									 8, paint);
 					paint.setColor(Color.DKGRAY);
 					paint.setStrokeWidth(1);
 					canvas.drawText("-1",
-							(c.getColumna()%(maxScreenXY.x-minScreenXY.x)-1)*54+24,
-							(maxScreenXY.y-c.getFila()%(maxScreenXY.y-minScreenXY.y))*54+112+37, paint);
+							(c.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+24,
+							(maxScreenXY.y-c.fila%(maxScreenXY.y-minScreenXY.y))*54+112+37, paint);
 				}
 			}
 		}
@@ -277,5 +248,8 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		return true;
 	}
 
+	public poodleDeveloper.karel.data.karelmovil.KWorld getKWorld(){
+		return kworld;
+	}
 	
 }

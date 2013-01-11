@@ -1,10 +1,11 @@
-package karelmovil;
+package poodleDeveloper.karel.data.karelmovil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import json.JSONArray;
-import json.JSONException;
-import json.JSONObject;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class KWorld {
 	/* Representa el mundo de karel
@@ -423,4 +424,5 @@ public class KWorld {
     	this.karel = new Karel();
     	this.casillas.clear();
     }
+    
 }

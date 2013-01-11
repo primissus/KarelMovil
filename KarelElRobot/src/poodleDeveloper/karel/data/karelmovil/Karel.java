@@ -1,4 +1,4 @@
-package karelmovil;
+	package poodleDeveloper.karel.data.karelmovil;
 
 public class Karel {
 	public KPosition posicion;
