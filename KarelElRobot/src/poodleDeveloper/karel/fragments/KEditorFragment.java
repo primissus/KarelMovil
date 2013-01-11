@@ -5,9 +5,11 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import poodleDeveloper.karel.KWorldGraphics;
 import poodleDeveloper.karel.R;
 import poodleDeveloper.karel.data.karelmovil.KGrammar;
 import poodleDeveloper.karel.data.karelmovil.KarelException;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,6 +24,7 @@ import com.actionbarsherlock.app.SherlockFragment;
 
 public class KEditorFragment extends SherlockFragment{
 
+	private String test = "iniciar-programa\ninicia-ejecucion\navanza;\ntermina-ejecucion\nfinalizar-programa";
 	public KEditorFragment(){
 		;
 	}
@@ -40,7 +43,7 @@ public class KEditorFragment extends SherlockFragment{
 		
 		final EditText textEdit = (EditText)view.findViewById(R.id.editor);
 		textEdit.setTypeface(Typeface.MONOSPACE);
-		
+		textEdit.setText(test);
 		Button openWorld = (Button)view.findViewById(R.id.openWorld);
 		openWorld.setOnClickListener(new View.OnClickListener() {
 			
@@ -68,6 +71,7 @@ public class KEditorFragment extends SherlockFragment{
 				try{
 					KGrammar grammar = new KGrammar(new BufferedReader(isr), false);
 					grammar.verificar_sintaxis();
+					startActivity(new Intent(getActivity(),KWorldGraphics.class));
 				}catch(KarelException e){
 					Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
 				}

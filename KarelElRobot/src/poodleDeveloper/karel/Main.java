@@ -15,6 +15,7 @@ public class Main extends SherlockActivity {
         super.onCreate(savedInstanceState);
         kworld = new KWorld();
         startActivity(new Intent(this, KEditor.class));
+        
     }
     
     @Override

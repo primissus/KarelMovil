@@ -28,13 +28,12 @@
             android:padding="5dp"/>
     </LinearLayout>
     <EditText
-        android:inputType="text"
         android:id="@+id/editor"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:gravity="top"
 	    android:singleLine="false"
-	    android:lines="5"
+	    android:lines="15"
 	    android:layout_below="@id/layout"
 	    android:layout_marginLeft="10dip"
 	    android:layout_marginRight="10dip" />
