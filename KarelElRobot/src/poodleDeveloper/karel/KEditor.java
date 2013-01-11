@@ -12,6 +12,7 @@ public class KEditor extends SherlockFragmentActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.keditor_layout);
 		
+		@SuppressWarnings("unused")
 		KEditorFragment fragment = (KEditorFragment)getSupportFragmentManager().findFragmentById(R.id.keditor);
 	}
 }

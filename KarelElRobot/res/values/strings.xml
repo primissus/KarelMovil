@@ -4,5 +4,8 @@
     <string name="app_name">Karel el Robot</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="Abrir">Abrir</string>
+    <string name="Guardar">Guardar</string>
+    <string name="Run">Ejecutar</string>
 
 </resources>

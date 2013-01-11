@@ -1,16 +1,6 @@
 package poodleDeveloper.karel;
 
-import java.util.ArrayList;
-
-import net.londatiga.android.ActionItem;
-import net.londatiga.android.QuickAction;
-import net.londatiga.android.QuickAction.OnActionItemClickListener;
-
-import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.internal.view.menu.ActionMenuItem;
-
 import android.annotation.SuppressLint;
-import android.app.ActionBar.LayoutParams;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -20,15 +10,10 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.Display;
-import android.view.DragEvent;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
@@ -43,14 +28,12 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	
 	private Point maxScreenXY;
 	private Point minScreenXY;
-	private Context context;
 	private int lastX,lastY;
 	private boolean estoyArrastrando = false;	
 	
 	@SuppressLint("NewApi")
 	public void init(Context context) {
 		//super(context);
-		this.context = context;
 		WindowManager wm = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
 		Display display = wm.getDefaultDisplay();
 		
@@ -87,7 +70,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private void initMenuItems(){
 		
 	}
-	@Override
+	@SuppressLint("DrawAllocation") @Override
 	public void onDraw(Canvas canvas){ 
 		Paint paint = new Paint();
 		paint.setStyle(Paint.Style.STROKE);
@@ -189,7 +172,6 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width,
 			int height) {
-		// TODO Auto-generated method stub 
 		
 	}
 

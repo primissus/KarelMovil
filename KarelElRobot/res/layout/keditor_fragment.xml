@@ -12,22 +12,23 @@
             android:id="@+id/openWorld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Abrir"
+            android:text="@string/Abrir"
             android:padding="5dp"/>
         <Button 
             android:id="@+id/saveWorld"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Guardar"
+            android:text="@string/Guardar"
             android:padding="5dp"/>
         <Button 
             android:id="@+id/run"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ejecutar"
+            android:text="@string/Run"
             android:padding="5dp"/>
     </LinearLayout>
     <EditText
+        android:inputType="text"
         android:id="@+id/editor"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"

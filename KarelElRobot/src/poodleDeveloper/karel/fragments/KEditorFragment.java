@@ -5,14 +5,12 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import poodleDeveloper.karel.KWorld;
 import poodleDeveloper.karel.R;
 import poodleDeveloper.karel.data.karelmovil.KGrammar;
 import poodleDeveloper.karel.data.karelmovil.KarelException;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
