@@ -322,6 +322,8 @@ public class KRunner {
                     );
                     ejecucion ++;
                 }
+            } else {
+            	return KRunner.ESTADO_TERMINADO;
             }
 		} catch(KarelException e){
 			this.corriendo = false;
