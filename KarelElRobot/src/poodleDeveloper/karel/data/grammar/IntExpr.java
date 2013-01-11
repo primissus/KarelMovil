@@ -1,4 +1,4 @@
-package grammar;
+package poodleDeveloper.karel.data.grammar;
 
 public class IntExpr{
 	 //{ Decimal | Identificador | "PRECEDE" "(" ExpresionEntera ")" | "SUCEDE" "(" ExpresionEntera ")" }

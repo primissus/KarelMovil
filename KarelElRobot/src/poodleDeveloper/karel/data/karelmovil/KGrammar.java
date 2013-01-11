@@ -1,4 +1,4 @@
-package karelmovil;
+package poodleDeveloper.karel.data.karelmovil;
 
 /**
  *
@@ -9,21 +9,8 @@ import java.io.BufferedReader;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Iterator;
-import structs.EndStruct;
-import structs.RStructFuncion;
-import structs.RStructInstruccion;
-import structs.RStructMientras;
-import structs.RStructRepite;
-import structs.RStructSi;
-import structs.RStructSino;
-import structs.RunStruct;
-import structs.Struct;
-import structs.StructFuncion;
-import structs.StructInstruccion;
-import structs.StructMientras;
-import structs.StructRepite;
-import structs.StructSi;
-import grammar.*;
+import poodleDeveloper.karel.data.structs.*;
+import poodleDeveloper.karel.data.grammar.*;
 
 public class KGrammar {
     /*
@@ -56,18 +43,18 @@ public class KGrammar {
     public String expresionesEnteras[] = {"sucede", "precede"};
     public String estructuras[] = {"si", "mientras", "repite", "repetir"};
     public String palabrasReservadas[];
-    
+
     public KLexer lexer;
     public KToken token_actual;
-    
+
     public HashMap<String, LinkedList<String>> prototipoFunciones;
     public HashMap<String, LinkedList<IntExpr>> funciones;
-    
+
     public boolean futuro;
     private Arbol arbol;
     private LinkedList<RunStruct> listaPrograma;
     private Ejecutable ejecutable;
-    
+
     public KGrammar(BufferedReader flujo, boolean futuro){
         /* Inicializa la gramatica:
         flujo       indica el torrente de entrada
@@ -76,7 +63,7 @@ public class KGrammar {
         gen_arbol   indica si hay que compilar
         futuro      indica si se pueden usar caracteristicas del futuro
                     de Karel como las condiciones "falso" y "verdadero"*/
-        
+
         if (! futuro){
             this.condiciones = new String[]{
                 "frente-libre",
@@ -121,12 +108,12 @@ public class KGrammar {
             "sino"
         };
         this.palabrasReservadas = new String[palabras_clave.length+this.instrucciones.length+this.condiciones.length+this.expresionesEnteras.length+this.estructuras.length];
-        
+
         int i=0;
         for(int j=0;j<palabras_clave.length;j++){
             this.palabrasReservadas[i] = palabras_clave[j];
             i++;
-        }
+        } 
         for(int j=0;j<this.instrucciones.length;j++){
             this.palabrasReservadas[i] = this.instrucciones[j];
             i++;
@@ -143,7 +130,7 @@ public class KGrammar {
             this.palabrasReservadas[i] = this.estructuras[j];
             i++;
         }
-        
+
         this.lexer = new KLexer(flujo, false);
         try{
             this.token_actual = this.lexer.get_token();
@@ -151,7 +138,7 @@ public class KGrammar {
             System.out.println(e.getMessage());
             System.exit(1);
         }
-        
+
         this.prototipoFunciones = new HashMap<String, LinkedList<String>>();
         this.funciones = new HashMap<String, LinkedList<IntExpr>>();
         this.arbol = new Arbol();
@@ -167,7 +154,7 @@ public class KGrammar {
 
     public static boolean in_array(Object val, Object[] arr){
         /* Indica cuando val se encuentra en arr
-         * 
+         *
          */
         for(Object elem:arr){
             if(elem.equals(val)){
@@ -176,10 +163,10 @@ public class KGrammar {
         }
         return false;
     }
-    
+
     public static boolean in_array(char val, char[] arr){
         /* Indica cuando val se encuentra en arr
-         * 
+         *
          */
         for(char elem:arr){
             if(elem == val)
@@ -187,10 +174,10 @@ public class KGrammar {
         }
         return false;
     }
-    
+
     public static boolean in_array(int val, int[] arr){
         /* Indica cuando val se encuentra en arr
-         * 
+         *
          */
         for(int elem:arr){
             if(elem == val)
@@ -198,19 +185,19 @@ public class KGrammar {
         }
         return false;
     }
-    
+
     public boolean contains(String name, LinkedList<IntExpr> lista){
-    	Iterator<IntExpr> iterador = lista.iterator();
-    	while(iterador.hasNext()){
-    		IntExpr elemento = iterador.next();
-    		if(elemento.tipo == IntExpr.VALOR_IDENTIFICADOR){
-    			if(elemento.valorIdentificador.equals(name))
-    				return true;
-    		}
-    	}
-    	return false;
+        Iterator<IntExpr> iterador = lista.iterator();
+        while(iterador.hasNext()){
+            IntExpr elemento = iterador.next();
+            if(elemento.tipo == IntExpr.VALOR_IDENTIFICADOR){
+                if(elemento.valorIdentificador.equals(name))
+                    return true;
+            }
+        }
+        return false;
     }
-    
+
     private boolean avanza_token () throws KarelException{
         /* Avanza un token en el archivo */
         KToken siguiente_token = this.lexer.get_token();
@@ -264,9 +251,9 @@ public class KGrammar {
         Define una clausila atomica
         {
         ClausulaAtomica ::=  {
-                              "SI-ES-CERO" "(" ExpresionEntera ")" | 
-                              FuncionBooleana | 
-                              "(" Termino ")" 
+                              "SI-ES-CERO" "(" ExpresionEntera ")" |
+                              FuncionBooleana |
+                              "(" Termino ")"
                              }{
         }
         */
@@ -293,7 +280,7 @@ public class KGrammar {
         }else{
             retornar_valor.crearExpresionBooleana(this.funcion_booleana());
         }
-        
+
         return retornar_valor;
     }
 
@@ -412,7 +399,7 @@ public class KGrammar {
         if (this.prototipoFunciones.containsKey(nombre_funcion)) //Hay que verificar que se defina como se planeó
             if (this.prototipoFunciones.get(nombre_funcion).size() != this.funciones.get(nombre_funcion).size())
                 throw new KarelException("La función '"+nombre_funcion+"' no está definida como se planeó en el prototipo, verifica el número de variables");
-        
+
         FunctionDef funcion = this.arbol.funciones.get(nombre_funcion);
         funcion.cola = this.expresion(this.funciones.get(nombre_funcion), true, false);
         this.arbol.funciones.put(nombre_funcion, funcion);
@@ -557,9 +544,9 @@ public class KGrammar {
             //Se trata de una instrucción creada por el usuario
             if (this.prototipoFunciones.containsKey(this.token_actual.token) || this.funciones.containsKey(this.token_actual.token)){
                 String nombre_funcion = this.token_actual.token;
-                
+
                 StructFuncion funcion = new StructFuncion(nombre_funcion, new LinkedList<IntExpr>(), new LinkedList<Struct>());
-                
+
                 retornar_valor.add(funcion);
                 this.avanza_token();
                 int num_parametros = 0;
@@ -607,16 +594,16 @@ public class KGrammar {
         //En este punto hay que verificar que se trate de un numero entero
         boolean es_numero = false;
         if (this.es_numero(this.token_actual)){
-        	retornar_valor.crearDecimal(Integer.parseInt(this.token_actual.token));
+            retornar_valor.crearDecimal(Integer.parseInt(this.token_actual.token));
             es_numero = true;
         }else{
             //No era un entero
             if (KGrammar.in_array(this.token_actual, this.expresionesEnteras)){
-            	//Precede o sucede
-            	if(this.token_actual.token.equals("precede"))
-            		retornar_valor.crearPrecede(null);
-            	else
-            		retornar_valor.crearSucede(null);
+                //Precede o sucede
+                if(this.token_actual.token.equals("precede"))
+                    retornar_valor.crearPrecede(null);
+                else
+                    retornar_valor.crearSucede(null);
                 this.avanza_token();
                 if (this.token_actual.token.equals("(")){
                     this.avanza_token();
@@ -674,7 +661,7 @@ public class KGrammar {
                                   Expresion
         }
         */
-    	StructMientras retornar_valor = new StructMientras();
+        StructMientras retornar_valor = new StructMientras();
         this.avanza_token();
 
         retornar_valor.argumentoLogico = this.termino(lista_variables);
@@ -695,7 +682,7 @@ public class KGrammar {
                               Expresion
         }
         */
-    	StructRepite retornar_valor = new StructRepite();
+        StructRepite retornar_valor = new StructRepite();
 
         this.avanza_token();
         retornar_valor.argumentoEntero = this.expresion_entera(lista_variables);
@@ -720,7 +707,7 @@ public class KGrammar {
                         ]
         }
         */
-    	StructSi retornar_valor = new StructSi();
+        StructSi retornar_valor = new StructSi();
 
         this.avanza_token();
 
@@ -856,20 +843,20 @@ public class KGrammar {
     public Ejecutable expandir_arbol(){
         /*Expande el árbol de instrucciones para ser usado por krunner
         durante la ejecución*/
-    	for(Object funcion_o: this.arbol.funciones.keySet().toArray()){
+        for(Object funcion_o: this.arbol.funciones.keySet().toArray()){
             String funcion = (String)funcion_o;
-            
+
             RStructFuncion def_funcion = new RStructFuncion(this.arbol.funciones.get(funcion).params, funcion);
-            
+
             int posicion_inicio = this.listaPrograma.size();
             this.listaPrograma.add(def_funcion);
 
             this.ejecutable.indiceFunciones.put(funcion, posicion_inicio);
             this.expandir_arbol_recursivo(this.arbol.funciones.get(funcion).cola);
-            
+
             EndStruct fin = new EndStruct(Struct.ESTRUCTURA_INSTRUCCION_DEFINIDA);
             fin.inicio = posicion_inicio;
-            
+
             this.listaPrograma.add(fin);
         }
         this.ejecutable.main = this.listaPrograma.size();
@@ -878,7 +865,7 @@ public class KGrammar {
         this.ejecutable.lista = this.listaPrograma;
         return this.ejecutable;
     }
-    
+
     private void expandir_arbol_recursivo(LinkedList<Struct> cola){
         /*Toma un arbol y lo expande*/
         Iterator<Struct> iterador = cola.iterator();
@@ -886,36 +873,36 @@ public class KGrammar {
         while(iterador.hasNext()){
             elemento = iterador.next();
             if(elemento.estructura == Struct.ESTRUCTURA_INSTRUCCION){
-            	RStructInstruccion instruccion = new RStructInstruccion(((StructInstruccion)elemento).nombre);
-            	this.listaPrograma.add(instruccion);
+                RStructInstruccion instruccion = new RStructInstruccion(((StructInstruccion)elemento).nombre);
+                this.listaPrograma.add(instruccion);
             } else if(elemento.estructura == Struct.ESTRUCTURA_MIENTRAS){
                 int posicion_inicio = this.listaPrograma.size();
                 RStructMientras estructura = new RStructMientras(((StructMientras)elemento).argumentoLogico, posicion_inicio);
-                
+
                 this.listaPrograma.add(estructura);
                 this.expandir_arbol_recursivo(((StructMientras)elemento).cola);
-                
+
                 int posicion_fin = this.listaPrograma.size();
-                
+
                 EndStruct fin = new EndStruct(Struct.ESTRUCTURA_MIENTRAS);
                 fin.inicio = posicion_inicio;
                 this.listaPrograma.add(fin);
-                
+
                 estructura.finEstructura = posicion_fin;
                 this.listaPrograma.set(posicion_inicio, estructura);
             } else if(elemento.estructura == Struct.ESTRUCTURA_REPITE){
-            	int posicion_inicio = this.listaPrograma.size();
+                int posicion_inicio = this.listaPrograma.size();
                 RStructRepite estructura = new RStructRepite(((StructRepite)elemento).argumentoEntero, posicion_inicio);
-                
+
                 this.listaPrograma.add(estructura);
                 this.expandir_arbol_recursivo(((StructRepite)elemento).cola);
-                
+
                 int posicion_fin = this.listaPrograma.size();
-                
+
                 EndStruct fin = new EndStruct(Struct.ESTRUCTURA_REPITE);
                 fin.inicio = posicion_inicio;
                 this.listaPrograma.add(fin);
-                
+
                 estructura.finEstructura = posicion_fin;
                 this.listaPrograma.set(posicion_inicio, estructura);
             } else if (elemento.estructura == Struct.ESTRUCTURA_SI){
@@ -925,24 +912,24 @@ public class KGrammar {
                 this.listaPrograma.add(estructura);
                 this.expandir_arbol_recursivo(((StructSi)elemento).cola);
                 int posicion_fin = this.listaPrograma.size();
-                
+
                 EndStruct fin_def = new EndStruct(Struct.ESTRUCTURA_SI);
                 fin_def.inicio = posicion_inicio;
                 fin_def.finEstructura = posicion_fin+1;
                 this.listaPrograma.add(fin_def);
-                
+
                 estructura.finEstructura = posicion_fin;
                 this.listaPrograma.set(posicion_inicio, estructura);
                 if (((StructSi)elemento).tieneSino){
                     RStructSino nueva_estructura = new RStructSino();
-                    
+
                     this.listaPrograma.add(nueva_estructura);
                     this.expandir_arbol_recursivo(((StructSi)elemento).colaSino);
                     int fin_sino = this.listaPrograma.size();
-                    
+
                     EndStruct fin = new EndStruct(Struct.ESTRUCTURA_SINO);
                     this.listaPrograma.add(fin);
-                    
+
                     fin_def.finEstructura = fin_sino;
                     this.listaPrograma.set(posicion_fin, fin_def);
                 }

@@ -9,8 +9,6 @@ import net.londatiga.android.QuickAction.OnActionItemClickListener;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.internal.view.menu.ActionMenuItem;
 
-import poodleDeveloper.karel.data.KCasilla;
-import poodleDeveloper.karel.data.Karel;
 import android.annotation.SuppressLint;
 import android.app.ActionBar.LayoutParams;
 import android.content.Context;

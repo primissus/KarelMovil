@@ -1,11 +1,11 @@
-package grammar;
+package poodleDeveloper.karel.data.grammar;
 
 import java.util.LinkedList;
 
-import structs.Struct;
+import poodleDeveloper.karel.data.structs.Struct;
 
 public class FunctionDef {
-	public String nombre;
+    public String nombre;
     public LinkedList<Struct> cola; //Instrucciones que le pertenecen a esta función
     public LinkedList<IntExpr> params; //Parametros de la funcion
     public FunctionDef(String nombre, LinkedList<Struct> cola, LinkedList<IntExpr> params){

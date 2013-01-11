@@ -1,4 +1,4 @@
-package grammar;
+package poodleDeveloper.karel.data.grammar;
 
 public class LogicAtomic{
     public static final int EXPRESION_ENTERA=0x1; //si-es-cero

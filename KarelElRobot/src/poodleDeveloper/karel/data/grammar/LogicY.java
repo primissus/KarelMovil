@@ -1,4 +1,4 @@
-package grammar;
+package poodleDeveloper.karel.data.grammar;
 
 import java.util.LinkedList;
 

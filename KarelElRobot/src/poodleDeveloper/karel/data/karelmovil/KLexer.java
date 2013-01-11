@@ -21,7 +21,7 @@
  *
  */
 
-package karelmovil;
+package poodleDeveloper.karel.data.karelmovil;
 
 import java.util.LinkedList;
 import java.io.BufferedReader;
@@ -37,7 +37,7 @@ public class KLexer {
 
     public String nombre_archivo;
     private BufferedReader lector_buffer;
-            
+
     public final String numeros = "0123456789";
     public final String palabras = "abcdfeghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-";
     public final String simbolos = "(){}*/;,"; //Simbolos permitidos para esta sintaxis
@@ -54,31 +54,31 @@ public class KLexer {
     public int linea;
     public int columna;
     public String posicion;
-    
+
     private boolean tiene_cambio_de_linea;
     private char estado;
     private boolean debug;
     public String token;
-    
+
     public KLexer(BufferedReader archivo, boolean debug){
         /*Se construye el analizador con el nombre del archivo*/
         //this.archivo = archivo;
         this.lector_buffer = archivo;
-        
+
         this.pila_tokens = new LinkedList<KToken>();
         this.pila_chars = new LinkedList<Character>();
-        
+
         this.linea = 1; //El número de linea
         this.columna = 0; //El número de columna
         this.tiene_cambio_de_linea = false;
         this.token = "";
         this.estado = this.ESTADO_ESPACIO;
-        
+
         this.debug = debug;
         if (this.debug)
             System.out.println("leyendo archivo '"+this.nombre_archivo+"'");
     }
-    
+
     public Character lee_caracter() throws IOException{
         /*Lee un caracter de la fuente o devuelve uno de la pila si no
         está vacía*/

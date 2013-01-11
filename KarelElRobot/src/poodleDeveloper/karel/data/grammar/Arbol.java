@@ -1,9 +1,9 @@
-package grammar;
+package poodleDeveloper.karel.data.grammar;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 
-import structs.Struct;
+import poodleDeveloper.karel.data.structs.Struct;
 
 public class Arbol{ //El arbol de instrucciones de karel
     public HashMap<String, FunctionDef> funciones;
