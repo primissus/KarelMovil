@@ -246,8 +246,5 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		return true;
 	}
 
-	public poodleDeveloper.karel.data.karelmovil.KWorld getKWorld(){
-		return kworld;
-	}
 	
 }

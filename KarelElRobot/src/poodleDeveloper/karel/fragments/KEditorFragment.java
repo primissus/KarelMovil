@@ -1,7 +1,14 @@
 package poodleDeveloper.karel.fragments;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import poodleDeveloper.karel.KWorld;
 import poodleDeveloper.karel.R;
+import poodleDeveloper.karel.data.karelmovil.KGrammar;
+import poodleDeveloper.karel.data.karelmovil.KarelException;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -33,8 +40,8 @@ public class KEditorFragment extends SherlockFragment{
 	public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstance){
 		View view = inflater.inflate(R.layout.keditor_fragment, container,false);
 		
-		final EditText codigo = (EditText)view.findViewById(R.id.editor);
-		codigo.setTypeface(Typeface.MONOSPACE);
+		final EditText textEdit = (EditText)view.findViewById(R.id.editor);
+		textEdit.setTypeface(Typeface.MONOSPACE);
 		
 		Button openWorld = (Button)view.findViewById(R.id.openWorld);
 		openWorld.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +64,15 @@ public class KEditorFragment extends SherlockFragment{
 			
 			@Override
 			public void onClick(View v) {
-				
+				String codigo = textEdit.getText().toString();
+				InputStream is = new ByteArrayInputStream(codigo.getBytes());
+				InputStreamReader isr = new InputStreamReader(is);
+				try{
+					KGrammar grammar = new KGrammar(new BufferedReader(isr), false);
+					grammar.verificar_sintaxis();
+				}catch(KarelException e){
+					Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+				}
 			}
 		});
 		return view;
