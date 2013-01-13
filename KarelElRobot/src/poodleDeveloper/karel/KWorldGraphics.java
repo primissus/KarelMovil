@@ -2,6 +2,7 @@ package poodleDeveloper.karel;
 
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Window;
@@ -18,5 +19,23 @@ public class KWorldGraphics extends SherlockActivity{
         	
         }
 		setContentView(R.layout.kworld_layout);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(com.actionbarsherlock.view.Menu menu) {
+		this.getSupportMenuInflater().inflate(R.menu.editor_menu, menu);
+	    return true;
+	} 
+	
+	public boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem item) {
+		switch(item.getItemId()){
+		case R.id.help_item:
+			Toast.makeText(getApplicationContext(), "Ayuda", Toast.LENGTH_SHORT).show();
+			break;
+		case R.id.about_item:
+			Toast.makeText(getApplicationContext(), "Acerda de", Toast.LENGTH_SHORT).show();
+			break;
+		}
+		return true;
 	}
 }
