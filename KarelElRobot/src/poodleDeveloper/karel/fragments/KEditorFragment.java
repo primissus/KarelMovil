@@ -73,11 +73,16 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		textEdit.setText(prevText+item+nextText);
 		textEdit.setSelection(cursor+offset);
 	}
+	
+	public void addNewCode(){
+		
+	}
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()){
 		case R.id.newCode:
 			Toast.makeText(getActivity(), "Nuevo", Toast.LENGTH_SHORT).show();
+			addNewCode();
 			break;
 		case R.id.openCode:
 			Toast.makeText(getActivity(), "Abrir", Toast.LENGTH_SHORT).show();

@@ -94,37 +94,37 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			fila_actual++;
 		}
 				
-		if(Main.kworld.karel.posicion.fila < maxScreenXY.y+2 && Main.kworld.karel.posicion.fila > minScreenXY.y && 
-				Main.kworld.karel.posicion.columna < maxScreenXY.x+3 && Main.kworld.karel.posicion.columna > minScreenXY.x)
-			switch (Main.kworld.karel.orientacion) {
+		if(Exchanger.kworld.karel.posicion.fila < maxScreenXY.y+2 && Exchanger.kworld.karel.posicion.fila > minScreenXY.y && 
+				Exchanger.kworld.karel.posicion.columna < maxScreenXY.x+3 && Exchanger.kworld.karel.posicion.columna > minScreenXY.x)
+			switch (Exchanger.kworld.karel.orientacion) {
 			case poodleDeveloper.karel.data.karelmovil.KWorld.NORTE:
 				canvas.drawBitmap(karelN,
-						(Main.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-Main.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						(Exchanger.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-Exchanger.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
 						paint);
 				break;
 			case poodleDeveloper.karel.data.karelmovil.KWorld.ESTE:
 				canvas.drawBitmap(karelE,
-						(Main.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-Main.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						(Exchanger.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-Exchanger.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
 						paint);
 				break; 
 			case poodleDeveloper.karel.data.karelmovil.KWorld.SUR:
 				canvas.drawBitmap(karelS,
-						(Main.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-Main.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						(Exchanger.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-Exchanger.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
 						paint);
 				break;
 			case poodleDeveloper.karel.data.karelmovil.KWorld.OESTE:
 				canvas.drawBitmap(karelO,
-						(Main.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-Main.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						(Exchanger.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
+						(maxScreenXY.y-Exchanger.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
 						paint);
 				break;
 			default:
 				break;
 			}
-		for(poodleDeveloper.karel.data.karelmovil.KCasilla c: Main.kworld.casillas.values()){ 
+		for(poodleDeveloper.karel.data.karelmovil.KCasilla c: Exchanger.kworld.casillas.values()){ 
 			if(c.fila < maxScreenXY.y+2 && c.fila > minScreenXY.y && c.columna < maxScreenXY.x+3 && c.columna > minScreenXY.x){
 				if(c.paredes.size() > 0){
 					paint.setColor(Color.BLACK);
