@@ -20,6 +20,10 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 
 	private static int TAM_CAS;
 	private static int FREE_SPACE;
+	private static int MAX_SCREEN_X;
+	private static int MAX_SCREEN_Y;
+	private static int MIN_SCREEN_X;
+	private static int MIN_SCREEN_Y;
 	public KWorld(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		this.init(context);
@@ -32,7 +36,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	
 	private Point maxScreenXY;
 	private Point minScreenXY;
-	private int lastX,lastY;
+	private int firstX,firstY,lastX,lastY;
 	private boolean estoyArrastrando = false;	
 	private CasillaMaestra casilla;
 	@SuppressLint("NewApi")
@@ -52,6 +56,10 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		minScreenXY = new Point();
 		size = getDisplaySize(display);
 		maxScreenXY.set((int)size.x/TAM_CAS, (int)size.y/TAM_CAS);
+		MAX_SCREEN_X = (int)(size.x/TAM_CAS);
+		MAX_SCREEN_Y = (int)(size.y/TAM_CAS);
+		MIN_SCREEN_X = 1;
+		MIN_SCREEN_Y = 1;
 		minScreenXY.set(1, 1);
 		
 		FREE_SPACE = size.y-(((int)(size.y/TAM_CAS))*TAM_CAS);
@@ -86,7 +94,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		
 		
 		for(float i = 0; i < size.x+TAM_CAS; i+=TAM_CAS)
-			for(float j = size.y-TAM_CAS; j > -60 ; j-=TAM_CAS)
+			for(float j = size.y-TAM_CAS; j > -TAM_CAS ; j-=TAM_CAS)
 					canvas.drawBitmap(world, i, j, paint);
 /*		int num_filas = size.y/TAM_CAS+1;
 		int num_columnas = size.x/TAM_CAS+1;
@@ -102,8 +110,8 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			switch (Exchanger.kworld.karel.orientacion) {
 			case poodleDeveloper.karel.data.karelmovil.KWorld.NORTE:
 				canvas.drawBitmap(karelN,
-						(Exchanger.kworld.karel.posicion.columna-minScreenXY.x)*TAM_CAS,
-						(((((int)(size.y/TAM_CAS))-(Exchanger.kworld.karel.posicion.fila-minScreenXY.y))-1)*TAM_CAS)+FREE_SPACE,
+						(Exchanger.kworld.karel.posicion.columna-MIN_SCREEN_X)*TAM_CAS,
+						(((((int)(size.y/TAM_CAS))-(Exchanger.kworld.karel.posicion.fila-MIN_SCREEN_Y))-1)*TAM_CAS)+FREE_SPACE,
 						paint);
 				break;
 			case poodleDeveloper.karel.data.karelmovil.KWorld.ESTE:
@@ -218,21 +226,41 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		switch (evento) {
 		case MotionEvent.ACTION_DOWN:
 			estoyArrastrando = true;
-			lastX = (int)event.getX();
-			lastY = (int)event.getY();
+			firstX = (int)event.getX();
+			firstY = (int)event.getY();
+			lastX = firstX;
+			lastY = firstY;
 			//	 System.out.println(lastX+"  "+lastY);
-			System.out.println("Max: "+maxScreenXY.x+"x"+maxScreenXY.y+"     Min: "+minScreenXY.x+"x"+minScreenXY.y);
+			System.out.println("Max: "+MAX_SCREEN_X+"x"+MAX_SCREEN_Y+"     Min: "+MIN_SCREEN_X+"x"+MIN_SCREEN_Y);
 			break;
 		case MotionEvent.ACTION_MOVE:
 			if(estoyArrastrando){
-				int dx = ((int)(event.getX()) - lastX);
-				int dy = ((int)(event.getY()) - lastY);
-					maxScreenXY.x = (maxScreenXY.x+dx)%54;
-					maxScreenXY.y = (maxScreenXY.y+dy)%54;
-					minScreenXY.x = (minScreenXY.x+dx)%54;
-					minScreenXY.y = (minScreenXY.y+dy)%54; 
-					lastX = (int)event.getX();
-					lastY = (int)event.getY();
+				int offsetX = (int)event.getX();
+				int offsetY = (int)event.getY();
+				lastX+=(offsetX-lastX);
+				lastY+=(offsetY-lastY);
+				if(Math.abs(lastX-firstX) >= TAM_CAS/2){
+					if(lastX > firstX){
+						MIN_SCREEN_X-=1;
+						MAX_SCREEN_X-=1;
+					}else{
+						MIN_SCREEN_X+=1;
+						MAX_SCREEN_X+=1;
+					}
+					firstX = lastX;
+					firstY = lastY;
+				}
+				if(Math.abs(lastY-firstY) >= TAM_CAS/2){
+					if(lastY > firstY){
+						MIN_SCREEN_Y+=1;
+						MAX_SCREEN_Y+=1;
+					}else{
+						MIN_SCREEN_Y-=1;
+						MAX_SCREEN_Y-=1;
+					}
+					firstX = lastX;
+					firstY = lastY;
+				}
 			}
 			break;
 		case MotionEvent.ACTION_UP:
