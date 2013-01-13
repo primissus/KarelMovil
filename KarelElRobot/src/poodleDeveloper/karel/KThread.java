@@ -27,7 +27,10 @@ public class KThread extends Thread{
 				synchronized (sh) {
 					view.onDraw(canvas);
 				}
+			}catch(Exception e){
+				
 			}finally{
+			
 				if(canvas!=null)
 					sh.unlockCanvasAndPost(canvas);
 			}
