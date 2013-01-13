@@ -18,7 +18,9 @@ import android.widget.Toast;
 
 public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 
-	private static final int TAM_CAS = 54;
+	private static int TAM_CAS;
+	private int MAX_VIRTUAL_WIDHT;
+	private int MIN_VIRTUAL_WIDHT;
 	public KWorld(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		this.init(context);
@@ -40,20 +42,21 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		WindowManager wm = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
 		Display display = wm.getDefaultDisplay();
 		
-		world = BitmapFactory.decodeResource(getResources(), R.drawable.kworld);
+		world = BitmapFactory.decodeResource(getResources(), R.drawable.bkworld);
 		karelN = BitmapFactory.decodeResource(getResources(), R.drawable.knorte);
 		karelE = BitmapFactory.decodeResource(getResources(), R.drawable.keste);
 		karelS = BitmapFactory.decodeResource(getResources(), R.drawable.ksur);
 		karelO = BitmapFactory.decodeResource(getResources(), R.drawable.koeste);
-		
+		TAM_CAS = world.getWidth();
 		getHolder().addCallback(this);
 		maxScreenXY = new Point();
 		minScreenXY = new Point();
 		size = getDisplaySize(display);
-		maxScreenXY.set(size.x/54+1, size.y/54);
-		minScreenXY.set(0, 0);
+		maxScreenXY.set((int)size.x/TAM_CAS, (int)size.y/TAM_CAS);
+		minScreenXY.set(1, 1);
 		
 		casilla = new CasillaMaestra();
+		//Toast.makeText(context,size.x+"x"+size.y, Toast.LENGTH_SHORT).show();
 		Toast.makeText(context, maxScreenXY.x+"x"+maxScreenXY.y, Toast.LENGTH_SHORT).show();
 		initMenuItems();
 	}
@@ -78,14 +81,14 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	public void onDraw(Canvas canvas){ 
 		Paint paint = new Paint();
 		paint.setStyle(Paint.Style.STROKE);
-		paint.setColor(Color.BLACK);
+		paint.setColor(Color.BLACK); 
 		paint.setAntiAlias(true);
 		
 		
-		/*for(float i = 0; i < size.x+54; i+=54)
-			for(float j = size.y-28; j > -54 ; j-=54)
-					canvas.drawBitmap(world, i, j, paint);*/
-		int num_filas = size.y/TAM_CAS+1;
+		for(float i = 0; i < size.x+TAM_CAS; i+=TAM_CAS)
+			for(float j = size.y-TAM_CAS; j > -60 ; j-=TAM_CAS)
+					canvas.drawBitmap(world, i, j, paint);
+/*		int num_filas = size.y/TAM_CAS+1;
 		int num_columnas = size.x/TAM_CAS+1;
 		for(int i = casilla.fila+num_filas; i >= casilla.fila; i--){
 			int fila_actual = 0;
@@ -93,39 +96,39 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				canvas.drawBitmap(world, (j-casilla.columna)*TAM_CAS-casilla.backX, fila_actual*TAM_CAS+(TAM_CAS-size.y%TAM_CAS)+casilla.forwY,paint);
 			fila_actual++;
 		}
-				
-		if(Exchanger.kworld.karel.posicion.fila < maxScreenXY.y+2 && Exchanger.kworld.karel.posicion.fila > minScreenXY.y && 
-				Exchanger.kworld.karel.posicion.columna < maxScreenXY.x+3 && Exchanger.kworld.karel.posicion.columna > minScreenXY.x)
+*/				
+		if(Exchanger.kworld.karel.posicion.fila < maxScreenXY.y+1 && Exchanger.kworld.karel.posicion.fila >= minScreenXY.y && 
+				Exchanger.kworld.karel.posicion.columna < maxScreenXY.x+1 && Exchanger.kworld.karel.posicion.columna >= minScreenXY.x)
 			switch (Exchanger.kworld.karel.orientacion) {
 			case poodleDeveloper.karel.data.karelmovil.KWorld.NORTE:
 				canvas.drawBitmap(karelN,
-						(Exchanger.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-Exchanger.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						(Exchanger.kworld.karel.posicion.columna-1)*TAM_CAS,
+						size.y-(Exchanger.kworld.karel.posicion.fila*TAM_CAS),
 						paint);
 				break;
 			case poodleDeveloper.karel.data.karelmovil.KWorld.ESTE:
 				canvas.drawBitmap(karelE,
-						(Exchanger.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-Exchanger.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						(Exchanger.kworld.karel.posicion.columna-1)*TAM_CAS,
+						size.y-(Exchanger.kworld.karel.posicion.fila*TAM_CAS),
 						paint);
 				break; 
 			case poodleDeveloper.karel.data.karelmovil.KWorld.SUR:
 				canvas.drawBitmap(karelS,
-						(Exchanger.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-Exchanger.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						(Exchanger.kworld.karel.posicion.columna-1)*TAM_CAS,
+						size.y-(Exchanger.kworld.karel.posicion.fila*TAM_CAS),
 						paint);
 				break;
 			case poodleDeveloper.karel.data.karelmovil.KWorld.OESTE:
 				canvas.drawBitmap(karelO,
-						(Exchanger.kworld.karel.posicion.columna%(maxScreenXY.x-minScreenXY.x)-1)*54+8,
-						(maxScreenXY.y-Exchanger.kworld.karel.posicion.fila%(maxScreenXY.y-minScreenXY.y))*54+122,
+						(Exchanger.kworld.karel.posicion.columna-1)*TAM_CAS,
+						size.y-(Exchanger.kworld.karel.posicion.fila*TAM_CAS),
 						paint);
 				break;
 			default:
 				break;
 			}
 		for(poodleDeveloper.karel.data.karelmovil.KCasilla c: Exchanger.kworld.casillas.values()){ 
-			if(c.fila < maxScreenXY.y+2 && c.fila > minScreenXY.y && c.columna < maxScreenXY.x+3 && c.columna > minScreenXY.x){
+			if(c.fila < maxScreenXY.y+1 && c.fila >= minScreenXY.y && c.columna < maxScreenXY.x+1 && c.columna >= minScreenXY.x){
 				if(c.paredes.size() > 0){
 					paint.setColor(Color.BLACK);
 					paint.setStrokeWidth(6);
@@ -177,7 +180,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				}
 			}
 		}
-		canvas.drawBitmap(karelS,100,25,paint);
+		//canvas.drawBitmap(karelS,100,25,paint);
 		
 				
 	}
