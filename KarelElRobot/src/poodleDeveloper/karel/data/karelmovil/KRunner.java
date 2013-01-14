@@ -51,7 +51,7 @@ public class KRunner {
         private int indice;
         private int ejecucion=0;
         private HashMap<String, Integer> diccionario_variables;
-        private boolean corriendo=true;
+        public boolean corriendo=true;
 
         private LinkedList<Nota> pilaFunciones;
         private PilaEstructuras pilaEstructuras;
@@ -232,7 +232,7 @@ public class KRunner {
                         indice ++;
                     } else if (instruccionPredefinida.instruccion.equals("apagate")){
                         this.corriendo = false; //Fin de la ejecución
-                        this.estado = KRunner.ESTADO_TERMINADO;
+                        this.estado = KRunner.ESTADO_OK;
                         this.mensaje = "Ejecucion terminada";
                         return KRunner.ESTADO_TERMINADO;
                     } else if (instruccionPredefinida.instruccion.equals("sal-de-instruccion")){
@@ -242,6 +242,9 @@ public class KRunner {
                     } else if (instruccionPredefinida.instruccion.equals("sal-de-bucle")){
                         RStructBucle bucle = this.pilaEstructuras.pop();
                         indice = bucle.finEstructura+1;
+                    } else if(instruccionPredefinida.instruccion.equals("continua-bucle")){
+                        RStructBucle bucle = (RStructBucle)this.pilaEstructuras.getLast();
+                        indice = ((EndStruct)this.ejecutable.lista.get(bucle.finEstructura)).inicio;
                     } else { //FIN
                         throw new KarelException("HanoiTowerException: Tu programa excede el límite de ejecución ¿Usaste 'apagate'?");
                     }
@@ -283,7 +286,7 @@ public class KRunner {
                         this.pilaEstructuras.push(mientras);
                     }
                     if (this.terminoLogico(mientras.argumentoLogico, diccionario_variables)){//Se cumple la condición del mientras
-                        if (this.pilaEstructuras.getLast().cuenta == this.limiteIteracion)
+                        if (this.pilaEstructuras.getLast().cuenta >= this.limiteIteracion)
                             throw new KarelException("LoopLimitExceded: hay un bucle que se cicla");
                         indice ++;
                         this.pilaEstructuras.getLast().cuenta ++;
@@ -292,7 +295,7 @@ public class KRunner {
                     }
                     ejecucion ++;
                 } else { //Se trata la llamada a una función
-                    if (this.pilaFunciones.size() == this.limiteRecursion)
+                    if (this.pilaFunciones.size() >= this.limiteRecursion)
                         throw new KarelException("StackOverflow: Karel ha excedido el límite de recursión");
                     RStructFuncion funcion = (RStructFuncion)instruccion;
                     //Hay que guardar la posición actual y el diccionario de variables en uso
@@ -314,6 +317,8 @@ public class KRunner {
             }
                 } catch(KarelException e){
                         this.corriendo = false;
+                        this.estado = KRunner.ESTADO_ERROR;
+                        this.mensaje = e.getMessage();
                         return KRunner.ESTADO_ERROR;
                 }
                 return KRunner.ESTADO_OK;

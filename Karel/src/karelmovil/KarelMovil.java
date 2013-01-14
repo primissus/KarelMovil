@@ -36,7 +36,7 @@ public class KarelMovil {
                 
                 KWorld mundo = new KWorld();
                 
-                KRunner runner = new KRunner(exe, mundo, 200, 200, 200);
+                KRunner runner = new KRunner(exe, mundo, 200, 7, 200);
                 runner.run();
                 if(runner.estado == KRunner.ESTADO_OK){
                 	System.out.println("Programa ejecutado");
@@ -44,7 +44,8 @@ public class KarelMovil {
                 	System.out.println("ERROR: "+runner.mensaje);
                 }
                 try{
-                	JSONObject cosa = runner.getMundo().exporta_mundo();
+                	KWorld w = runner.getMundo();
+                	JSONObject cosa = w.exporta_mundo();
                 	String res = cosa.toString();
                 	
                 	File f = new File("/home/abraham/resultado.json");
@@ -52,6 +53,7 @@ public class KarelMovil {
                 	fw.write(res);
                 	fw.close();
                 	System.out.println("Mundo exportado");
+                	System.out.println("Karel está en la "+w.karel.posicion.fila+","+w.karel.posicion.columna);
                 } catch (JSONException e){
                 	System.out.println(e.getMessage());
                 } catch (IOException e){
