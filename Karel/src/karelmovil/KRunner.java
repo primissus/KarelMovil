@@ -245,7 +245,7 @@ public class KRunner {
                         indice ++;
                     } else if (instruccionPredefinida.instruccion.equals("apagate")){
                         this.corriendo = false; //Fin de la ejecución
-                        this.estado = KRunner.ESTADO_OK;
+                        this.estado = KRunner.ESTADO_TERMINADO;
                         this.mensaje = "Ejecucion terminada";
                         return KRunner.ESTADO_TERMINADO;
                     } else if (instruccionPredefinida.instruccion.equals("sal-de-instruccion")){
