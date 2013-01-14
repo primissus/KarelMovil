@@ -29,7 +29,7 @@ public class KGrammar {
     /*
     Clase que contiene y conoce la gramatica de karel
     */
-    public String instrucciones[] = {"avanza", "gira-izquierda", "coge-zumbador", "deja-zumbador", "apagate", "sal-de-instruccion", "sal-de-bucle"};
+    public String instrucciones[] = {"avanza", "gira-izquierda", "coge-zumbador", "deja-zumbador", "apagate", "sal-de-instruccion", "sal-de-bucle", "continua-bucle"};
     public String condiciones[] = {
         "frente-libre",
         "frente-bloqueado",
@@ -99,11 +99,9 @@ public class KGrammar {
                 "no-orientado-al-sur",
                 "orientado-al-oeste",
                 "no-orientado-al-oeste",
-                "si-es-cero",
-                "verdadero", //Reservadas para futuros usos
-                "falso" //reservadas para futuros usos
+                "si-es-cero"
             };
-            this.instrucciones = new String[]{"avanza", "gira-izquierda", "coge-zumbador", "deja-zumbador", "apagate", "sal-de-instruccion", "sal-de-bucle"};
+            this.instrucciones = new String[]{"avanza", "gira-izquierda", "coge-zumbador", "deja-zumbador", "apagate", "sal-de-instruccion"};
         }
         String palabras_clave[]= {
             "iniciar-programa",
@@ -530,13 +528,13 @@ public class KGrammar {
                     this.avanza_token();
                 }else
                     throw new KarelException("No es posible usar 'sal-de-instruccion' fuera de una instruccion :)");
-            }else if (this.token_actual.token.equals("sal-de-bucle")){
+            }else if (this.token_actual.token.equals("sal-de-bucle") || this.token_actual.token.equals("continua-bucle")){
                 if (c_bucle){
                     StructInstruccion ins = new StructInstruccion(this.token_actual.token);
                     retornar_valor.add(ins);
                     this.avanza_token();
                 }else
-                    throw new KarelException("No es posible usar 'sal-de-bucle' fuera de un bucle :)");
+                    throw new KarelException("No es posible usar '"+this.token_actual.token+"' fuera de un bucle :)");
             }else{
                 StructInstruccion ins = new StructInstruccion(this.token_actual.token);
                 if(this.token_actual.token.equals("apagate")){
