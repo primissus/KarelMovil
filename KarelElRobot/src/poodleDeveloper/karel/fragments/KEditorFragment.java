@@ -96,7 +96,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		case R.id.run:
 			String codigo = textEdit.getText().toString();
 			InputStream is = new ByteArrayInputStream(codigo.getBytes());
-			InputStreamReader isr = new InputStreamReader(is);
+			InputStreamReader isr = new InputStreamReader(is); 
 			try{
 				Exchanger.kworld.limpiar();
 				KGrammar grammar = new KGrammar(new BufferedReader(isr), true, false);

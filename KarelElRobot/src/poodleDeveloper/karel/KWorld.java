@@ -1,5 +1,8 @@
 package poodleDeveloper.karel;
 
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
+
 import poodleDeveloper.karel.data.karelmovil.KRunner;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -34,11 +37,11 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private int firstX,firstY,lastX,lastY;
 	private boolean estoyArrastrando = false;	
 	final Handler handler = new Handler();
-	private Context context;
+	final Context context;
 	public KWorld(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		this.context = context;
-		this.init(context);
+		this.init(context);	
 	}
 	
 	@SuppressLint("NewApi")
@@ -55,18 +58,28 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 					try{
 						handler.post(runnable);
 						Thread.sleep(500);
-						if(Exchanger.krunner.estado == KRunner.ESTADO_ERROR){
-							Toast.makeText(context, Exchanger.krunner.mensaje, Toast.LENGTH_LONG).show();
-							this.interrupt();
-						}
-						else if(Exchanger.krunner.estado == KRunner.ESTADO_TERMINADO){
-							Toast.makeText(context, "Felicidades, ejecución terminada con éxito", Toast.LENGTH_LONG).show();
-							this.interrupt();
-						}
 					}catch(Exception e){
-						Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+						//Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
 					}
 				}
+				final SherlockActivity activity = (SherlockActivity)context;
+				if(Exchanger.krunner.estado == KRunner.ESTADO_ERROR){
+					activity.runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							Toast.makeText(activity, Exchanger.krunner.mensaje, Toast.LENGTH_SHORT).show();
+						}
+					});
+				}
+				else if(Exchanger.krunner.estado == KRunner.ESTADO_TERMINADO){
+					activity.runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							Toast.makeText(activity, "FELICIDADES, Karel llegó a su destino", Toast.LENGTH_SHORT).show();
+						}
+					});
+				}
+				this.interrupt();
 			}
 		};
 		t.start();
