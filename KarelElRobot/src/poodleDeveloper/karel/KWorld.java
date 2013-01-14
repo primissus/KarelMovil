@@ -55,14 +55,18 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 					try{
 						handler.post(runnable);
 						Thread.sleep(500);
+						if(Exchanger.krunner.estado == KRunner.ESTADO_ERROR){
+							Toast.makeText(context, Exchanger.krunner.mensaje, Toast.LENGTH_LONG).show();
+							this.interrupt();
+						}
+						else if(Exchanger.krunner.estado == KRunner.ESTADO_TERMINADO){
+							Toast.makeText(context, "Felicidades, ejecución terminada con éxito", Toast.LENGTH_LONG).show();
+							this.interrupt();
+						}
 					}catch(Exception e){
 						Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
 					}
 				}
-				if(Exchanger.krunner.estado == KRunner.ESTADO_ERROR)
-					Toast.makeText(context, Exchanger.krunner.mensaje, Toast.LENGTH_LONG).show();
-				else if(Exchanger.krunner.estado == KRunner.ESTADO_TERMINADO)
-					Toast.makeText(context, "Felicidades, ejecución terminada con éxito", Toast.LENGTH_LONG).show();
 			}
 		};
 		t.start();
