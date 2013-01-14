@@ -28,7 +28,7 @@ public class KarelMovil {
         try{
             FileReader fr = new FileReader(archivo);
             BufferedReader br_ = new BufferedReader(fr);
-            k = new KGrammar(br_, true);
+            k = new KGrammar(br_, true, true);
             try{
                 k.verificar_sintaxis();
                 System.out.println("Sintaxis correcta");

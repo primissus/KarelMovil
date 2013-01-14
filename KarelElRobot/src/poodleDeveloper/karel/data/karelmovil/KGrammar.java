@@ -50,12 +50,14 @@ public class KGrammar {
     public HashMap<String, LinkedList<String>> prototipoFunciones;
     public HashMap<String, LinkedList<IntExpr>> funciones;
 
-    public boolean futuro;
+    private boolean futuro;
+    private boolean strictSyntax;
+    private boolean tieneApagate = false;
     private Arbol arbol;
     private LinkedList<RunStruct> listaPrograma;
     private Ejecutable ejecutable;
 
-    public KGrammar(BufferedReader flujo, boolean futuro){
+    public KGrammar(BufferedReader flujo, boolean strict, boolean futuro){
         /* Inicializa la gramatica:
         flujo       indica el torrente de entrada
         archivo     es el nombre del archivo fuente, si existe
@@ -63,7 +65,7 @@ public class KGrammar {
         gen_arbol   indica si hay que compilar
         futuro      indica si se pueden usar caracteristicas del futuro
                     de Karel como las condiciones "falso" y "verdadero"*/
-
+        this.strictSyntax = strict;
         if (! futuro){
             this.condiciones = new String[]{
                 "frente-libre",
@@ -113,7 +115,7 @@ public class KGrammar {
         for(int j=0;j<palabras_clave.length;j++){
             this.palabrasReservadas[i] = palabras_clave[j];
             i++;
-        } 
+        }
         for(int j=0;j<this.instrucciones.length;j++){
             this.palabrasReservadas[i] = this.instrucciones[j];
             i++;
@@ -524,6 +526,9 @@ public class KGrammar {
                     throw new KarelException("No es posible usar 'sal-de-bucle' fuera de un bucle :)");
             }else{
                 StructInstruccion ins = new StructInstruccion(this.token_actual.token);
+                if(this.token_actual.token.equals("apagate")){
+                    this.tieneApagate = true;
+                }
                 retornar_valor.add(ins);
                 this.avanza_token();
             }
@@ -800,6 +805,9 @@ public class KGrammar {
                 throw new KarelException("Codigo mal formado");
         }else
             throw new KarelException("Se esperaba 'iniciar-programa' al inicio del programa");
+        if(this.strictSyntax && (!this.tieneApagate)){
+            throw new KarelException("Tu código no tiene 'apagate', en el modo estricto esto no se permite");
+        }
     }
 
     public boolean es_identificador_valido(KToken token){
