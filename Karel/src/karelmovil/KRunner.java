@@ -64,7 +64,7 @@ public class KRunner {
 	private int indice;
 	private int ejecucion=0;
 	private HashMap<String, Integer> diccionario_variables;
-	private boolean corriendo=true;
+	public boolean corriendo=true;
 	
 	private LinkedList<Nota> pilaFunciones;
 	private PilaEstructuras pilaEstructuras;
@@ -245,7 +245,7 @@ public class KRunner {
                         indice ++;
                     } else if (instruccionPredefinida.instruccion.equals("apagate")){
                         this.corriendo = false; //Fin de la ejecución
-                        this.estado = KRunner.ESTADO_TERMINADO;
+                        this.estado = KRunner.ESTADO_OK;
                         this.mensaje = "Ejecucion terminada";
                         return KRunner.ESTADO_TERMINADO;
                     } else if (instruccionPredefinida.instruccion.equals("sal-de-instruccion")){
