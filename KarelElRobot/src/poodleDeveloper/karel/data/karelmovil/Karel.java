@@ -10,8 +10,8 @@ public class Karel {
         this.orientacion = orientacion;
     }
     public Karel(){
-        this.posicion = new KPosition(1, 1);
-        this.mochila = 0;
+        this.posicion = new KPosition(1, 1); 
+        this.mochila = 0; 
         this.orientacion = KWorld.NORTE;
     }
 }

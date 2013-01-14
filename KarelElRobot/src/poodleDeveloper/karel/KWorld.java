@@ -1,5 +1,6 @@
 package poodleDeveloper.karel;
 
+import poodleDeveloper.karel.data.karelmovil.KRunner;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -8,6 +9,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -24,67 +26,59 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private static int MAX_SCREEN_Y;
 	private static int MIN_SCREEN_X;
 	private static int MIN_SCREEN_Y;
-	public KWorld(Context context, AttributeSet attrs) {
-		super(context, attrs);
-		this.init(context);
-	}
-	
-	
 	private KThread thread;
 	private Bitmap world,karelN,karelE,karelS,karelO;
 	private Point size;
-	
 	private Point maxScreenXY;
 	private Point minScreenXY;
 	private int firstX,firstY,lastX,lastY;
 	private boolean estoyArrastrando = false;	
-	private CasillaMaestra casilla;
+	final Handler handler = new Handler();
+	private Context context;
+	public KWorld(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		this.context = context;
+		this.init(context);
+	}
+	
 	@SuppressLint("NewApi")
 	public void init(Context context) {
-		//super(context);
-		WindowManager wm = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
-		Display display = wm.getDefaultDisplay();
-		
-		world = BitmapFactory.decodeResource(getResources(), R.drawable.bkworld);
-		karelN = BitmapFactory.decodeResource(getResources(), R.drawable.knorte);
-		karelE = BitmapFactory.decodeResource(getResources(), R.drawable.keste);
-		karelS = BitmapFactory.decodeResource(getResources(), R.drawable.ksur);
-		karelO = BitmapFactory.decodeResource(getResources(), R.drawable.koeste);
-		getHolder().addCallback(this);
-		TAM_CAS = world.getWidth();
-		maxScreenXY = new Point();
-		minScreenXY = new Point();
-		size = getDisplaySize(display);
-		maxScreenXY.set((int)size.x/TAM_CAS, (int)size.y/TAM_CAS);
-		MAX_SCREEN_X = (int)(size.x/TAM_CAS);
-		MAX_SCREEN_Y = (int)(size.y/TAM_CAS);
-		MIN_SCREEN_X = 1;
-		MIN_SCREEN_Y = 1;
-		minScreenXY.set(1, 1);
-		
-		FREE_SPACE = size.y-(((int)(size.y/TAM_CAS))*TAM_CAS);
-		casilla = new CasillaMaestra();
-		//Toast.makeText(context,size.x+"x"+size.y, Toast.LENGTH_SHORT).show();
-		Toast.makeText(context, maxScreenXY.x+"x"+maxScreenXY.y, Toast.LENGTH_SHORT).show();
-		initMenuItems();
+		loadItems(context);	
+		Exchanger.krunner.step_run();
+		kThread();
 	}
 	
-	@SuppressWarnings("deprecation")
-	@SuppressLint("NewApi")
-	private static Point getDisplaySize(final Display display) {
-	    final Point point = new Point();
-	    try {
-	        display.getSize(point);
-	    } catch (java.lang.NoSuchMethodError ignore) {
-	        point.x = display.getWidth();
-	        point.y = display.getHeight(); 
-	    }
-	    return point;
+	protected void kThread(){
+		Thread t = new Thread(){
+			public void run(){
+				while(Exchanger.krunner.estado == KRunner.ESTADO_OK){
+					try{
+						handler.post(runnable);
+						Thread.sleep(500);
+					}catch(Exception e){
+						Toast.makeText(context, e.getMessage(), Toast.LENGTH_SHORT).show();
+					}
+				}
+				if(Exchanger.krunner.estado == KRunner.ESTADO_ERROR)
+					Toast.makeText(context, Exchanger.krunner.mensaje, Toast.LENGTH_LONG).show();
+				else if(Exchanger.krunner.estado == KRunner.ESTADO_TERMINADO)
+					Toast.makeText(context, "Felicidades, ejecución terminada con éxito", Toast.LENGTH_LONG).show();
+			}
+		};
+		t.start();
 	}
 	
-	private void initMenuItems(){
+	final Runnable runnable = new Runnable() {
 		
-	}
+		@Override
+		public void run() {
+			Exchanger.krunner.step();
+			invalidate();
+		}
+	};
+	
+	
+	
 	@SuppressLint("DrawAllocation") @Override
 	public void onDraw(Canvas canvas){ 
 		Paint paint = new Paint();
@@ -135,7 +129,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			default:
 				break;
 			}
-		for(poodleDeveloper.karel.data.karelmovil.KCasilla c: Exchanger.kworld.casillas.values()){ 
+		/*for(poodleDeveloper.karel.data.karelmovil.KCasilla c: Exchanger.kworld.casillas.values()){ 
 			if(c.fila < maxScreenXY.y+1 && c.fila >= minScreenXY.y && c.columna < maxScreenXY.x+1 && c.columna >= minScreenXY.x){
 				if(c.paredes.size() > 0){
 					paint.setColor(Color.BLACK);
@@ -189,7 +183,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			}
 		}
 		//canvas.drawBitmap(karelS,100,25,paint);
-		
+		*/
 				
 	}
 
@@ -272,17 +266,40 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		return true;
 	}
 
-	class CasillaMaestra{
-		public int fila, columna, backX, forwY;
-		public CasillaMaestra(){
-			fila = columna = 1;
-			backX = forwY = 0;
-		}
-		public CasillaMaestra(int fila, int columna){
-			this.fila = fila;
-			this.columna = columna;
-			backX = forwY = 0;
-		}
+	@SuppressWarnings("deprecation")
+	@SuppressLint("NewApi")
+	private static Point getDisplaySize(final Display display) {
+	    final Point point = new Point();
+	    try {
+	        display.getSize(point);
+	    } catch (java.lang.NoSuchMethodError ignore) {
+	        point.x = display.getWidth();
+	        point.y = display.getHeight(); 
+	    }
+	    return point;
+	}
+
+	private void loadItems(Context context){
+		WindowManager wm = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
+		Display display = wm.getDefaultDisplay();
+		
+		world = BitmapFactory.decodeResource(getResources(), R.drawable.bkworld);
+		karelN = BitmapFactory.decodeResource(getResources(), R.drawable.knorte);
+		karelE = BitmapFactory.decodeResource(getResources(), R.drawable.keste);
+		karelS = BitmapFactory.decodeResource(getResources(), R.drawable.ksur);
+		karelO = BitmapFactory.decodeResource(getResources(), R.drawable.koeste);
+		getHolder().addCallback(this);
+		TAM_CAS = world.getWidth();
+		maxScreenXY = new Point();
+		minScreenXY = new Point();
+		size = getDisplaySize(display);
+		maxScreenXY.set((int)size.x/TAM_CAS, (int)size.y/TAM_CAS);
+		MAX_SCREEN_X = (int)(size.x/TAM_CAS);
+		MAX_SCREEN_Y = (int)(size.y/TAM_CAS);
+		MIN_SCREEN_X = 1;
+		MIN_SCREEN_Y = 1;
+		minScreenXY.set(1, 1);
+		FREE_SPACE = size.y-(((int)(size.y/TAM_CAS))*TAM_CAS);
 	}
 	
 }

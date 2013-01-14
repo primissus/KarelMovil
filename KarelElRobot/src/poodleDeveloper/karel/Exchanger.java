@@ -3,6 +3,7 @@ package poodleDeveloper.karel;
 import java.io.File;
 
 import android.os.Environment;
+import poodleDeveloper.karel.data.karelmovil.KRunner;
 import poodleDeveloper.karel.data.karelmovil.KWorld;
 
 public class Exchanger {
@@ -11,4 +12,5 @@ public class Exchanger {
 	public static final String WORLD_PATH = ROOT_PATH+File.separator+"Mundos";
 	public static final String CODE_PATH = ROOT_PATH+File.separator+"Códigos";
 	public static KWorld kworld;
+	public static KRunner krunner; 
 }
