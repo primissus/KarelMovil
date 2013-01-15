@@ -55,33 +55,30 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		/** Hilo de ejecución de karel*/
 		t = new Thread(){
 			public void run(){
-				while(Exchanger.krunner.estado == KRunner.ESTADO_OK){
-					try{
-						Exchanger.krunner.step();
+				int estado;
+				while((estado = Exchanger.krunner.step()) == KRunner.ESTADO_OK){
+					try{ 
 						invalidate();
 						Thread.sleep(500); 
-						System.out.println(Exchanger.krunner.estado);
 					}catch(Exception e){
 						e.getMessage();
-					}
+					} 
 				}
 				final SherlockActivity activity = (SherlockActivity)context;
-				if(Exchanger.krunner.estado == KRunner.ESTADO_ERROR){
+				if(estado == KRunner.ESTADO_ERROR){
 					/** Mostramos en el hilo de la principal de la UI el mensaje*/
 					activity.runOnUiThread(new Runnable() {
 						@Override
 						public void run() {
 							Toast.makeText(activity, Exchanger.krunner.mensaje, Toast.LENGTH_SHORT).show();
-							System.out.println(Exchanger.krunner.mensaje);
 						} 
 					});
-				}
-				else if(Exchanger.krunner.estado == KRunner.ESTADO_TERMINADO){
+				} 
+				else if(estado == KRunner.ESTADO_TERMINADO){
 					activity.runOnUiThread(new Runnable() {
 						@Override
 						public void run() {
 							Toast.makeText(activity, "FELICIDADES, Karel llegó a su destino", Toast.LENGTH_SHORT).show();
-							System.out.println("Karel llegó a la meta");
 						}
 					});
 				} 
