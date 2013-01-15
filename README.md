@@ -36,3 +36,7 @@ Los principales maestros de este proyecto:
 * [@HouseCkleiin](https://twitter.com/HouseCkleiin) User Shell
 * [@Categulario](https://twitter.com/categulario) Core
 
+Intégrate!
+---------
+
+Nunca sobran manos en un proyecto de desarrollo de software, si tienes ideas, iniciativa, programas, cantas o bailas échanos la mano con esto, salen cosas geniales cuando haces algo por diversión!
