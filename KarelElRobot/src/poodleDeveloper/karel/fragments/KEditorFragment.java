@@ -28,7 +28,7 @@ import com.actionbarsherlock.app.SherlockFragment;
 
 public class KEditorFragment extends SherlockFragment implements View.OnClickListener{
 
-	private String test = "iniciar-programa\ninicia-ejecucion\navanza;\navanza;\navanza;\nrepetir 3 veces gira-izquierda;\navanza;\navanza;\ntermina-ejecucion\nfinalizar-programa";
+	private String test = "iniciar-programa\ninicia-ejecucion\navanza;\navanza;\navanza;\nrepetir 3 veces gira-izquierda;\navanza;\navanza;\napagate;\ntermina-ejecucion\nfinalizar-programa";
 	private EditText textEdit;
 	private ImageView newCode, openCode, saveCode, run;
 	private Button tab, semiColon, dash;
