@@ -4,7 +4,9 @@ import com.actionbarsherlock.app.SherlockActivity;
 
 import poodleDeveloper.karel.data.karelmovil.KRunner;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -12,12 +14,16 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.os.Handler;
+import android.text.InputType;
 import android.util.AttributeSet;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
@@ -32,10 +38,11 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private Bitmap world,karelN,karelE,karelS,karelO;
 	private Point size;
 	private int firstX,firstY,lastX,lastY;
-	private boolean estoyArrastrando = false;	
+	private static boolean estoyArrastrando = false, addingBeeper = false, addingWall = false;	
 	final Handler handler = new Handler();
-	final Context context;
+	static Context context;
 	private Thread t;
+	private static int NUM_BEEPERS;
 	
 	public KWorld(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -49,6 +56,37 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		loadItems(context);	
 		Exchanger.krunner.step_run();  //KRunner ya fue inicializado previamente, acomodamos las variables
 		//kThread();  
+	}
+	
+	public static void loadButtons(Button addBeeper, Button addWall){
+		addBeeper.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				final EditText input = new EditText(context);
+				input.setInputType(InputType.TYPE_CLASS_PHONE);
+				new AlertDialog.Builder(context)
+				    .setTitle("Agregar Zumbador")
+				    .setMessage("Cuantos zumbadores deseas agregar?\n(-1 = Infinitos)")
+				    .setView(input)
+				    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+				         public void onClick(DialogInterface dialog, int whichButton) {
+				            int numerBeepers = Integer.parseInt(input.getText().toString());
+				            if(numerBeepers > 99)
+				            	Toast.makeText(context, "El número máximo de zumbadores es 99, vuelve a intentarlo", Toast.LENGTH_SHORT).show();
+				            else{
+				            	Toast.makeText(context, "Pulsa la casilla donde quieres colocar los zumbadores", Toast.LENGTH_SHORT).show();
+				            	addingBeeper = true;
+				            	NUM_BEEPERS = numerBeepers;
+				            }
+				         }
+				    })
+				    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+				         public void onClick(DialogInterface dialog, int whichButton) {
+				         }
+				    }).show();
+			}
+		});
 	}
 	
 	protected void kThread(){

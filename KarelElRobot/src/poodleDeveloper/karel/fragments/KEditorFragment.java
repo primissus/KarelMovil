@@ -53,7 +53,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		textEdit.setText(test);
 		newCode = (ImageView)view.findViewById(R.id.openCode);
 		newCode.setOnClickListener(this);
-		openCode = (ImageView)view.findViewById(R.id.openCode);
+		openCode = (ImageView)view.findViewById(R.id.openCode); 
 		openCode.setOnClickListener(this);
 		saveCode = (ImageView)view.findViewById(R.id.saveCode);
 		saveCode.setOnClickListener(this);
