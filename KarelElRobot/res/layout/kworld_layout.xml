@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
     
     <poodleDeveloper.karel.KWorld
+        android:id="@+id/surface"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
-
-</LinearLayout>
+	<LinearLayout 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:id="@+id/layout_buttons"
+	    android:layout_alignTop="@id/surface"
+	    android:layout_alignRight="@id/surface"
+	    android:padding="5dp"
+	    android:orientation="vertical">
+	    <Button 
+	        android:id="@+id/addBeeper"
+	        android:layout_width="45dp"
+	        android:layout_height="39dp"
+	        android:text="Z"/>
+	    <Button 
+	        android:id="@+id/addWall"
+	        android:layout_width="45dp"
+	        android:layout_height="39dp"
+	        android:text="M"/>
+	</LinearLayout>
+</RelativeLayout>

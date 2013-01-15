@@ -1,7 +1,9 @@
 package poodleDeveloper.karel;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
@@ -19,6 +21,9 @@ public class KWorldGraphics extends SherlockActivity{
         	
         }
 		setContentView(R.layout.kworld_layout);
+		Button addBeeper = (Button)findViewById(R.id.addBeeper);
+		Button addWall = (Button)findViewById(R.id.addWall);
+		KWorld.loadButtons(addBeeper, addWall);
 	}
 	
 	@Override

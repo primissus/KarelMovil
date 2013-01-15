@@ -5,9 +5,12 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import poodleDeveloper.karel.Exchanger;
 import poodleDeveloper.karel.KWorldGraphics;
 import poodleDeveloper.karel.R;
+import poodleDeveloper.karel.data.grammar.Ejecutable;
 import poodleDeveloper.karel.data.karelmovil.KGrammar;
+import poodleDeveloper.karel.data.karelmovil.KRunner;
 import poodleDeveloper.karel.data.karelmovil.KarelException;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -25,7 +28,7 @@ import com.actionbarsherlock.app.SherlockFragment;
 
 public class KEditorFragment extends SherlockFragment implements View.OnClickListener{
 
-	private String test = "iniciar-programa\ninicia-ejecucion\navanza;\ntermina-ejecucion\nfinalizar-programa";
+	private String test = "iniciar-programa\ninicia-ejecucion\navanza;\navanza;\navanza;\nrepetir 3 veces gira-izquierda;\navanza;\navanza;\napagate;\ntermina-ejecucion\nfinalizar-programa";
 	private EditText textEdit;
 	private ImageView newCode, openCode, saveCode, run;
 	private Button tab, semiColon, dash;
@@ -50,7 +53,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		textEdit.setText(test);
 		newCode = (ImageView)view.findViewById(R.id.openCode);
 		newCode.setOnClickListener(this);
-		openCode = (ImageView)view.findViewById(R.id.openCode);
+		openCode = (ImageView)view.findViewById(R.id.openCode); 
 		openCode.setOnClickListener(this);
 		saveCode = (ImageView)view.findViewById(R.id.saveCode);
 		saveCode.setOnClickListener(this);
@@ -93,10 +96,13 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		case R.id.run:
 			String codigo = textEdit.getText().toString();
 			InputStream is = new ByteArrayInputStream(codigo.getBytes());
-			InputStreamReader isr = new InputStreamReader(is);
+			InputStreamReader isr = new InputStreamReader(is); 
 			try{
-				KGrammar grammar = new KGrammar(new BufferedReader(isr), false);
+				Exchanger.kworld.limpiar();
+				KGrammar grammar = new KGrammar(new BufferedReader(isr), true, false);
 				grammar.verificar_sintaxis();
+				Ejecutable exe = grammar.expandir_arbol();
+				Exchanger.krunner = new KRunner(exe, Exchanger.kworld);
 				startActivity(new Intent(getActivity(),KWorldGraphics.class));
 			}catch(KarelException e){
 				Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();

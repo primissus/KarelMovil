@@ -178,151 +178,221 @@ public class KRunner {
         proporcionado, comenzando por el bloque "main" o estructura
         principal. */
                 this.step_run();
-        while(this.corriendo){
-                this.step();
-        }
+                while(this.corriendo){
+                	this.step();
+                }
         }
 
         public void step_run(){
                 /* Prepara las cosas para un step-run de karel */
                 this.indice = this.ejecutable.main; //El cabezal de esta máquina de turing
-        this.ejecucion = 0;
-        this.diccionario_variables = new HashMap<String, Integer>();
+                this.ejecucion = 0;
+                this.diccionario_variables = new HashMap<String, Integer>();
         }
 
-        public int step(){
-                try{
-                        if (this.corriendo){
-                if (ejecucion >= this.limiteEjecucion){
-                    throw new KarelException("HanoiTowerException: Tu programa nunca termina ¿Usaste 'apagate'?");
-                }
-                //Hay que ejecutar la función en turno en el índice actual
-                RunStruct instruccion = this.ejecutable.lista.get(indice); //TODO cuidar esta líneas
-                if(EndStruct.class.isInstance(instruccion)){
-                        EndStruct fin = (EndStruct)instruccion;
-                        int bucles[] = {Struct.ESTRUCTURA_MIENTRAS, Struct.ESTRUCTURA_REPITE};
-                        if(KGrammar.in_array(fin.estructura, bucles)){
-                                indice = fin.inicio;
-                        } else if (fin.estructura == Struct.ESTRUCTURA_SI){
-                        indice = fin.finEstructura;
-                        } else if (instruccion.estructura == Struct.ESTRUCTURA_SINO){
-                        indice ++;
-                        } else{//fin de una funcion
-                        Nota nota = this.pilaFunciones.pop(); //Obtenemos la nota de donde nos hemos quedado
-                        indice = nota.posicion+1;
-                        diccionario_variables = nota.diccionarioVariables;
-                    }
-                } else if(instruccion.estructura == Struct.ESTRUCTURA_INSTRUCCION){
-                        //Es una instruccion predefinida de Karel
-                        RStructInstruccion instruccionPredefinida = (RStructInstruccion)instruccion;
-                    if (instruccionPredefinida.instruccion.equals("avanza")){
-                        if (! this.mundo.avanza())
-                            throw new KarelException("Karel se ha estrellado con una pared!");
-                        indice ++;
-                    } else if (instruccionPredefinida.instruccion.equals("gira-izquierda")){
-                        this.mundo.gira_izquierda();
-                        indice ++;
-                    } else if (instruccionPredefinida.instruccion.equals("coge-zumbador")){
-                        if (! this.mundo.coge_zumbador())
-                                throw new KarelException("Karel quizo coger un zumbador pero no habia en su posicion");
-                        indice ++;
-                    } else if (instruccionPredefinida.instruccion.equals("deja-zumbador")){
-                        if (! this.mundo.deja_zumbador())
-                            throw new KarelException("Karel quizo dejar un zumbador pero su mochila estaba vacia");
-                        indice ++;
-                    } else if (instruccionPredefinida.instruccion.equals("apagate")){
-                        this.corriendo = false; //Fin de la ejecución
-                        this.estado = KRunner.ESTADO_OK;
-                        this.mensaje = "Ejecucion terminada";
-                        return KRunner.ESTADO_TERMINADO;
-                    } else if (instruccionPredefinida.instruccion.equals("sal-de-instruccion")){
-                        Nota nota = this.pilaFunciones.pop();//Obtenemos la nota de donde nos hemos quedado
-                        indice = nota.posicion+1;
-                        diccionario_variables = nota.diccionarioVariables;
-                    } else if (instruccionPredefinida.instruccion.equals("sal-de-bucle")){
-                        RStructBucle bucle = this.pilaEstructuras.pop();
-                        indice = bucle.finEstructura+1;
-                    } else if(instruccionPredefinida.instruccion.equals("continua-bucle")){
-                        RStructBucle bucle = (RStructBucle)this.pilaEstructuras.getLast();
-                        indice = ((EndStruct)this.ejecutable.lista.get(bucle.finEstructura)).inicio;
-                    } else { //FIN
-                        throw new KarelException("HanoiTowerException: Tu programa excede el límite de ejecución ¿Usaste 'apagate'?");
-                    }
-                    ejecucion ++;
-                } else if (instruccion.estructura == Struct.ESTRUCTURA_SI){ //Se trata de una estructura de control o una funcion definida
-                        RStructSi si = (RStructSi)instruccion;
-                    if (this.terminoLogico(si.argumentoLogico, diccionario_variables)){
-                        indice ++; //Avanzamos a la siguiente posicion en la cinta
-                    } else {//nos saltamos el si, vamos a la siguiente casilla, que debe ser un sino o la siguiente instruccion
-                        indice = si.finEstructura+1;
-                    }
-                    ejecucion ++;
-                } else if (instruccion.estructura == Struct.ESTRUCTURA_SINO){ //Llegamos a un sino, procedemos, no hay de otra
-                    indice ++;
-                    ejecucion ++;
-                } else if (instruccion.estructura == Struct.ESTRUCTURA_REPITE){
-                        RStructRepite repite = (RStructRepite)instruccion;
-                    if (!this.pilaEstructuras.enTope(repite.id)){//Se está llegando a la estructura por primera vez
-                        int argumento = this.expresionEntera(repite.argumento, diccionario_variables);
-                        if (argumento < 0)
-                            throw new KarelException("WeirdNumberException: Estás intentando que karel repita un número negativo de veces");
-                        repite.argumento = new IntExpr(argumento);
-                        this.pilaEstructuras.push(repite);
-                    }
-                    if (((RStructRepite)this.pilaEstructuras.getLast()).argumento.valorDecimal>0){
-                        if (this.pilaEstructuras.getLast().cuenta == this.limiteIteracion)
-                            throw new KarelException("LoopLimitExceded: hay un bucle que se cicla");
-                        indice ++;
-                        this.pilaEstructuras.getLast().cuenta ++;
-                        ((RStructRepite)this.pilaEstructuras.getLast()).argumento.valorDecimal --;
-                    }else{//nos vamos al final y extraemos el repite de la pila
-                        indice = this.pilaEstructuras.getLast().finEstructura+1;
-                        this.pilaEstructuras.pop();
-                    }
-                    ejecucion ++;
-                } else if (instruccion.estructura == Struct.ESTRUCTURA_MIENTRAS){
-                        RStructMientras mientras = (RStructMientras)instruccion;
-                    if (!this.pilaEstructuras.enTope(mientras.id)){//Se está llegando a la estructura al menos por segunda vez
-                        this.pilaEstructuras.push(mientras);
-                    }
-                    if (this.terminoLogico(mientras.argumentoLogico, diccionario_variables)){//Se cumple la condición del mientras
-                        if (this.pilaEstructuras.getLast().cuenta >= this.limiteIteracion)
-                            throw new KarelException("LoopLimitExceded: hay un bucle que se cicla");
-                        indice ++;
-                        this.pilaEstructuras.getLast().cuenta ++;
-                    } else { //nos vamos al final
-                        indice = this.pilaEstructuras.pop().finEstructura+1;
-                    }
-                    ejecucion ++;
-                } else { //Se trata la llamada a una función
-                    if (this.pilaFunciones.size() >= this.limiteRecursion)
-                        throw new KarelException("StackOverflow: Karel ha excedido el límite de recursión");
-                    RStructFuncion funcion = (RStructFuncion)instruccion;
-                    //Hay que guardar la posición actual y el diccionario de variables en uso
-                    this.pilaFunciones.push(new Nota(indice, diccionario_variables));
-                    // Lo que prosigue es ir a la definición de la función
-                    indice = this.ejecutable.indiceFunciones.get(funcion.nombre)+1;
-                    // recalcular el diccionario de variables
-                    LinkedList<IntExpr> valores = new LinkedList<IntExpr>();
-                    for (IntExpr i:funcion.params)
-                        valores.push(new IntExpr(this.expresionEntera(i, diccionario_variables)));
-                    diccionario_variables = merge(
-                        ((RStructFuncion)this.ejecutable.lista.get(indice-1)).params,
-                        valores
-                    );
-                    ejecucion ++;
-                }
-            } else {
-                return KRunner.ESTADO_TERMINADO;
-            }
-                } catch(KarelException e){
-                        this.corriendo = false;
-                        this.estado = KRunner.ESTADO_ERROR;
-                        this.mensaje = e.getMessage();
-                        return KRunner.ESTADO_ERROR;
-                }
-                return KRunner.ESTADO_OK;
-        }
+		public int step() {
+			try {
+				if (this.corriendo) {
+					if (ejecucion >= this.limiteEjecucion) {
+						throw new KarelException(
+								"HanoiTowerException: Tu programa nunca termina ¿Usaste 'apagate'?");
+					}
+					// Hay que ejecutar la función en turno en el índice actual
+					RunStruct instruccion = this.ejecutable.lista.get(indice); // TODO
+																				// cuidar
+																				// esta
+																				// líneas
+					if (EndStruct.class.isInstance(instruccion)) {
+						EndStruct fin = (EndStruct) instruccion;
+						int bucles[] = { Struct.ESTRUCTURA_MIENTRAS,
+								Struct.ESTRUCTURA_REPITE };
+						if (KGrammar.in_array(fin.estructura, bucles)) {
+							indice = fin.inicio;
+						} else if (fin.estructura == Struct.ESTRUCTURA_SI) {
+							indice = fin.finEstructura;
+						} else if (instruccion.estructura == Struct.ESTRUCTURA_SINO) {
+							indice++;
+						} else {// fin de una funcion
+							Nota nota = this.pilaFunciones.pop(); // Obtenemos la
+																	// nota de donde
+																	// nos hemos
+																	// quedado
+							indice = nota.posicion + 1;
+							diccionario_variables = nota.diccionarioVariables;
+						}
+					} else if (instruccion.estructura == Struct.ESTRUCTURA_INSTRUCCION) {
+						// Es una instruccion predefinida de Karel
+						RStructInstruccion instruccionPredefinida = (RStructInstruccion) instruccion;
+						if (instruccionPredefinida.instruccion.equals("avanza")) {
+							if (!this.mundo.avanza())
+								throw new KarelException(
+										"Karel se ha estrellado con una pared!");
+							indice++;
+						} else if (instruccionPredefinida.instruccion
+								.equals("gira-izquierda")) {
+							this.mundo.gira_izquierda();
+							indice++;
+						} else if (instruccionPredefinida.instruccion
+								.equals("coge-zumbador")) {
+							if (!this.mundo.coge_zumbador())
+								throw new KarelException(
+										"Karel quizo coger un zumbador pero no habia en su posicion");
+							indice++;
+						} else if (instruccionPredefinida.instruccion
+								.equals("deja-zumbador")) {
+							if (!this.mundo.deja_zumbador())
+								throw new KarelException(
+										"Karel quizo dejar un zumbador pero su mochila estaba vacia");
+							indice++;
+						} else if (instruccionPredefinida.instruccion
+								.equals("apagate")) {
+							this.corriendo = false; // Fin de la ejecución
+							this.estado = KRunner.ESTADO_OK;
+							this.mensaje = "Ejecucion terminada";
+							return KRunner.ESTADO_TERMINADO;
+						} else if (instruccionPredefinida.instruccion
+								.equals("sal-de-instruccion")) {
+							Nota nota = this.pilaFunciones.pop();// Obtenemos la
+																	// nota de donde
+																	// nos hemos
+																	// quedado
+							indice = nota.posicion + 1;
+							diccionario_variables = nota.diccionarioVariables;
+						} else if (instruccionPredefinida.instruccion
+								.equals("sal-de-bucle")) {
+							RStructBucle bucle = this.pilaEstructuras.pop();
+							indice = bucle.finEstructura + 1;
+						} else if (instruccionPredefinida.instruccion
+								.equals("continua-bucle")) {
+							RStructBucle bucle = (RStructBucle) this.pilaEstructuras
+									.getLast();
+							indice = ((EndStruct) this.ejecutable.lista
+									.get(bucle.finEstructura)).inicio;
+						} else { // FIN
+							throw new KarelException(
+									"HanoiTowerException: Tu programa excede el límite de ejecución ¿Usaste 'apagate'?");
+						}
+						ejecucion++;
+					} else if (instruccion.estructura == Struct.ESTRUCTURA_SI) { // Se
+																					// trata
+																					// de
+																					// una
+																					// estructura
+																					// de
+																					// control
+																					// o
+																					// una
+																					// funcion
+																					// definida
+						RStructSi si = (RStructSi) instruccion;
+						if (this.terminoLogico(si.argumentoLogico,
+								diccionario_variables)) {
+							indice++; // Avanzamos a la siguiente posicion en la
+										// cinta
+						} else {// nos saltamos el si, vamos a la siguiente casilla,
+								// que debe ser un sino o la siguiente instruccion
+							indice = si.finEstructura + 1;
+						}
+						ejecucion++;
+					} else if (instruccion.estructura == Struct.ESTRUCTURA_SINO) { // Llegamos
+																					// a
+																					// un
+																					// sino,
+																					// procedemos,
+																					// no
+																					// hay
+																					// de
+																					// otra
+						indice++;
+						ejecucion++;
+					} else if (instruccion.estructura == Struct.ESTRUCTURA_REPITE) {
+						RStructRepite repite = (RStructRepite) instruccion;
+						if (!this.pilaEstructuras.enTope(repite.id)) {// Se está
+																		// llegando
+																		// a la
+																		// estructura
+																		// por
+																		// primera
+																		// vez
+							int argumento = this.expresionEntera(repite.argumento,
+									diccionario_variables);
+							if (argumento < 0)
+								throw new KarelException(
+										"WeirdNumberException: Estás intentando que karel repita un número negativo de veces");
+							repite.argumento = new IntExpr(argumento);
+							this.pilaEstructuras.push(repite);
+						}
+						if (((RStructRepite) this.pilaEstructuras.getLast()).argumento.valorDecimal > 0) {
+							if (this.pilaEstructuras.getLast().cuenta == this.limiteIteracion)
+								throw new KarelException(
+										"LoopLimitExceded: hay un bucle que se cicla");
+							indice++;
+							this.pilaEstructuras.getLast().cuenta++;
+							((RStructRepite) this.pilaEstructuras.getLast()).argumento.valorDecimal--;
+						} else {// nos vamos al final y extraemos el repite de la
+								// pila
+							indice = this.pilaEstructuras.getLast().finEstructura + 1;
+							this.pilaEstructuras.pop();
+						}
+						ejecucion++;
+					} else if (instruccion.estructura == Struct.ESTRUCTURA_MIENTRAS) {
+						RStructMientras mientras = (RStructMientras) instruccion;
+						if (!this.pilaEstructuras.enTope(mientras.id)) {// Se está
+																		// llegando
+																		// a la
+																		// estructura
+																		// al menos
+																		// por
+																		// segunda
+																		// vez
+							this.pilaEstructuras.push(mientras);
+						}
+						if (this.terminoLogico(mientras.argumentoLogico,
+								diccionario_variables)) {// Se cumple la condición
+															// del mientras
+							if (this.pilaEstructuras.getLast().cuenta >= this.limiteIteracion)
+								throw new KarelException(
+										"LoopLimitExceded: hay un bucle que se cicla");
+							indice++;
+							this.pilaEstructuras.getLast().cuenta++;
+						} else { // nos vamos al final
+							indice = this.pilaEstructuras.pop().finEstructura + 1;
+						}
+						ejecucion++;
+					} else { // Se trata la llamada a una función
+						if (this.pilaFunciones.size() >= this.limiteRecursion)
+							throw new KarelException(
+									"StackOverflow: Karel ha excedido el límite de recursión");
+						RStructFuncion funcion = (RStructFuncion) instruccion;
+						// Hay que guardar la posición actual y el diccionario de
+						// variables en uso
+						this.pilaFunciones.push(new Nota(indice,
+								diccionario_variables));
+						// Lo que prosigue es ir a la definición de la función
+						indice = this.ejecutable.indiceFunciones
+								.get(funcion.nombre) + 1;
+						// recalcular el diccionario de variables
+						LinkedList<IntExpr> valores = new LinkedList<IntExpr>();
+						for (IntExpr i : funcion.params)
+							valores.push(new IntExpr(this.expresionEntera(i,
+									diccionario_variables)));
+						diccionario_variables = merge(
+								((RStructFuncion) this.ejecutable.lista
+										.get(indice - 1)).params,
+								valores);
+						ejecucion++;
+					}
+				} else {
+					return KRunner.ESTADO_TERMINADO;
+				}
+			} catch (KarelException e) {
+				this.corriendo = false;
+				this.estado = KRunner.ESTADO_ERROR;
+				this.mensaje = e.getMessage();
+				return KRunner.ESTADO_ERROR;
+			}
+			return KRunner.ESTADO_OK;
+		}
 
         private HashMap<String, Integer> merge(LinkedList<IntExpr> nombres, LinkedList<IntExpr> valores) {
                 HashMap<String, Integer> diccionario_variables = new HashMap<String, Integer>();
