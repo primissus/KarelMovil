@@ -1,7 +1,12 @@
 package poodleDeveloper.karel;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 import com.actionbarsherlock.app.SherlockActivity;
 
+import poodleDeveloper.karel.data.karelmovil.KCasilla;
+import poodleDeveloper.karel.data.karelmovil.KPosition;
 import poodleDeveloper.karel.data.karelmovil.KRunner;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -28,7 +33,20 @@ import android.widget.Toast;
 
 public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 
-	private static int TAM_CAS;
+	class Zumbador{
+		public int columna;
+		public int fila;
+		public int radio;
+		public String numero;
+		public Zumbador(int x, int y, int radio, String numero){
+			this.fila = x;
+			this.columna = y;
+			this.radio = radio;
+			this.numero = numero;
+		}
+	}
+	
+	private static int TAM_CAS;	
 	private static int FREE_SPACE; 
 	private static int MAX_SCREEN_X;
 	private static int MAX_SCREEN_Y;
@@ -43,6 +61,10 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	static Context context;
 	private Thread t;
 	private static int NUM_BEEPERS;
+	private Canvas canvas;
+	private Paint paint;
+	private ArrayList<Zumbador> zumabores = new ArrayList<KWorld.Zumbador>();
+	private int NUMBER_ITEMS;
 	
 	public KWorld(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -56,6 +78,8 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		loadItems(context);	
 		Exchanger.krunner.step_run();  //KRunner ya fue inicializado previamente, acomodamos las variables
 		//kThread();  
+		NUM_BEEPERS = 0;
+		NUMBER_ITEMS = 0;
 	}
 	
 	public static void loadButtons(Button addBeeper, Button addWall){
@@ -65,25 +89,22 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			public void onClick(View v) {
 				final EditText input = new EditText(context);
 				input.setInputType(InputType.TYPE_CLASS_PHONE);
-				new AlertDialog.Builder(context)
-				    .setTitle("Agregar Zumbador")
-				    .setMessage("Cuantos zumbadores deseas agregar?\n(-1 = Infinitos)")
-				    .setView(input)
-				    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+				new AlertDialog.Builder(context).setTitle("Agregar Zumbador").setMessage("Cuantos zumbadores deseas agregar?\n(-1 = Infinitos)")
+				    .setView(input).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 				         public void onClick(DialogInterface dialog, int whichButton) {
-				            int numerBeepers = Integer.parseInt(input.getText().toString());
-				            if(numerBeepers > 99)
-				            	Toast.makeText(context, "El número máximo de zumbadores es 99, vuelve a intentarlo", Toast.LENGTH_SHORT).show();
-				            else{
-				            	Toast.makeText(context, "Pulsa la casilla donde quieres colocar los zumbadores", Toast.LENGTH_SHORT).show();
-				            	addingBeeper = true;
-				            	NUM_BEEPERS = numerBeepers;
-				            }
+				        	if(!input.getText().toString().equals("")){
+				        		int numerBeepers = Integer.parseInt(input.getText().toString());
+					            if(numerBeepers > 99)
+					            	Toast.makeText(context, "El número máximo de zumbadores es 99, vuelve a intentarlo", Toast.LENGTH_SHORT).show();
+					            else{
+					            	Toast.makeText(context, "Pulsa la casilla donde quieres colocar los zumbadores", Toast.LENGTH_SHORT).show();
+					            	addingBeeper = true;
+					            	NUM_BEEPERS = numerBeepers;
+					            }
+				        	}
 				         }
-				    })
-				    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-				         public void onClick(DialogInterface dialog, int whichButton) {
-				         }
+				    }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+				         public void onClick(DialogInterface dialog, int whichButton) {}
 				    }).show();
 			}
 		});
@@ -130,16 +151,28 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	
 	@SuppressLint("DrawAllocation") @Override
 	public void onDraw(Canvas canvas){ 
+		this.canvas = canvas;
 		Paint paint = new Paint();
 		paint.setStyle(Paint.Style.STROKE);
-		paint.setColor(Color.BLACK); 
+		paint.setColor(Color.GREEN); 
 		paint.setAntiAlias(true);
-		
+		this.paint = paint;
 		/** Pintamos las casillas */
 		for(float i = 0; i < size.x+TAM_CAS; i+=TAM_CAS)
 			for(float j = size.y-TAM_CAS; j > -TAM_CAS ; j-=TAM_CAS)
 					canvas.drawBitmap(world, i, j, paint);
-		
+		paint.setStrokeWidth(30);
+		/** En caso de haber zumbadores los agregamos*/
+		int xB;
+		int yB;
+		for(KCasilla casilla : Exchanger.kworld.casillas.values()){
+			if(casilla.fila < MAX_SCREEN_Y+1 && casilla.fila >= MIN_SCREEN_Y && casilla.columna < MAX_SCREEN_X+1 && casilla.columna >= MIN_SCREEN_X){
+				 xB = (casilla.columna-MIN_SCREEN_X)*TAM_CAS;
+				 yB = (((((int)(size.y/TAM_CAS))-(casilla.fila-MIN_SCREEN_Y))-1)*TAM_CAS)+FREE_SPACE;
+				canvas.drawCircle(xB+(TAM_CAS/2), yB+(TAM_CAS/2), (TAM_CAS-40)/2, paint);
+			}
+		}
+		paint.setStrokeWidth(1);
 		/** Sólo si Karel se encuentra dentro de los límites virtuales del mundo, lo pintamos*/
 		if(Exchanger.kworld.karel.posicion.fila < MAX_SCREEN_Y+1 && Exchanger.kworld.karel.posicion.fila >= MIN_SCREEN_Y && 
 				Exchanger.kworld.karel.posicion.columna < MAX_SCREEN_X+1 && Exchanger.kworld.karel.posicion.columna >= MIN_SCREEN_X){
@@ -203,12 +236,20 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		int evento = event.getAction();
 		switch (evento) {
 		case MotionEvent.ACTION_DOWN:
-			estoyArrastrando = true;
-			/** Obtenemos el primer punto donde hicimos click*/
-			firstX = (int)event.getX();
-			firstY = (int)event.getY();
-			lastX = firstX;
-			lastY = firstY;
+			Toast.makeText(context, TAM_CAS + ": " + event.getX()+" x "+event.getY(), Toast.LENGTH_SHORT).show();
+			if(addingBeeper){ 
+				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
+				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
+				Exchanger.kworld.pon_zumbadores(new KPosition(fila, columna), NUM_BEEPERS);
+				NUMBER_ITEMS++;
+			}else{
+				estoyArrastrando = true;
+				/** Obtenemos el primer punto donde hicimos click*/
+				firstX = (int)event.getX();
+				firstY = (int)event.getY();
+				lastX = firstX;
+				lastY = firstY;
+			}
 			break;
 		case MotionEvent.ACTION_MOVE:
 			if(estoyArrastrando){
@@ -244,6 +285,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			break;
 		case MotionEvent.ACTION_UP:
 			estoyArrastrando = false;
+			addingBeeper = false;
 		default:
 			break;
 		}
