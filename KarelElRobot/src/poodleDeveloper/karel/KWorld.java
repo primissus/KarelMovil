@@ -190,17 +190,19 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		paint.setTextSize(TAM_CAS/3);
 		for(KCasilla casilla : Exchanger.kworld.casillas.values()){
 			if(casilla.fila < MAX_SCREEN_Y+1 && casilla.fila >= MIN_SCREEN_Y && casilla.columna < MAX_SCREEN_X+2 && casilla.columna >= MIN_SCREEN_X){
-				 xB = (casilla.columna-MIN_SCREEN_X)*TAM_CAS;
-				 yB = (((((int)(size.y/TAM_CAS))-(casilla.fila-MIN_SCREEN_Y))-1)*TAM_CAS)+FREE_SPACE;
-				 paint.setStrokeWidth(28);
-				 paint.setColor(Color.GREEN); 
-				 canvas.drawCircle(xB+(TAM_CAS/2), yB+(TAM_CAS/2), (TAM_CAS-50)/2, paint);
-				 paint.setStrokeWidth(1);
-				 paint.setColor(Color.BLACK); 
-				 if(casilla.zumbadores > 9)
-					 canvas.drawText(String.valueOf(casilla.zumbadores), xB+(TAM_CAS/3), yB+(TAM_CAS-(TAM_CAS/2))+5, paint);
-				 else
-					 canvas.drawText(String.valueOf(casilla.zumbadores), xB+(TAM_CAS/3)+5, yB+(TAM_CAS-(TAM_CAS/2))+5, paint);
+				xB = (casilla.columna-MIN_SCREEN_X)*TAM_CAS;
+				yB = (((((int)(size.y/TAM_CAS))-(casilla.fila-MIN_SCREEN_Y))-1)*TAM_CAS)+FREE_SPACE;
+				if(casilla.zumbadores != 0){
+					 paint.setStrokeWidth(28);
+					 paint.setColor(Color.GREEN); 
+					 canvas.drawCircle(xB+(TAM_CAS/2), yB+(TAM_CAS/2), (TAM_CAS-50)/2, paint);
+					 paint.setStrokeWidth(1);
+					 paint.setColor(Color.BLACK);
+					 if(casilla.zumbadores > 9)
+						 canvas.drawText(String.valueOf(casilla.zumbadores), xB+(TAM_CAS/3), yB+(TAM_CAS-(TAM_CAS/2))+5, paint);
+					 else
+						 canvas.drawText(String.valueOf(casilla.zumbadores), xB+(TAM_CAS/3)+5, yB+(TAM_CAS-(TAM_CAS/2))+5, paint);
+				}
 			}
 		}
 		paint.setStrokeWidth(1);
@@ -317,6 +319,15 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		case MotionEvent.ACTION_UP:
 			estoyArrastrando = false;
 			addingBeeper = false;
+			if(deleting){
+				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
+				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
+				for(KCasilla casilla: Exchanger.kworld.casillas.values()){
+					if(casilla.fila == fila && casilla.columna == columna)
+						casilla.zumbadores = 0;
+				}
+			}
+			break;
 		default:
 			break;
 		}
