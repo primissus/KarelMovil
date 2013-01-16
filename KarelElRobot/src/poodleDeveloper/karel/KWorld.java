@@ -1,7 +1,5 @@
 package poodleDeveloper.karel;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 import com.actionbarsherlock.app.SherlockActivity;
 
@@ -58,12 +56,13 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private int firstX,firstY,lastX,lastY;
 	private static boolean estoyArrastrando = false, addingBeeper = false, addingWall = false, deleting = false;	
 	final Handler handler = new Handler();
-	static Context context;
+	private static Context context;
 	private Thread t;
 	private static int NUM_BEEPERS;
-	private int NUMBER_ITEMS;
+	private static int NUMBER_ITEMS;
 	private static Button beeper, del;
 	
+	@SuppressWarnings("static-access")
 	public KWorld(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		setFocusable(true);
@@ -118,7 +117,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if(event.getAction() == MotionEvent.ACTION_UP)
-					if(NUM_BEEPERS > 0)
+					if(NUMBER_ITEMS > 0)
 						if(!deleting){
 							deleting = true;
 							del.setPressed(true);
@@ -322,10 +321,10 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			if(deleting){
 				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
 				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
-				for(KCasilla casilla: Exchanger.kworld.casillas.values()){
+				/** Buscamos las coordenadas obtenidas en todas las casillas para eliminar el item*/
+				for(KCasilla casilla: Exchanger.kworld.casillas.values())
 					if(casilla.fila == fila && casilla.columna == columna)
 						casilla.zumbadores = 0;
-				}
 			}
 			break;
 		default:
