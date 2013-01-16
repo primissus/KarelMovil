@@ -56,15 +56,14 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private Bitmap world,karelN,karelE,karelS,karelO;
 	private Point size;
 	private int firstX,firstY,lastX,lastY;
-	private static boolean estoyArrastrando = false, addingBeeper = false, addingWall = false;	
+	private static boolean estoyArrastrando = false, addingBeeper = false, addingWall = false, deleting = false;	
 	final Handler handler = new Handler();
 	static Context context;
 	private Thread t;
 	private static int NUM_BEEPERS;
-	private Canvas canvas;
-	private Paint paint;
-	private ArrayList<Zumbador> zumabores = new ArrayList<KWorld.Zumbador>();
 	private int NUMBER_ITEMS;
+	private static boolean beeper_button_pressed = false;
+	private static Button beeper, del;
 	
 	public KWorld(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -82,30 +81,57 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		NUMBER_ITEMS = 0;
 	}
 	
-	public static void loadButtons(Button addBeeper, Button addWall){
-		addBeeper.setOnClickListener(new OnClickListener() {
+	public static void loadButtons(Button addBeeper, Button addWall, Button delete){
+		beeper = addBeeper;
+		del = delete;
+		beeper.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				final EditText input = new EditText(context);
-				input.setInputType(InputType.TYPE_CLASS_PHONE);
-				new AlertDialog.Builder(context).setTitle("Agregar Zumbador").setMessage("Cuantos zumbadores deseas agregar?\n(-1 = Infinitos)")
-				    .setView(input).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-				         public void onClick(DialogInterface dialog, int whichButton) {
-				        	if(!input.getText().toString().equals("")){
-				        		int numerBeepers = Integer.parseInt(input.getText().toString());
-					            if(numerBeepers > 99)
-					            	Toast.makeText(context, "El número máximo de zumbadores es 99, vuelve a intentarlo", Toast.LENGTH_SHORT).show();
-					            else{
-					            	Toast.makeText(context, "Pulsa la casilla donde quieres colocar los zumbadores", Toast.LENGTH_SHORT).show();
-					            	addingBeeper = true;
-					            	NUM_BEEPERS = numerBeepers;
-					            }
-				        	}
-				         }
-				    }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-				         public void onClick(DialogInterface dialog, int whichButton) {}
-				    }).show();
+				if(!deleting){
+					final EditText input = new EditText(context);
+					input.setInputType(InputType.TYPE_CLASS_PHONE);
+					new AlertDialog.Builder(context).setTitle("Agregar Zumbador").setMessage("¿Cuantos zumbadores deseas agregar? (-1 = Infinitos)")
+					    .setView(input).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+					         public void onClick(DialogInterface dialog, int whichButton) {				
+						        	if(!input.getText().toString().equals("")){
+						        		int numerBeepers = Integer.parseInt(input.getText().toString());
+							            if(numerBeepers > 99)
+							            	Toast.makeText(context, "El número máximo de zumbadores es 99, vuelve a intentarlo", Toast.LENGTH_SHORT).show();
+							            else{
+							            	Toast.makeText(context, "Pulsa la casilla donde quieres colocar los zumbadores", Toast.LENGTH_SHORT).show();
+							            	addingBeeper = true;
+							            	NUM_BEEPERS = numerBeepers;
+							            }
+						        	}
+					         }
+					    }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+					         public void onClick(DialogInterface dialog, int whichButton) {}
+					    }).show();
+				}else{
+					Toast.makeText(context, "Modo de borrado activado, pulse el icono para desactivarlo", Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
+		
+		del.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction() == MotionEvent.ACTION_UP)
+					if(NUM_BEEPERS > 0)
+						if(!deleting){
+							deleting = true;
+							del.setPressed(true);
+							Toast.makeText(context, "Seleccione un ítem para borrarlo", Toast.LENGTH_SHORT).show();
+						}else{
+							deleting = false;
+							del.setPressed(false);
+						}
+					else{
+						Toast.makeText(context, "No hay movimientos que deshacer", Toast.LENGTH_SHORT).show();
+					}
+				return true;
 			}
 		});
 	}
@@ -151,11 +177,9 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	
 	@SuppressLint("DrawAllocation") @Override
 	public void onDraw(Canvas canvas){ 
-		this.canvas = canvas;
 		Paint paint = new Paint();
 		paint.setStyle(Paint.Style.STROKE);
 		paint.setAntiAlias(true);
-		this.paint = paint;
 		/** Pintamos las casillas */
 		for(float i = 0; i < size.x+TAM_CAS; i+=TAM_CAS)
 			for(float j = size.y-TAM_CAS; j > -TAM_CAS ; j-=TAM_CAS)
@@ -244,7 +268,9 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		int evento = event.getAction();
 		switch (evento) {
 		case MotionEvent.ACTION_DOWN:
-			if(addingBeeper){ 
+			if(deleting){
+				;
+			}else if(addingBeeper){ 
 				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
 				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
 				Exchanger.kworld.pon_zumbadores(new KPosition(fila, columna), NUM_BEEPERS);

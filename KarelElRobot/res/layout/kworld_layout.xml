@@ -21,11 +21,19 @@
 	        android:id="@+id/addBeeper"
 	        android:layout_width="45dp"
 	        android:layout_height="39dp"
+	        android:alpha="1"
 	        android:text="Z"/>
 	    <Button 
 	        android:id="@+id/addWall"
 	        android:layout_width="45dp"
 	        android:layout_height="39dp"
+	        android:alpha="1"
 	        android:text="M"/>
+	    <Button 
+	        android:id="@+id/delete"
+	        android:layout_width="45dp"
+	        android:layout_height="39dp"
+	        android:alpha="1"
+	        android:text="-"/>
 	</LinearLayout>
 </RelativeLayout>
