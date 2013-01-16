@@ -154,28 +154,36 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		this.canvas = canvas;
 		Paint paint = new Paint();
 		paint.setStyle(Paint.Style.STROKE);
-		paint.setColor(Color.GREEN); 
 		paint.setAntiAlias(true);
 		this.paint = paint;
 		/** Pintamos las casillas */
 		for(float i = 0; i < size.x+TAM_CAS; i+=TAM_CAS)
 			for(float j = size.y-TAM_CAS; j > -TAM_CAS ; j-=TAM_CAS)
 					canvas.drawBitmap(world, i, j, paint);
-		paint.setStrokeWidth(30);
+		
 		/** En caso de haber zumbadores los agregamos*/
 		int xB;
 		int yB;
+		paint.setTextSize(TAM_CAS/3);
 		for(KCasilla casilla : Exchanger.kworld.casillas.values()){
-			if(casilla.fila < MAX_SCREEN_Y+1 && casilla.fila >= MIN_SCREEN_Y && casilla.columna < MAX_SCREEN_X+1 && casilla.columna >= MIN_SCREEN_X){
+			if(casilla.fila < MAX_SCREEN_Y+1 && casilla.fila >= MIN_SCREEN_Y && casilla.columna < MAX_SCREEN_X+2 && casilla.columna >= MIN_SCREEN_X){
 				 xB = (casilla.columna-MIN_SCREEN_X)*TAM_CAS;
 				 yB = (((((int)(size.y/TAM_CAS))-(casilla.fila-MIN_SCREEN_Y))-1)*TAM_CAS)+FREE_SPACE;
-				canvas.drawCircle(xB+(TAM_CAS/2), yB+(TAM_CAS/2), (TAM_CAS-40)/2, paint);
+				 paint.setStrokeWidth(28);
+				 paint.setColor(Color.GREEN); 
+				 canvas.drawCircle(xB+(TAM_CAS/2), yB+(TAM_CAS/2), (TAM_CAS-50)/2, paint);
+				 paint.setStrokeWidth(1);
+				 paint.setColor(Color.BLACK); 
+				 if(casilla.zumbadores > 9)
+					 canvas.drawText(String.valueOf(casilla.zumbadores), xB+(TAM_CAS/3), yB+(TAM_CAS-(TAM_CAS/2))+5, paint);
+				 else
+					 canvas.drawText(String.valueOf(casilla.zumbadores), xB+(TAM_CAS/3)+5, yB+(TAM_CAS-(TAM_CAS/2))+5, paint);
 			}
 		}
 		paint.setStrokeWidth(1);
 		/** Sólo si Karel se encuentra dentro de los límites virtuales del mundo, lo pintamos*/
 		if(Exchanger.kworld.karel.posicion.fila < MAX_SCREEN_Y+1 && Exchanger.kworld.karel.posicion.fila >= MIN_SCREEN_Y && 
-				Exchanger.kworld.karel.posicion.columna < MAX_SCREEN_X+1 && Exchanger.kworld.karel.posicion.columna >= MIN_SCREEN_X){
+				Exchanger.kworld.karel.posicion.columna < MAX_SCREEN_X+2 && Exchanger.kworld.karel.posicion.columna >= MIN_SCREEN_X){
 			
 			int x = (Exchanger.kworld.karel.posicion.columna-MIN_SCREEN_X)*TAM_CAS;
 			int y = (((((int)(size.y/TAM_CAS))-(Exchanger.kworld.karel.posicion.fila-MIN_SCREEN_Y))-1)*TAM_CAS)+FREE_SPACE;
@@ -236,7 +244,6 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		int evento = event.getAction();
 		switch (evento) {
 		case MotionEvent.ACTION_DOWN:
-			Toast.makeText(context, TAM_CAS + ": " + event.getX()+" x "+event.getY(), Toast.LENGTH_SHORT).show();
 			if(addingBeeper){ 
 				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
 				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
