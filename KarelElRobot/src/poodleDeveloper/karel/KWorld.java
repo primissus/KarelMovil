@@ -62,13 +62,12 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private Thread t;
 	private static int NUM_BEEPERS;
 	private int NUMBER_ITEMS;
-	private static boolean beeper_button_pressed = false;
 	private static Button beeper, del;
 	
 	public KWorld(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		setFocusable(true);
-		this.context = context;
+		this.context = context; 
 		this.init(context);	
 	}
 	
@@ -275,14 +274,13 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
 				Exchanger.kworld.pon_zumbadores(new KPosition(fila, columna), NUM_BEEPERS);
 				NUMBER_ITEMS++;
-			}else{
-				estoyArrastrando = true;
-				/** Obtenemos el primer punto donde hicimos click*/
-				firstX = (int)event.getX();
-				firstY = (int)event.getY();
-				lastX = firstX;
-				lastY = firstY;
 			}
+			estoyArrastrando = true;
+			/** Obtenemos el primer punto donde hicimos click*/
+			firstX = (int)event.getX();
+			firstY = (int)event.getY();
+			lastX = firstX;
+			lastY = firstY;
 			break;
 		case MotionEvent.ACTION_MOVE:
 			if(estoyArrastrando){
