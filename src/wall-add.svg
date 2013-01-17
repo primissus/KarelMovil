@@ -15,7 +15,10 @@
    id="svg5968"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="wall-add.svg">
+   sodipodi:docname="wall-add.svg"
+   inkscape:export-filename="/home/abraham/GitHub/KarelMovil/src/18x18/wall-add.png"
+   inkscape:export-xdpi="33.75"
+   inkscape:export-ydpi="33.75">
   <defs
      id="defs5970">
     <radialGradient
@@ -282,7 +285,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="5.6"
      inkscape:cx="5.170899"
-     inkscape:cy="31.776241"
+     inkscape:cy="24.633384"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -303,7 +306,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
