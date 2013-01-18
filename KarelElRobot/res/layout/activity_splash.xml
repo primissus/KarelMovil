@@ -15,15 +15,5 @@
         android:layout_centerInParent="true"
         android:id="@+id/image_splash"
         android:layout_gravity="center"/>
-    <TextView 
-        android:layout_below="@id/image_splash"
-        android:text="Karel el Robot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textColor="#FFFFFF"/>
  
 </RelativeLayout>

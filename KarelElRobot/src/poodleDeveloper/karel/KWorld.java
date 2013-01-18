@@ -50,6 +50,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private static int MAX_SCREEN_Y;
 	private static int MIN_SCREEN_X;
 	private static int MIN_SCREEN_Y;
+	private static int WALL_AREA;
 	private KThread thread;
 	private Bitmap world,karelN,karelE,karelS,karelO;
 	private Point size;
@@ -60,7 +61,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private Thread t;
 	private static int NUM_BEEPERS;
 	private static int NUMBER_ITEMS;
-	private static Button beeper, del;
+	private static Button beeper, del, wall;
 	
 	@SuppressWarnings("static-access")
 	public KWorld(Context context, AttributeSet attrs) {
@@ -82,11 +83,16 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	public static void loadButtons(Button addBeeper, Button addWall, Button delete){
 		beeper = addBeeper;
 		del = delete;
+		wall = addWall;
 		beeper.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				if(!deleting){
+					if(addingWall){
+						addingWall = false;
+						wall.setPressed(false);
+					}
 					final EditText input = new EditText(context);
 					input.setInputType(InputType.TYPE_CLASS_PHONE);
 					new AlertDialog.Builder(context).setTitle("Agregar Zumbador").setMessage("¿Cuantos zumbadores deseas agregar? (-1 = Infinitos)")
@@ -132,6 +138,25 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				return true;
 			}
 		});
+		
+		wall.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction() == MotionEvent.ACTION_UP){
+					if(!addingWall){
+						addingWall = true;
+						wall.setPressed(true);
+						Toast.makeText(context, "Toca cerca de los bordes de las casillas para agregar un muro", Toast.LENGTH_SHORT).show();
+					}else{
+						addingWall = false;
+						wall.setPressed(false);
+					}
+				}
+				return true;
+			}
+		});
+		
 	}
 	
 	protected void kThread(){
@@ -271,10 +296,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			if(deleting){
 				;
 			}else if(addingBeeper){ 
-				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
-				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
-				Exchanger.kworld.pon_zumbadores(new KPosition(fila, columna), NUM_BEEPERS);
-				NUMBER_ITEMS++;
+				;
 			}
 			estoyArrastrando = true;
 			/** Obtenemos el primer punto donde hicimos click*/
@@ -316,15 +338,31 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			}
 			break;
 		case MotionEvent.ACTION_UP:
-			estoyArrastrando = false;
+			estoyArrastrando = false; 
 			addingBeeper = false;
 			if(deleting){
 				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
 				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
 				/** Buscamos las coordenadas obtenidas en todas las casillas para eliminar el item*/
 				for(KCasilla casilla: Exchanger.kworld.casillas.values())
-					if(casilla.fila == fila && casilla.columna == columna)
+					if(casilla.fila == fila && casilla.columna == columna && casilla.zumbadores == 0)
 						casilla.zumbadores = 0;
+					else
+						Toast.makeText(context, "Ya hay zumbadores en esa casilla", Toast.LENGTH_SHORT).show();
+			}else if(addingBeeper){
+				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
+				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
+				Exchanger.kworld.pon_zumbadores(new KPosition(fila, columna), NUM_BEEPERS);
+				NUMBER_ITEMS++;
+			}else if(addingWall){
+				double lastX = event.getX();
+				double lastY = event.getY();
+				int columna = ((int)lastX/TAM_CAS)+MIN_SCREEN_X;
+				int fila = (MAX_SCREEN_Y - (((int)lastY)+FREE_SPACE)/TAM_CAS);
+				if(lastX > (((columna-1)%(Math.abs(MAX_SCREEN_X-(MIN_SCREEN_X-1))))*TAM_CAS) && lastX < (((columna-1)%(Math.abs(MAX_SCREEN_X-(MIN_SCREEN_X-1))))*TAM_CAS+WALL_AREA))
+					Toast.makeText(context, "Pared izquierda en: "+columna+"  "+fila, Toast.LENGTH_SHORT).show();
+				else if(lastX > (columna*TAM_CAS-WALL_AREA) && lastX < columna*TAM_CAS)
+					Toast.makeText(context, "Pared derecha en: "+columna+"  "+fila, Toast.LENGTH_SHORT).show();
 			}
 			break;
 		default:
@@ -360,6 +398,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		karelO = BitmapFactory.decodeResource(getResources(), R.drawable.koeste);
 		getHolder().addCallback(this);
 		TAM_CAS = world.getWidth();
+		WALL_AREA = TAM_CAS/4;
 		size = getDisplaySize(display);
 		MAX_SCREEN_X = (int)(size.x/TAM_CAS);
 		MAX_SCREEN_Y = (int)(size.y/TAM_CAS);

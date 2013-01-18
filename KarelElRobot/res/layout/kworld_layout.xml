@@ -16,19 +16,19 @@
 	    android:layout_alignTop="@id/surface"
 	    android:layout_alignRight="@id/surface"
 	    android:padding="5dp"
-	    android:orientation="vertical">
+	    android:orientation="vertical"> 
 	    <Button 
 	        android:id="@+id/addBeeper"
 	        android:layout_width="45dp"
 	        android:layout_height="39dp"
 	        android:alpha="1"
-	        android:text="Z"/>
+	        android:drawableTop="@drawable/beeper_add"/>
 	    <Button 
 	        android:id="@+id/addWall"
 	        android:layout_width="45dp"
 	        android:layout_height="39dp"
 	        android:alpha="1"
-	        android:text="M"/>
+	        android:drawableTop="@drawable/wall_add"/>
 	    <Button 
 	        android:id="@+id/delete"
 	        android:layout_width="45dp"
