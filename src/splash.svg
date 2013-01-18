@@ -39,7 +39,7 @@
          offset="0"
          id="stop4109" />
       <stop
-         style="stop-color:#c5e655;stop-opacity:0;"
+         style="stop-color:#ffffff;stop-opacity:1;"
          offset="1"
          id="stop4111" />
     </linearGradient>
@@ -115,10 +115,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.8"
-     inkscape:cx="90"
+     inkscape:cx="68.125"
      inkscape:cy="110.17767"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="684"
@@ -136,7 +136,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -144,8 +144,7 @@
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-792.36218)"
-     sodipodi:insensitive="true">
+     transform="translate(0,-792.36218)">
     <rect
        style="fill:url(#linearGradient4113);fill-opacity:1;stroke:none"
        id="rect3832"
@@ -160,7 +159,8 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="flechas"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <path
        style="fill:none;stroke:#000000;stroke-width:0.32582521px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline"
        d="m 32.87367,237.5 45.502662,0"
@@ -180,26 +180,26 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
     <path
-       style="fill:url(#linearGradient4137);fill-opacity:1.0;stroke:none"
+       style="fill:url(#linearGradient4137);fill-opacity:1;stroke:none"
        d="M 7.9987278,22.335628 29.582248,8.3400571 l 21.58353,13.9955709 -12.30935,-4e-5 0,29.171469 -18.54835,0 0,-29.171469 z"
        id="path3890-2-0"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
     <path
-       style="fill:url(#linearGradient4129);fill-opacity:1.0;stroke:none"
+       style="fill:url(#linearGradient4129);fill-opacity:1;stroke:none"
        d="m 58.729435,55.427003 18.492401,19.237624 -18.492401,19.237639 5.4e-5,-10.971468 -38.544351,0 0,-16.532341 38.544351,0 z"
        id="path3890-2-0-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
     <path
-       style="fill:url(#linearGradient4145);fill-opacity:1.0;stroke:none"
+       style="fill:url(#linearGradient4145);fill-opacity:1;stroke:none"
        d="M 28.070968,181.40673 9.5785545,155.09802 28.070968,128.78933 l -5.5e-5,15.00417 38.544298,0 0,22.60904 -38.544298,0 z"
        id="path3890-2-0-6-9"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
     <text
        xml:space="preserve"
-       style="font-size:47.40891265999999860px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#475939;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       style="font-size:47.40891266px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#475939;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
        x="55.210491"
        y="45.010353"
        id="text4016"
@@ -210,7 +210,7 @@
          y="45.010353">Karel</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:39.82192993000000314px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#4a594f;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       style="font-size:39.82192993px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#4a594f;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
        x="11.603243"
        y="120.56788"
        id="text4016-4"
@@ -221,7 +221,7 @@
          y="120.56788">the</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:47.40891265999999860px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#3f5348;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       style="font-size:47.40891266px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#3f5348;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
        x="56.195736"
        y="217.71161"
        id="text4016-5"
@@ -231,20 +231,20 @@
          x="56.195736"
          y="217.71161">Robot</tspan></text>
     <path
-       style="fill:url(#linearGradient4153);fill-opacity:1.0;stroke:none"
+       style="fill:url(#linearGradient4153);fill-opacity:1;stroke:none"
        d="m 104.97433,157.79837 -17.469873,12.27959 -17.469859,-12.27959 9.963276,4e-5 0,-25.59472 15.013166,0 0,25.59472 z"
        id="path3890-2-0-6-9-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
     <path
-       style="fill:url(#linearGradient4161);fill-opacity:1.0;stroke:none"
+       style="fill:url(#linearGradient4161);fill-opacity:1;stroke:none"
        d="m 63.431808,228.69121 -28.960364,20.35626 -28.9603394,-20.35626 16.5164394,6e-5 0,-42.42918 24.887801,0 0,42.42918 z"
        id="path3890-2-0-6-9-1-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
     <text
        xml:space="preserve"
-       style="font-size:23.82018661000000037px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#6d5a49;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
+       style="font-size:23.82018661px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#6d5a49;fill-opacity:1;stroke:none;font-family:Ubuntu Mono;-inkscape-font-specification:Ubuntu Mono"
        x="198.79503"
        y="245.37148"
        id="text4016-47"
