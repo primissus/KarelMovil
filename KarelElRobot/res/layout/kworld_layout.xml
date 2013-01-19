@@ -30,10 +30,16 @@
 	        android:alpha="1"
 	        android:drawableTop="@drawable/wall_add"/>
 	    <Button 
-	        android:id="@+id/delete"
+	        android:id="@+id/deleteBeeper"
 	        android:layout_width="45dp"
 	        android:layout_height="39dp"
 	        android:alpha="1"
-	        android:text="-"/>
+	        android:drawableTop="@drawable/beeper_remove"/>
+	    <Button 
+	        android:id="@+id/deleteWall"
+	        android:layout_width="45dp"
+	        android:layout_height="39dp"
+	        android:alpha="1"
+	        android:drawableTop="@drawable/wall_remove"/>
 	</LinearLayout>
 </RelativeLayout>

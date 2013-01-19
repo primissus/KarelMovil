@@ -55,13 +55,13 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private Bitmap world,karelN,karelE,karelS,karelO;
 	private Point size;
 	private int firstX,firstY,lastX,lastY;
-	private static boolean estoyArrastrando = false, addingBeeper = false, addingWall = false, deleting = false;	
+	private static boolean estoyArrastrando = false, addingBeeper = false, addingWall = false, deletingBeeper = false, deletingWall = false;	
 	final Handler handler = new Handler();
 	private static Context context;
 	private Thread t;
 	private static int NUM_BEEPERS;
 	private static int NUMBER_ITEMS;
-	private static Button beeper, del, wall;
+	private static Button beeper, delB, delW, wall;
 	
 	@SuppressWarnings("static-access")
 	public KWorld(Context context, AttributeSet attrs) {
@@ -80,15 +80,16 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		NUMBER_ITEMS = 0;
 	}
 	
-	public static void loadButtons(Button addBeeper, Button addWall, Button delete){
+	public static void loadButtons(Button addBeeper, Button addWall, Button deleteBeeper, Button deleteWall){
 		beeper = addBeeper;
-		del = delete;
+		delB = deleteBeeper;
+		delW = deleteWall;
 		wall = addWall;
 		beeper.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				if(!deleting){
+				if(!deletingBeeper && !deletingWall){
 					if(addingWall){
 						addingWall = false;
 						wall.setPressed(false);
@@ -118,44 +119,73 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			}
 		});
 		
-		del.setOnTouchListener(new OnTouchListener() {
-			
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				if(event.getAction() == MotionEvent.ACTION_UP)
-					if(NUMBER_ITEMS > 0)
-						if(!deleting){
-							deleting = true;
-							del.setPressed(true);
-							Toast.makeText(context, "Seleccione un ítem para borrarlo", Toast.LENGTH_SHORT).show();
-						}else{
-							deleting = false;
-							del.setPressed(false);
-						}
-					else{
-						Toast.makeText(context, "No hay movimientos que deshacer", Toast.LENGTH_SHORT).show();
-					}
-				return true;
-			}
-		});
-		
 		wall.setOnTouchListener(new OnTouchListener() {
 			
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if(event.getAction() == MotionEvent.ACTION_UP){
-					if(!addingWall){
-						addingWall = true;
-						wall.setPressed(true);
-						Toast.makeText(context, "Toca cerca de los bordes de las casillas para agregar un muro", Toast.LENGTH_SHORT).show();
+					if(!deletingBeeper && !deletingWall){
+						if(!addingWall){
+							addingWall = true;
+							wall.setPressed(true);
+							Toast.makeText(context, "Toca cerca de los bordes de las casillas para agregar un muro", Toast.LENGTH_SHORT).show();
+						}else{
+							addingWall = false;
+							wall.setPressed(false);
+						}
 					}else{
-						addingWall = false;
-						wall.setPressed(false);
+						Toast.makeText(context, "Modo de borrado activado, pulse el icono para desactivarlo", Toast.LENGTH_SHORT).show();
 					}
 				}
 				return true;
 			}
 		});
+		delB.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction() == MotionEvent.ACTION_UP)
+					if(!addingWall)
+						if(NUMBER_ITEMS > 0)
+							if(!deletingBeeper){
+								deletingBeeper = true;
+								delB.setPressed(true);
+								Toast.makeText(context, "Seleccione un ítem para borrarlo", Toast.LENGTH_SHORT).show();
+							}else{
+								deletingBeeper = false;
+								delB.setPressed(false);
+							}
+						else
+							Toast.makeText(context, "No hay movimientos que deshacer", Toast.LENGTH_SHORT).show();
+					else
+						Toast.makeText(context, "Modo de agregado activado, pulse el icono para desactivarlo", Toast.LENGTH_SHORT).show();
+				return true;
+			}
+		});
+		
+		delW.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getAction() == MotionEvent.ACTION_UP)
+					if(!addingWall)
+						if(NUMBER_ITEMS > 0)
+							if(!deletingWall){
+								deletingWall = true;
+								delW.setPressed(true);
+								Toast.makeText(context, "Seleccione un ítem para borrarlo", Toast.LENGTH_SHORT).show();
+							}else{
+								deletingWall = false;
+								delW.setPressed(false);
+							}
+						else
+							Toast.makeText(context, "No hay movimientos que deshacer", Toast.LENGTH_SHORT).show();
+					else
+						Toast.makeText(context, "Modo de agregado activado, pulse el icono para desactivarlo", Toast.LENGTH_SHORT).show();
+				return true;
+			}
+		});
+		
 		
 	}
 	
@@ -227,6 +257,20 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 					 else
 						 canvas.drawText(String.valueOf(casilla.zumbadores), xB+(TAM_CAS/3)+5, yB+(TAM_CAS-(TAM_CAS/2))+5, paint);
 				}
+				if(casilla.paredes.size() > 0){
+					paint.setStrokeWidth(6);
+					paint.setColor(Color.BLACK);
+					for(int pared : casilla.paredes){
+						if(pared == poodleDeveloper.karel.data.karelmovil.KWorld.NORTE)
+							canvas.drawLine(xB, yB, xB+TAM_CAS, yB, paint);
+						else if(pared == poodleDeveloper.karel.data.karelmovil.KWorld.ESTE)
+							canvas.drawLine(xB+TAM_CAS, yB, xB+TAM_CAS, yB+TAM_CAS, paint);
+						else if(pared == poodleDeveloper.karel.data.karelmovil.KWorld.SUR)
+							canvas.drawLine(xB, yB+TAM_CAS, xB+TAM_CAS, yB+TAM_CAS, paint);
+						else if(pared == poodleDeveloper.karel.data.karelmovil.KWorld.OESTE)
+							canvas.drawLine(xB, yB, xB, yB+TAM_CAS, paint);
+					}
+				}
 			}
 		}
 		paint.setStrokeWidth(1);
@@ -293,10 +337,43 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		int evento = event.getAction();
 		switch (evento) {
 		case MotionEvent.ACTION_DOWN:
-			if(deleting){
-				;
-			}else if(addingBeeper){ 
-				;
+			if(deletingBeeper){
+				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
+				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
+				/** Buscamos las coordenadas obtenidas en todas las casillas para eliminar el item*/
+				for(KCasilla casilla: Exchanger.kworld.casillas.values())
+					if(casilla.fila == fila && casilla.columna == columna && casilla.zumbadores != 0){
+						casilla.zumbadores = 0;
+						break;
+					}
+					else
+						Toast.makeText(context, "No hay zumbadores en esa casilla", Toast.LENGTH_SHORT).show();
+			}else if(addingBeeper){
+				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
+				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
+				Exchanger.kworld.pon_zumbadores(new KPosition(fila, columna), NUM_BEEPERS);
+				NUMBER_ITEMS++;
+			}else if(addingWall){
+				double lastX = event.getX();
+				double lastY = event.getY();
+				int x = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
+				int y = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
+				int columna = ((int)lastX/TAM_CAS)+1;
+				int fila = ((int)(size.y-(event.getY()+FREE_SPACE)))/TAM_CAS+1;
+				if( lastX > (columna-1)*TAM_CAS && lastX < (columna-1)*TAM_CAS+WALL_AREA){
+					try{
+					Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.OESTE);}catch(Exception e){}
+				}
+				else if(lastX > (columna*TAM_CAS-WALL_AREA) && lastX < (columna*TAM_CAS)){
+					try{
+					Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.ESTE);}catch(Exception e){}
+				}else if(lastY < size.y-(fila*TAM_CAS-WALL_AREA) && lastY > size.y-(fila*TAM_CAS)){
+					try{
+						Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.NORTE);}catch(Exception e){}
+				}else if(lastY > size.y-(fila-1)*TAM_CAS-WALL_AREA && lastY < size.y-(fila-1)*TAM_CAS){
+					try{
+						Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.SUR);}catch(Exception e){}
+				}
 			}
 			estoyArrastrando = true;
 			/** Obtenemos el primer punto donde hicimos click*/
@@ -340,30 +417,6 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		case MotionEvent.ACTION_UP:
 			estoyArrastrando = false; 
 			addingBeeper = false;
-			if(deleting){
-				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
-				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
-				/** Buscamos las coordenadas obtenidas en todas las casillas para eliminar el item*/
-				for(KCasilla casilla: Exchanger.kworld.casillas.values())
-					if(casilla.fila == fila && casilla.columna == columna && casilla.zumbadores == 0)
-						casilla.zumbadores = 0;
-					else
-						Toast.makeText(context, "Ya hay zumbadores en esa casilla", Toast.LENGTH_SHORT).show();
-			}else if(addingBeeper){
-				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
-				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
-				Exchanger.kworld.pon_zumbadores(new KPosition(fila, columna), NUM_BEEPERS);
-				NUMBER_ITEMS++;
-			}else if(addingWall){
-				double lastX = event.getX();
-				double lastY = event.getY();
-				int columna = ((int)lastX/TAM_CAS)+MIN_SCREEN_X;
-				int fila = (MAX_SCREEN_Y - (((int)lastY)+FREE_SPACE)/TAM_CAS);
-				if(lastX > (((columna-1)%(Math.abs(MAX_SCREEN_X-(MIN_SCREEN_X-1))))*TAM_CAS) && lastX < (((columna-1)%(Math.abs(MAX_SCREEN_X-(MIN_SCREEN_X-1))))*TAM_CAS+WALL_AREA))
-					Toast.makeText(context, "Pared izquierda en: "+columna+"  "+fila, Toast.LENGTH_SHORT).show();
-				else if(lastX > (columna*TAM_CAS-WALL_AREA) && lastX < columna*TAM_CAS)
-					Toast.makeText(context, "Pared derecha en: "+columna+"  "+fila, Toast.LENGTH_SHORT).show();
-			}
 			break;
 		default:
 			break;

@@ -23,8 +23,9 @@ public class KWorldGraphics extends SherlockActivity{
 		setContentView(R.layout.kworld_layout);
 		Button addBeeper = (Button)findViewById(R.id.addBeeper);
 		Button addWall = (Button)findViewById(R.id.addWall);
-		Button delete = (Button)findViewById(R.id.delete);
-		KWorld.loadButtons(addBeeper, addWall, delete);
+		Button deleteBeeper = (Button)findViewById(R.id.deleteBeeper);
+		Button deleteWall = (Button)findViewById(R.id.deleteWall);
+		KWorld.loadButtons(addBeeper, addWall, deleteBeeper, deleteWall);
 	}
 	
 	@Override

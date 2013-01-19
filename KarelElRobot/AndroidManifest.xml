@@ -27,7 +27,7 @@
         <activity 
             android:name="poodleDeveloper.karel.KEditor"/>
         <activity 
-            android:name="poodleDeveloper.karel.KWorldGraphics"/>
+            android:name="poodleDeveloper.karel.KWorldGraphics" android:configChanges="orientation|keyboardHidden"/>
     </application>
 
 </manifest>
