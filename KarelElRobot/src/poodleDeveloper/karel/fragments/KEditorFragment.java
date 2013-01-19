@@ -2,9 +2,15 @@ package poodleDeveloper.karel.fragments;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.Buffer;
+
 import poodleDeveloper.karel.Exchanger;
+import poodleDeveloper.karel.FilePickerActivity;
 import poodleDeveloper.karel.KWorldGraphics;
 import poodleDeveloper.karel.R;
 import poodleDeveloper.karel.data.grammar.Ejecutable;
@@ -27,6 +33,8 @@ import com.actionbarsherlock.app.SherlockFragment;
 
 public class KEditorFragment extends SherlockFragment implements View.OnClickListener{
 
+	private static final int REQUEST_PICK_FILE = 1;
+	
 	private String test = "iniciar-programa\ninicia-ejecucion\navanza;\navanza;\navanza;\nrepetir 3 veces gira-izquierda;\navanza;\navanza;\napagate;\ntermina-ejecucion\nfinalizar-programa";
 	private EditText textEdit;
 	private ImageView newCode, openCode, saveCode, run;
@@ -49,7 +57,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		
 		textEdit = (EditText)view.findViewById(R.id.editor);
 		textEdit.setTypeface(Typeface.MONOSPACE);
-		textEdit.setText(test);
+		//textEdit.setText(test);
 		newCode = (ImageView)view.findViewById(R.id.openCode);
 		newCode.setOnClickListener(this);
 		openCode = (ImageView)view.findViewById(R.id.openCode); 
@@ -87,7 +95,10 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			addNewCode();
 			break;
 		case R.id.openCode:
-			break;
+			Intent intent = new Intent(getActivity(), FilePickerActivity.class);
+			intent.putExtra(FilePickerActivity.EXTRA_FILE_PATH, Exchanger.ROOT_PATH);
+			getActivity().startActivityForResult(intent, REQUEST_PICK_FILE);
+			break; 
 		case R.id.saveCode:
 			Toast.makeText(getActivity(), "Guardar", Toast.LENGTH_SHORT).show();
 			break;
@@ -118,6 +129,24 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		}
 	}
 	
+	public void loadFile() throws IOException{
+		FileReader fr = null;
+		BufferedReader br = null;
+		try {
+			fr = new FileReader(Exchanger.code);
+			br = new BufferedReader(fr);
+			String aux;
+			StringBuilder sb = new StringBuilder();
+			while((aux = br.readLine())!= null){
+				sb.append(aux+"\n");
+			}
+			String code = new String(sb);
+			textEdit.setText("");
+			textEdit.setText(code);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 }

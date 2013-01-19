@@ -27,6 +27,8 @@
         <activity 
             android:name="poodleDeveloper.karel.KEditor"/>
         <activity 
+            android:name="poodleDeveloper.karel.FilePickerActivity"/>
+        <activity 
             android:name="poodleDeveloper.karel.KWorldGraphics" android:configChanges="orientation|keyboardHidden"/>
     </application>
 

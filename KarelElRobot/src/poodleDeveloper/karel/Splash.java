@@ -55,18 +55,18 @@ public class Splash extends SherlockActivity {
                         File worlds_path = new File(Exchanger.WORLD_PATH);
                         File codes_path = new File(Exchanger.CODE_PATH);
                         if(!root_path.exists()){
-                        	Toast.makeText(context, "El directorio raíz de Karel fue eliminado, se creará nuevamente", Toast.LENGTH_LONG).show();
+                        	showMessage("El directorio raíz de Karel fue eliminado, se creará nuevamente");
                         	root_path.mkdirs();
                         	worlds_path.mkdirs();
                         	codes_path.mkdirs();
                         }else{ 
                         	if(!worlds_path.exists()){
                         		worlds_path.mkdirs();
-                        		Toast.makeText(context, "El directorio de mundos de Karel fue eliminado, se creará nuevamente", Toast.LENGTH_LONG).show();
+                        		showMessage("El directorio de mundos de Karel fue eliminado, se creará nuevamente");
                         	}
                         	if(!codes_path.exists()){
                         		codes_path.mkdirs();
-                        		Toast.makeText(context, "El directorio de códigos de Karel fue eliminado, se creará nuevamente", Toast.LENGTH_LONG).show();
+                        		showMessage("El directorio de códigos de Karel fue eliminado, se creará nuevamente");
                         	}
                         }
                     }
@@ -79,6 +79,17 @@ public class Splash extends SherlockActivity {
         splashTread.start();
     }
     
+	
+	public void showMessage(final String str){
+		final SherlockActivity activity = (SherlockActivity)context;
+    	activity.runOnUiThread(new Runnable() {
+			
+			@Override
+			public void run() {
+				Toast.makeText(context, str, Toast.LENGTH_LONG).show();
+			}
+		});
+	}
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {

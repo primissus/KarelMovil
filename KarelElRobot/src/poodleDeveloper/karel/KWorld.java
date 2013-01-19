@@ -393,7 +393,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 					Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.OESTE);
 				}
 				else if(lastX > (columna*TAM_CAS-WALL_AREA) && lastX < (columna*TAM_CAS)){
-					Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.ESTE);
+					Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.ESTE); 
 				}else if(lastY < size.y-(fila*TAM_CAS-WALL_AREA) && lastY > size.y-(fila*TAM_CAS)){
 						Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.NORTE);
 				}else if(lastY > size.y-(fila-1)*TAM_CAS-WALL_AREA && lastY < size.y-(fila-1)*TAM_CAS){
