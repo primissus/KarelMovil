@@ -118,9 +118,9 @@ public class KWorld {
                 } else{
                     //quitamos una pared, asumimos que existe el registro
                     //del lado opuesto
-                        KCasilla casilla = this.casillas.get(casilla_opuesta.toString());
-                        casilla.paredes.remove(casilla_opuesta.toString());
-                        this.casillas.put(casilla_opuesta.toString(), casilla);
+                    KCasilla casilla = this.casillas.get(casilla_opuesta.toString());
+                    casilla.paredes.remove(posicion_opuesta);
+                    this.casillas.put(casilla_opuesta.toString(), casilla);
                 }
             }
             //Operaciones de limpieza para ahorrar memoria

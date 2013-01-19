@@ -67,10 +67,8 @@ public class KarelMovil {
 //        }
         KWorld mundo = new KWorld();
         mundo.conmuta_pared(new KPosition(2, 3), KWorld.NORTE);
-        mundo.conmuta_pared(new KPosition(2, 3), KWorld.NORTE);
-        mundo.karel.posicion.fila = 2;
-        mundo.karel.posicion.columna = 3;
-        System.out.println(mundo.avanza());
+        mundo.conmuta_pared(new KPosition(2, 3), KWorld.ESTE);
+        mundo.conmuta_pared(new KPosition(2, 3), KWorld.ESTE);
         System.out.println("hola");
     }
 }
