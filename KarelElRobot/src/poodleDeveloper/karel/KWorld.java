@@ -39,7 +39,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		public Zumbador(int x, int y, int radio, String numero){
 			this.fila = x;
 			this.columna = y;
-			this.radio = radio;
+			this.radio = radio; 
 			this.numero = numero;
 		}
 	}
@@ -355,7 +355,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 					}
 					else
 						Toast.makeText(context, "No hay zumbadores en esa casilla", Toast.LENGTH_SHORT).show();
-			}else if(deletingWall){
+			}/*else if(deletingWall){
 				double lastX = event.getX();
 				double lastY = event.getY();
 				int x = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
@@ -373,13 +373,13 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 					toDelete = poodleDeveloper.karel.data.karelmovil.KWorld.SUR;
 				}
 				NUMBER_ITEMS--;
-			}
+			}*/
 			else if(addingBeeper){
 				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
 				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
 				Exchanger.kworld.pon_zumbadores(new KPosition(fila, columna), NUM_BEEPERS);
 				NUMBER_ITEMS++;
-			}else if(addingWall){
+			}else if(addingWall || deletingWall){
 				/** Obtenemos el evento*/
 				double lastX = event.getX();
 				double lastY = event.getY();
@@ -390,18 +390,14 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				int columna = ((int)lastX/TAM_CAS)+1;
 				int fila = ((int)(size.y-(event.getY()+FREE_SPACE)))/TAM_CAS+1;
 				if( lastX > (columna-1)*TAM_CAS && lastX < (columna-1)*TAM_CAS+WALL_AREA){
-					try{
-					Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.OESTE);}catch(Exception e){}
+					Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.OESTE);
 				}
 				else if(lastX > (columna*TAM_CAS-WALL_AREA) && lastX < (columna*TAM_CAS)){
-					try{
-					Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.ESTE);}catch(Exception e){}
+					Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.ESTE);
 				}else if(lastY < size.y-(fila*TAM_CAS-WALL_AREA) && lastY > size.y-(fila*TAM_CAS)){
-					try{
-						Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.NORTE);}catch(Exception e){}
+						Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.NORTE);
 				}else if(lastY > size.y-(fila-1)*TAM_CAS-WALL_AREA && lastY < size.y-(fila-1)*TAM_CAS){
-					try{
-						Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.SUR);}catch(Exception e){}
+						Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.SUR);
 				}
 				NUMBER_ITEMS++;
 			}
