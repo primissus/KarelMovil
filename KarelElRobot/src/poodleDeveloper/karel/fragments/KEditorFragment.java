@@ -2,15 +2,25 @@ package poodleDeveloper.karel.fragments;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+
 import poodleDeveloper.karel.Exchanger;
+import poodleDeveloper.karel.FilePickerActivity;
 import poodleDeveloper.karel.KWorldGraphics;
 import poodleDeveloper.karel.R;
 import poodleDeveloper.karel.data.grammar.Ejecutable;
 import poodleDeveloper.karel.data.karelmovil.KGrammar;
 import poodleDeveloper.karel.data.karelmovil.KRunner;
 import poodleDeveloper.karel.data.karelmovil.KarelException;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -27,10 +37,14 @@ import com.actionbarsherlock.app.SherlockFragment;
 
 public class KEditorFragment extends SherlockFragment implements View.OnClickListener{
 
-	private String test = "iniciar-programa\ninicia-ejecucion\navanza;\navanza;\navanza;\nrepetir 3 veces gira-izquierda;\navanza;\navanza;\napagate;\ntermina-ejecucion\nfinalizar-programa";
+	private static final int REQUEST_PICK_FILE = 1;
+	
+	//private String test = "iniciar-programa\ninicia-ejecucion\navanza;\navanza;\navanza;\nrepetir 3 veces gira-izquierda;\navanza;\navanza;\napagate;\ntermina-ejecucion\nfinalizar-programa";
 	private EditText textEdit;
 	private ImageView newCode, openCode, saveCode, run;
 	private Button tab, semiColon, dash;
+	private boolean newCodeOn = false, EXISTING_CODE = false;
+	
 	public KEditorFragment(){
 		;
 	}
@@ -49,8 +63,11 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		
 		textEdit = (EditText)view.findViewById(R.id.editor);
 		textEdit.setTypeface(Typeface.MONOSPACE);
-		textEdit.setText(test);
-		newCode = (ImageView)view.findViewById(R.id.openCode);
+		//textEdit.setText(test);
+		textEdit.setEnabled(false);
+		textEdit.setHint("Pulsa nuevo para empezar");
+		textEdit.setTextSize(13);
+		newCode = (ImageView)view.findViewById(R.id.newCode);
 		newCode.setOnClickListener(this);
 		openCode = (ImageView)view.findViewById(R.id.openCode); 
 		openCode.setOnClickListener(this);
@@ -76,20 +93,21 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		textEdit.setSelection(cursor+offset);
 	}
 	
-	public void addNewCode(){
-		
-	}
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()){
 		case R.id.newCode:
-			Toast.makeText(getActivity(), "Nuevo", Toast.LENGTH_SHORT).show();
-			addNewCode();
+			newFile();
+			textEdit.setHint("");
+			textEdit.setText("");
 			break;
 		case R.id.openCode:
-			break;
+			openFile();
+			if(!textEdit.isEnabled())
+				textEdit.setEnabled(true);
+			break; 
 		case R.id.saveCode:
-			Toast.makeText(getActivity(), "Guardar", Toast.LENGTH_SHORT).show();
+			saveFile();
 			break;
 		case R.id.run:
 			String codigo = textEdit.getText().toString();
@@ -118,6 +136,94 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		}
 	}
 	
+	public void newFile(){
+		if(!newCodeOn && Exchanger.code == null){
+			newCodeOn = true;
+			textEdit.setEnabled(true);
+			EXISTING_CODE = false;
+		}else{
+			new AlertDialog.Builder(getActivity()).setTitle("KarelTheRobot").setMessage("¿Deseas guardar el archivo actual?")
+		    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+		         public void onClick(DialogInterface dialog, int whichButton) {
+		        	 saveFile();
+		        	 newCodeOn = true;
+		        	 EXISTING_CODE = false;
+		         }
+		    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+		         public void onClick(DialogInterface dialog, int whichButton) {}
+		    }).show();
+		}
+	}
+	
+	public void openFile(){
+		if(!newCodeOn && textEdit.getText().toString().equals("")){
+			Intent intent = new Intent(getActivity(), FilePickerActivity.class);
+			intent.putExtra(FilePickerActivity.EXTRA_FILE_PATH, Exchanger.CODE_PATH);
+			getActivity().startActivityForResult(intent, REQUEST_PICK_FILE);
+		}else{
+			new AlertDialog.Builder(getActivity()).setTitle("KarelTheRobot").setMessage("¿Deseas guardar el archivo actual?")
+		    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+		         public void onClick(DialogInterface dialog, int whichButton) {
+		        	 saveFile();
+		         }
+		    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+		         public void onClick(DialogInterface dialog, int whichButton) {
+		        	Intent intent = new Intent(getActivity(), FilePickerActivity.class);
+		 			intent.putExtra(FilePickerActivity.EXTRA_FILE_PATH, Exchanger.CODE_PATH);
+		 			getActivity().startActivityForResult(intent, REQUEST_PICK_FILE);
+		         }
+		    }).show();
+		}
+		EXISTING_CODE = true;
+	}
+	
+	public void loadFile() throws IOException{
+			FileReader fr = null;
+			BufferedReader br = null;
+			try {
+				fr = new FileReader(Exchanger.code);
+				br = new BufferedReader(fr);
+				String aux;
+				StringBuilder sb = new StringBuilder();
+				while((aux = br.readLine())!= null){
+					sb.append(aux+"\n");
+				}
+				String code = new String(sb);
+				textEdit.setText("");
+				textEdit.setText(code);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			EXISTING_CODE = true;
+	}
+	
+	private String file_name = "";
+	
+	public void saveFile(){
+		if(!EXISTING_CODE){
+			final EditText input = new EditText(getActivity());
+			new AlertDialog.Builder(getActivity()).setTitle("KarelTheRobot").setMessage("Escribe el nombre del archivo").setView(input)
+		    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+		         public void onClick(DialogInterface dialog, int whichButton) {
+		        	 file_name = Exchanger.CODE_PATH+File.separator+input.getText().toString()+".karel";
+		         }
+		    }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+		         public void onClick(DialogInterface dialog, int whichButton) {}
+		    }).show();
+		}else{
+			file_name = Exchanger.code.toString();
+		}
+		try {
+			FileWriter fw = new FileWriter(new File(file_name));
+			PrintWriter pw = new PrintWriter(fw);
+			pw.println(textEdit.getText().toString());
+			fw.close();
+			Toast.makeText(getActivity(), "Se guardo el archivo como: "+file_name, Toast.LENGTH_SHORT).show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		newCodeOn = false;
+	}
 	
 	
 }

@@ -1,6 +1,10 @@
 package poodleDeveloper.karel;
 
+import java.io.File;
+import java.io.IOException;
+
 import poodleDeveloper.karel.fragments.KEditorFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -10,6 +14,8 @@ import com.actionbarsherlock.view.Window;
 
 public class KEditor extends SherlockFragmentActivity{
 
+	private static final int REQUEST_PICK_FILE = 1;
+	private KEditorFragment fragment;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -21,9 +27,7 @@ public class KEditor extends SherlockFragmentActivity{
         	
         }
 		setContentView(R.layout.keditor_layout);
-		
-		@SuppressWarnings("unused")
-		KEditorFragment fragment = (KEditorFragment)getSupportFragmentManager().findFragmentById(R.id.keditor);
+		fragment = (KEditorFragment)getSupportFragmentManager().findFragmentById(R.id.keditor);
 	}
 	
 	@Override
@@ -42,5 +46,22 @@ public class KEditor extends SherlockFragmentActivity{
 			break;
 		}
 		return true;
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if(resultCode == RESULT_OK) {
+			switch(requestCode) {
+			case REQUEST_PICK_FILE:
+				if(data.hasExtra(FilePickerActivity.EXTRA_FILE_PATH)) {
+					Exchanger.code = new File(data.getStringExtra(FilePickerActivity.EXTRA_FILE_PATH));
+					try {
+						fragment.loadFile();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
 	}
 }
