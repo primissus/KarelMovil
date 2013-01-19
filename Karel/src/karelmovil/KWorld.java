@@ -2,6 +2,8 @@ package karelmovil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+
 import json.JSONArray;
 import json.JSONException;
 import json.JSONObject;
@@ -80,7 +82,7 @@ public class KWorld {
             if(this.casillas.containsKey(coordenadas.toString())){
                 //Puede existir una pared
             	KCasilla casilla = this.casillas.get(coordenadas.toString());
-            	if(this.casillas.get(coordenadas.toString()).paredes.contains(orientacion)){
+            	if(casilla.paredes.contains(orientacion)){
                     //Ya existe la pared, la quitamos
                     casilla.paredes.remove(orientacion);
                     this.casillas.put(coordenadas.toString(), casilla);
@@ -334,7 +336,7 @@ public class KWorld {
     		return KWorld.OESTE;
     }
     
-    public static ArrayList<String> convierteParedes(ArrayList<Integer> original){
+    public static ArrayList<String> convierteParedes(HashSet<Integer> original){
     	ArrayList<String> paredes = new ArrayList<String>();
     	for(int i:original){
     		paredes.add(KWorld.convierteOrientacion(i));
@@ -342,8 +344,8 @@ public class KWorld {
     	return paredes;
     }
 
-    public static ArrayList<Integer> convierteParedes(JSONArray original) throws JSONException{
-    	ArrayList<Integer> paredes = new ArrayList<Integer>();
+    public static HashSet<Integer> convierteParedes(JSONArray original) throws JSONException{
+    	HashSet<Integer> paredes = new HashSet<Integer>();
     	
     	for(int i=0; i<original.length(); i++){
     		paredes.add(KWorld.convierteOrientacion(original.getString(i)));
