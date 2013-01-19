@@ -1,6 +1,5 @@
 package poodleDeveloper.karel;
 
-import poodleDeveloper.karel.data.karelmovil.KRunner;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 

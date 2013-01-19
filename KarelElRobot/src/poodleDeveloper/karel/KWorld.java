@@ -148,9 +148,12 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 					if(!addingWall)
 						if(NUMBER_ITEMS > 0)
 							if(!deletingBeeper){
+								if(deletingWall){
+									delW.setPressed(false);
+									deletingWall = false;
+								}
 								deletingBeeper = true;
 								delB.setPressed(true);
-								Toast.makeText(context, "Seleccione un ítem para borrarlo", Toast.LENGTH_SHORT).show();
 							}else{
 								deletingBeeper = false;
 								delB.setPressed(false);
@@ -171,9 +174,12 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 					if(!addingWall)
 						if(NUMBER_ITEMS > 0)
 							if(!deletingWall){
+								if(deletingBeeper){
+									deletingBeeper = false;
+									delB.setPressed(false);
+								}
 								deletingWall = true;
 								delW.setPressed(true);
-								Toast.makeText(context, "Seleccione un ítem para borrarlo", Toast.LENGTH_SHORT).show();
 							}else{
 								deletingWall = false;
 								delW.setPressed(false);
@@ -344,20 +350,43 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				for(KCasilla casilla: Exchanger.kworld.casillas.values())
 					if(casilla.fila == fila && casilla.columna == columna && casilla.zumbadores != 0){
 						casilla.zumbadores = 0;
+						NUMBER_ITEMS--;
 						break;
 					}
 					else
 						Toast.makeText(context, "No hay zumbadores en esa casilla", Toast.LENGTH_SHORT).show();
-			}else if(addingBeeper){
+			}else if(deletingWall){
+				double lastX = event.getX();
+				double lastY = event.getY();
+				int x = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
+				int y = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
+				int columna = ((int)lastX/TAM_CAS)+1;
+				int fila = ((int)(size.y-(event.getY()+FREE_SPACE)))/TAM_CAS+1;
+				int toDelete;	
+				if( lastX > (columna-1)*TAM_CAS && lastX < (columna-1)*TAM_CAS+WALL_AREA){
+					toDelete = poodleDeveloper.karel.data.karelmovil.KWorld.OESTE;
+				}else if(lastX > (columna*TAM_CAS-WALL_AREA) && lastX < (columna*TAM_CAS)){
+					toDelete = poodleDeveloper.karel.data.karelmovil.KWorld.ESTE;
+				}else if(lastY < size.y-(fila*TAM_CAS-WALL_AREA) && lastY > size.y-(fila*TAM_CAS)){
+					toDelete = poodleDeveloper.karel.data.karelmovil.KWorld.NORTE;
+				}else if(lastY > size.y-(fila-1)*TAM_CAS-WALL_AREA && lastY < size.y-(fila-1)*TAM_CAS){
+					toDelete = poodleDeveloper.karel.data.karelmovil.KWorld.SUR;
+				}
+				NUMBER_ITEMS--;
+			}
+			else if(addingBeeper){
 				int columna = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
 				int fila = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
 				Exchanger.kworld.pon_zumbadores(new KPosition(fila, columna), NUM_BEEPERS);
 				NUMBER_ITEMS++;
 			}else if(addingWall){
+				/** Obtenemos el evento*/
 				double lastX = event.getX();
 				double lastY = event.getY();
+				/** Obtenemos las coordenadas en el mundo virtual de Karel*/
 				int x = ((int)event.getX()/TAM_CAS)+MIN_SCREEN_X;
 				int y = (MAX_SCREEN_Y - (((int)event.getY())+FREE_SPACE)/TAM_CAS);
+				/** Obtenemos las coordenadas en la pantalla*/
 				int columna = ((int)lastX/TAM_CAS)+1;
 				int fila = ((int)(size.y-(event.getY()+FREE_SPACE)))/TAM_CAS+1;
 				if( lastX > (columna-1)*TAM_CAS && lastX < (columna-1)*TAM_CAS+WALL_AREA){
@@ -374,6 +403,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 					try{
 						Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.SUR);}catch(Exception e){}
 				}
+				NUMBER_ITEMS++;
 			}
 			estoyArrastrando = true;
 			/** Obtenemos el primer punto donde hicimos click*/

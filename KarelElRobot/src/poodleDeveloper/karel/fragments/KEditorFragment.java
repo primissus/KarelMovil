@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
 import poodleDeveloper.karel.Exchanger;
 import poodleDeveloper.karel.KWorldGraphics;
 import poodleDeveloper.karel.R;
@@ -88,7 +87,6 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			addNewCode();
 			break;
 		case R.id.openCode:
-			Toast.makeText(getActivity(), "Abrir", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.saveCode:
 			Toast.makeText(getActivity(), "Guardar", Toast.LENGTH_SHORT).show();
@@ -119,4 +117,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			break;
 		}
 	}
+	
+	
+	
 }
