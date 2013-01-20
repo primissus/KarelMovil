@@ -210,7 +210,7 @@ public class KRunner {
                     throw new KarelException("HanoiTowerException: Tu programa nunca termina ¿Usaste 'apagate'?");
                 }
                 //Hay que ejecutar la función en turno en el índice actual
-                RunStruct instruccion = this.ejecutable.lista.get(indice); //TODO cuidar esta líneas
+                RunStruct instruccion = this.ejecutable.lista.get(indice);
                 if(EndStruct.class.isInstance(instruccion)){
                 	EndStruct fin = (EndStruct)instruccion;
                 	int bucles[] = {Struct.ESTRUCTURA_MIENTRAS, Struct.ESTRUCTURA_REPITE};
