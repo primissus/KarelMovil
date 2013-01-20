@@ -41,7 +41,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 	
 	//private String test = "iniciar-programa\ninicia-ejecucion\navanza;\navanza;\navanza;\nrepetir 3 veces gira-izquierda;\navanza;\navanza;\napagate;\ntermina-ejecucion\nfinalizar-programa";
 	private EditText textEdit;
-	private ImageView newCode, openCode, saveCode, run;
+	private ImageView newCode, openCode, saveCode, run , world;
 	private Button tab, semiColon, dash;
 	private boolean newCodeOn = false, EXISTING_CODE = false;
 	
@@ -74,6 +74,8 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		saveCode = (ImageView)view.findViewById(R.id.saveCode);
 		saveCode.setOnClickListener(this);
 		run = (ImageView)view.findViewById(R.id.run);
+		world = (ImageView)view.findViewById(R.id.switch_world);
+		world.setOnClickListener(this);
 		run.setOnClickListener(this);
 		tab = (Button)view.findViewById(R.id.tab);
 		tab.setOnClickListener(this);
@@ -98,8 +100,6 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		switch(v.getId()){
 		case R.id.newCode:
 			newFile();
-			textEdit.setHint("");
-			textEdit.setText("");
 			break;
 		case R.id.openCode:
 			openFile();
@@ -133,6 +133,9 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		case R.id.dash:
 			writing("-", 1);
 			break;
+		case R.id.switch_world:
+			startActivity(new Intent(getActivity(),KWorldGraphics.class));
+			break;
 		}
 	}
 	
@@ -141,6 +144,8 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			newCodeOn = true;
 			textEdit.setEnabled(true);
 			EXISTING_CODE = false;
+			textEdit.setHint("");
+			textEdit.setText("");
 		}else{
 			new AlertDialog.Builder(getActivity()).setTitle("KarelTheRobot").setMessage("¿Deseas guardar el archivo actual?")
 		    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
@@ -189,7 +194,6 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 					sb.append(aux+"\n");
 				}
 				String code = new String(sb);
-				textEdit.setText("");
 				textEdit.setText(code);
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
