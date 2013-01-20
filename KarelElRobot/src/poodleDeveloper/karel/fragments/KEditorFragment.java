@@ -157,7 +157,11 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		        	 textEdit.setText("");
 		         }
 		    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-		         public void onClick(DialogInterface dialog, int whichButton) {}
+		         public void onClick(DialogInterface dialog, int whichButton) {
+		        	 newCodeOn = true;
+		        	 EXISTING_CODE = false;
+		        	 textEdit.setText("");
+		         }
 		    }).show();
 		}
 	}
