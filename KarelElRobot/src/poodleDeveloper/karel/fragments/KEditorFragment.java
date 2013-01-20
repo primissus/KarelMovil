@@ -119,6 +119,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 				grammar.verificar_sintaxis();
 				Ejecutable exe = grammar.expandir_arbol();
 				Exchanger.krunner = new KRunner(exe, Exchanger.kworld);
+				Exchanger.SUCESS_EXECUTED = false;
 				startActivity(new Intent(getActivity(),KWorldGraphics.class));
 			}catch(KarelException e){
 				Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -153,6 +154,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		        	 saveFile();
 		        	 newCodeOn = true;
 		        	 EXISTING_CODE = false;
+		        	 textEdit.setText("");
 		         }
 		    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
 		         public void onClick(DialogInterface dialog, int whichButton) {}

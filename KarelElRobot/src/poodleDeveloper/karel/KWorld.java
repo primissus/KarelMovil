@@ -73,8 +73,11 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	
 	@SuppressLint("NewApi")
 	public void init(Context context) {
-		loadItems(context);	
-		Exchanger.krunner.step_run();  //KRunner ya fue inicializado previamente, acomodamos las variables
+		loadItems(context);
+		if(Exchanger.krunner != null){
+			Exchanger.krunner.step_run();  //KRunner ya fue inicializado previamente, acomodamos las variables
+			kThread();
+		}
 		//kThread();  
 		NUM_BEEPERS = 0;
 		NUMBER_ITEMS = 0;
@@ -100,13 +103,14 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 					    .setView(input).setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 					         public void onClick(DialogInterface dialog, int whichButton) {				
 						        	if(!input.getText().toString().equals("")){
-						        		int numerBeepers = Integer.parseInt(input.getText().toString());
-							            if(numerBeepers > 99)
+						        		int numberBeepers = Integer.parseInt(input.getText().toString());
+						        		System.out.println(numberBeepers);
+							            if(numberBeepers > 99)
 							            	Toast.makeText(context, "El número máximo de zumbadores es 99, vuelve a intentarlo", Toast.LENGTH_SHORT).show();
 							            else{
 							            	Toast.makeText(context, "Pulsa la casilla donde quieres colocar los zumbadores", Toast.LENGTH_SHORT).show();
 							            	addingBeeper = true;
-							            	NUM_BEEPERS = numerBeepers;
+							            	NUM_BEEPERS = numberBeepers;
 							            }
 						        	}
 					         }
@@ -218,11 +222,12 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 						} 
 					});
 				} 
-				else if(estado == KRunner.ESTADO_TERMINADO){
+				else if(estado == KRunner.ESTADO_TERMINADO && !Exchanger.SUCESS_EXECUTED){
 					activity.runOnUiThread(new Runnable() {
 						@Override
 						public void run() {
 							Toast.makeText(activity, "FELICIDADES, Karel llegó a su destino", Toast.LENGTH_SHORT).show();
+							Exchanger.SUCESS_EXECUTED = true;
 						}
 					});
 				} 
@@ -318,7 +323,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		thread = new KThread(getHolder(), this);
 		thread.setRunning(true);
 		thread.start();
-		kThread();
+		//kThread();
 	}
 
 	@Override
@@ -329,7 +334,8 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			try{
 				/** Detenemos ambos hilos al cerrar la vista*/
 				thread.join();
-				t.join();
+				if(t!=null)
+					t.join();
 				retry = false;
 			}catch(InterruptedException e){
 				
@@ -391,8 +397,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				int fila = ((int)(size.y-(event.getY()+FREE_SPACE)))/TAM_CAS+1;
 				if( lastX > (columna-1)*TAM_CAS && lastX < (columna-1)*TAM_CAS+WALL_AREA){
 					Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.OESTE);
-				}
-				else if(lastX > (columna*TAM_CAS-WALL_AREA) && lastX < (columna*TAM_CAS)){
+				}else if(lastX > (columna*TAM_CAS-WALL_AREA) && lastX < (columna*TAM_CAS)){
 					Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.ESTE); 
 				}else if(lastY < size.y-(fila*TAM_CAS-WALL_AREA) && lastY > size.y-(fila*TAM_CAS)){
 						Exchanger.kworld.conmuta_pared(new KPosition(y, x), poodleDeveloper.karel.data.karelmovil.KWorld.NORTE);

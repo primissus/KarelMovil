@@ -15,4 +15,5 @@ public class Exchanger {
 	public static KWorld kworld;
 	public static KRunner krunner;
 	public static File code;
+	public static boolean SUCESS_EXECUTED;
 }
