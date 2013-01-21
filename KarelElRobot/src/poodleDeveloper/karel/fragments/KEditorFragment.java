@@ -18,6 +18,7 @@ import poodleDeveloper.karel.R;
 import poodleDeveloper.karel.data.grammar.Ejecutable;
 import poodleDeveloper.karel.data.karelmovil.KGrammar;
 import poodleDeveloper.karel.data.karelmovil.KRunner;
+import poodleDeveloper.karel.data.karelmovil.KWorld;
 import poodleDeveloper.karel.data.karelmovil.KarelException;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -114,6 +115,8 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			InputStream is = new ByteArrayInputStream(codigo.getBytes());
 			InputStreamReader isr = new InputStreamReader(is); 
 			try{
+				Exchanger.kworld.karel.posicion.fila = Exchanger.kworld.karel.posicion.columna = 1;
+				Exchanger.kworld.karel.orientacion = KWorld.NORTE;
 				KGrammar grammar = new KGrammar(new BufferedReader(isr), true, false);
 				grammar.verificar_sintaxis();
 				Ejecutable exe = grammar.expandir_arbol();
