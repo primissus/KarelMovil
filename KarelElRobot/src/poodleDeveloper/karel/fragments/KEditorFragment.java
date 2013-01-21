@@ -114,7 +114,6 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			InputStream is = new ByteArrayInputStream(codigo.getBytes());
 			InputStreamReader isr = new InputStreamReader(is); 
 			try{
-				Exchanger.kworld.limpiar(); 
 				KGrammar grammar = new KGrammar(new BufferedReader(isr), true, false);
 				grammar.verificar_sintaxis();
 				Ejecutable exe = grammar.expandir_arbol();
