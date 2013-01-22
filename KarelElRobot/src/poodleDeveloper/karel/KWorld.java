@@ -74,7 +74,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private static int NUM_BEEPERS;
 	private static int NUMBER_ITEMS;
 	private static Button beeper, delB, delW, wall;
-	private static boolean newWorldOn = true, EXISTING_WORLD = true;
+	private static boolean newWorldOn = false, EXISTING_WORLD = false;
 	private static String file_name = "";
 	
 	@SuppressWarnings("static-access")

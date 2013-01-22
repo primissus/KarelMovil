@@ -360,9 +360,10 @@ public class KWorld {
         JSONObject mundo = new JSONObject();
 
         JSONObject karel = new JSONObject();
-        ArrayList<Integer> posicion = new ArrayList<Integer>();
-        posicion.add(this.karel.posicion.fila);
-        posicion.add(this.karel.posicion.columna);
+        /*ArrayList<Integer> posicion = new ArrayList<Integer>();*/
+        JSONArray posicion = new JSONArray();
+        posicion.put(this.karel.posicion.fila);
+        posicion.put(this.karel.posicion.columna);
         karel.put("posicion", posicion);
         karel.put("orientacion", KWorld.convierteOrientacion(this.karel.orientacion));
         karel.put("mochila", this.karel.mochila);
@@ -379,7 +380,7 @@ public class KWorld {
                 casilla.put("fila", valor.fila);
                 casilla.put("columna", valor.columna);
                 casilla.put("zumbadores", this.casillas.get(llave).zumbadores);
-                casilla.put("paredes", KWorld.convierteParedes(this.casillas.get(llave).paredes));
+                casilla.put("paredes", new JSONArray(convierteParedes(this.casillas.get(llave).paredes)));
 
                 casillas.add(casilla);
         }
