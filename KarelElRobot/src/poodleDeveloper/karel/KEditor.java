@@ -4,9 +4,11 @@ import java.io.File;
 import java.io.IOException;
 
 import poodleDeveloper.karel.fragments.KEditorFragment;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -18,7 +20,7 @@ public class KEditor extends SherlockFragmentActivity{
 	private KEditorFragment fragment;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
-		super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceState); 
 		try{
         	requestWindowFeature(Window.FEATURE_NO_TITLE);
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
@@ -42,12 +44,24 @@ public class KEditor extends SherlockFragmentActivity{
 			Toast.makeText(getApplicationContext(), "Ayuda", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.about_item:
-			Toast.makeText(getApplicationContext(), "Acerda de", Toast.LENGTH_SHORT).show();
+			dialog();
 			break;
 		}
 		return true;
 	}
 	
+	public void dialog(){
+		final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.about_layout);
+        dialog.setTitle("Acerca de KarelTheRobot Reloaded");
+        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(true);
+        TextView text = (TextView) dialog.findViewById(R.id.welcomeText);
+        text.setText("Karel v1.0.0 - Kiwi\n\nProgramadores:\nAbraham Toriz Cruz - Núcleo\n@categulario\n\nDaniel García Alvarado - UI\n@houseckleiin\n\n" +
+        		"Licencias de terceros:\n\nAction Bar Sherlock\nVersión: 4.2.0\nCopyright (c) 2012\nJake Wharton\n\nJava-JSON\nCopyright (c) 2013\n" +
+        		"www.java2s.com");    
+        dialog.show();
+	  }
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if(resultCode == RESULT_OK) {

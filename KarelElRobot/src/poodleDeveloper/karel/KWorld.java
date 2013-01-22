@@ -1,7 +1,17 @@
 package poodleDeveloper.karel;
 
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 
 import poodleDeveloper.karel.data.karelmovil.KCasilla;
 import poodleDeveloper.karel.data.karelmovil.KPosition;
@@ -10,6 +20,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -44,6 +55,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		}
 	}
 	
+	private static final int REQUEST_PICK_FILE = 1;
 	private static int TAM_CAS;	
 	private static int FREE_SPACE; 
 	private static int MAX_SCREEN_X;
@@ -62,6 +74,8 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private static int NUM_BEEPERS;
 	private static int NUMBER_ITEMS;
 	private static Button beeper, delB, delW, wall;
+	private static boolean newWorldOn = true, EXISTING_WORLD = true;
+	private static String file_name = "";
 	
 	@SuppressWarnings("static-access")
 	public KWorld(Context context, AttributeSet attrs) {
@@ -83,7 +97,7 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		NUMBER_ITEMS = 0;
 	}
 	
-	public static void loadButtons(Button addBeeper, Button addWall, Button deleteBeeper, Button deleteWall){
+	public static void loadButtons(Button addBeeper, Button addWall, Button deleteBeeper, Button deleteWall, Button new_world, Button open_world, Button save_world){
 		beeper = addBeeper;
 		delB = deleteBeeper;
 		delW = deleteWall;
@@ -122,7 +136,6 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				}
 			}
 		});
-		
 		wall.setOnTouchListener(new OnTouchListener() {
 			
 			@Override
@@ -169,7 +182,6 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				return true;
 			}
 		});
-		
 		delW.setOnTouchListener(new OnTouchListener() {
 			
 			@Override
@@ -195,8 +207,123 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 				return true;
 			}
 		});
+		new_world.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(!newWorldOn){
+					newWorldOn = true;
+					Exchanger.kworld.limpiar();
+					EXISTING_WORLD = false;
+				}else{
+					new AlertDialog.Builder(context).setTitle("KarelTheRobot").setMessage("¿Deseas guardar el mundo actual?")
+				    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+				         public void onClick(DialogInterface dialog, int whichButton) {
+				        	 saveFile();
+				        	 newWorldOn = true;
+				        	 EXISTING_WORLD = false;
+				        	 Exchanger.kworld.limpiar();
+				         }
+				    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+				         public void onClick(DialogInterface dialog, int whichButton) {
+				        	 newWorldOn = true;
+				        	 EXISTING_WORLD = false;
+				        	 Exchanger.kworld.limpiar();
+				         }
+				    }).show();
+				}
+			}
+		});
+		open_world.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(!newWorldOn){
+					Intent intent = new Intent(context, FilePickerActivity.class);
+					intent.putExtra(FilePickerActivity.EXTRA_FILE_PATH, Exchanger.WORLD_PATH);
+					((SherlockActivity)context).startActivityForResult(intent, REQUEST_PICK_FILE);
+				}else{
+					new AlertDialog.Builder(context).setTitle("KarelTheRobot").setMessage("¿Deseas guardar el mundo actual?")
+				    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+				         public void onClick(DialogInterface dialog, int whichButton) {
+				        	 saveFile();
+				        	 Intent intent = new Intent(context, FilePickerActivity.class);
+					 		 intent.putExtra(FilePickerActivity.EXTRA_FILE_PATH, Exchanger.WORLD_PATH);
+					 		 ((SherlockActivity)context).startActivityForResult(intent, REQUEST_PICK_FILE);
+				         }
+				    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+				         public void onClick(DialogInterface dialog, int whichButton) {
+				        	Intent intent = new Intent(context, FilePickerActivity.class);
+				 			intent.putExtra(FilePickerActivity.EXTRA_FILE_PATH, Exchanger.WORLD_PATH);
+				 			((SherlockActivity)context).startActivityForResult(intent, REQUEST_PICK_FILE);
+				         }
+				    }).show();
+				}
+				EXISTING_WORLD = true;
+			}
+		});
+		save_world.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				saveFile();
+			}
+		});
+	}
+	
+	private static void saveFile(){
+			if(!EXISTING_WORLD){
+				final EditText input = new EditText(context);
+				new AlertDialog.Builder(context).setTitle("KarelTheRobot").setMessage("Escribe el nombre del archivo").setView(input)
+			    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+			         public void onClick(DialogInterface dialog, int whichButton) {
+			        	 file_name = Exchanger.WORLD_PATH+File.separator+input.getText().toString()+".mdo";
+			        	 perform();
+			         }
+			    }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			         public void onClick(DialogInterface dialog, int whichButton) {}
+			    }).show();
+			}else{
+				file_name = Exchanger.world.toString();
+				perform();
+			}
+			
+	}
+	
+	public static void perform(){
+		try {
+			poodleDeveloper.karel.data.karelmovil.KWorld w = Exchanger.kworld;
+        	JSONObject cosa = w.exporta_mundo();
+        	String res = cosa.toString();
+        	File f = new File(file_name);
+        	FileWriter fw = new FileWriter(f);
+        	fw.write(res);
+        	fw.close();
+			Toast.makeText(context, "Se guardo el archivo como: "+file_name, Toast.LENGTH_SHORT).show();
+			newWorldOn = false;
+			EXISTING_WORLD = true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
-		
+	}
+	public static void loadFile(String file){
+		try{
+			FileReader fr = new FileReader(new File(file));
+			BufferedReader br = new BufferedReader(fr);
+			StringBuilder sb = new StringBuilder();
+			String cad = "";
+			while((cad = br.readLine())!= null){
+				sb.append(cad);
+			}
+			JSONObject json = new JSONObject(new String(sb));
+			Exchanger.kworld.limpiar();
+			Exchanger.kworld.cargaJSON(json);
+			EXISTING_WORLD = true;
+		}catch(JSONException e){
+			e.getMessage();
+			e.getCause();
+			e.printStackTrace();
+		}catch(Exception ex){
+			ex.getMessage();
+		}
 	}
 	
 	protected void kThread(){
@@ -235,9 +362,6 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 		};
 		t.start();
 	}
-	
-	
-	
 	
 	@SuppressLint("DrawAllocation") @Override
 	public void onDraw(Canvas canvas){ 

@@ -143,7 +143,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 	}
 	
 	public void newFile(){
-		if(!newCodeOn && Exchanger.code == null){
+		if(!newCodeOn){
 			newCodeOn = true;
 			textEdit.setEnabled(true);
 			EXISTING_CODE = false;
@@ -177,7 +177,10 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			new AlertDialog.Builder(getActivity()).setTitle("KarelTheRobot").setMessage("¿Deseas guardar el archivo actual?")
 		    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
 		         public void onClick(DialogInterface dialog, int whichButton) {
-		        	 saveFile();
+		        	saveFile();
+		        	Intent intent = new Intent(getActivity(), FilePickerActivity.class);
+		 			intent.putExtra(FilePickerActivity.EXTRA_FILE_PATH, Exchanger.CODE_PATH);
+		 			getActivity().startActivityForResult(intent, REQUEST_PICK_FILE);
 		         }
 		    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
 		         public void onClick(DialogInterface dialog, int whichButton) {
@@ -218,24 +221,31 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 		         public void onClick(DialogInterface dialog, int whichButton) {
 		        	 file_name = Exchanger.CODE_PATH+File.separator+input.getText().toString()+".karel";
+		        	 perform();
 		         }
 		    }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 		         public void onClick(DialogInterface dialog, int whichButton) {}
 		    }).show();
 		}else{
 			file_name = Exchanger.code.toString();
+			perform();
 		}
+	}
+	
+	public void perform(){
 		try {
-			FileWriter fw = new FileWriter(new File(file_name));
+			if(Exchanger.code == null)
+				Exchanger.code = new File(file_name);
+			FileWriter fw = new FileWriter(Exchanger.code);
 			PrintWriter pw = new PrintWriter(fw);
 			pw.println(textEdit.getText().toString());
 			fw.close();
 			Toast.makeText(getActivity(), "Se guardo el archivo como: "+file_name, Toast.LENGTH_SHORT).show();
+			newCodeOn = false;
+			EXISTING_CODE = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		newCodeOn = false;
 	}
-	
 	
 }
