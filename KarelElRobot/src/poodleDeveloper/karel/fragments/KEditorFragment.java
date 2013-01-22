@@ -128,7 +128,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			}
 			break;
 		case R.id.tab:
-			writing("   ", 3);
+			writing("    ", 4);
 			break;
 		case R.id.semiColon:
 			writing(";", 1);
