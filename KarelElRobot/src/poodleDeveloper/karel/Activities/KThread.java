@@ -1,5 +1,6 @@
-package poodleDeveloper.karel;
+package poodleDeveloper.karel.Activities;
 
+import poodleDeveloper.karel.fragments.KWorld;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 

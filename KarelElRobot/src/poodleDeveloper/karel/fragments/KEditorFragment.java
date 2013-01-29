@@ -11,15 +11,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
-import poodleDeveloper.karel.Exchanger;
-import poodleDeveloper.karel.FilePickerActivity;
-import poodleDeveloper.karel.KWorldGraphics;
 import poodleDeveloper.karel.R;
+import poodleDeveloper.karel.Activities.KWorldGraphics;
 import poodleDeveloper.karel.data.grammar.Ejecutable;
 import poodleDeveloper.karel.data.karelmovil.KGrammar;
 import poodleDeveloper.karel.data.karelmovil.KRunner;
 import poodleDeveloper.karel.data.karelmovil.KWorld;
 import poodleDeveloper.karel.data.karelmovil.KarelException;
+import poodleDeveloper.tools.Exchanger;
+import poodleDeveloper.tools.FilePickerActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -42,7 +42,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 	
 	//private String test = "iniciar-programa\ninicia-ejecucion\navanza;\navanza;\navanza;\nrepetir 3 veces gira-izquierda;\navanza;\navanza;\napagate;\ntermina-ejecucion\nfinalizar-programa";
 	private EditText textEdit;
-	private ImageView newCode, openCode, saveCode, run , world;
+	private ImageView newCode, openCode, openKarelapanCode,saveCode, run , world;
 	private Button tab, semiColon, dash;
 	private boolean newCodeOn = false, EXISTING_CODE = false;
 	
@@ -72,6 +72,8 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		newCode.setOnClickListener(this);
 		openCode = (ImageView)view.findViewById(R.id.openCode); 
 		openCode.setOnClickListener(this);
+		openKarelapanCode = (ImageView)view.findViewById(R.id.karelapanCode); 
+		openKarelapanCode.setOnClickListener(this);
 		saveCode = (ImageView)view.findViewById(R.id.saveCode);
 		saveCode.setOnClickListener(this);
 		run = (ImageView)view.findViewById(R.id.run);
@@ -107,6 +109,9 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			if(!textEdit.isEnabled())
 				textEdit.setEnabled(true);
 			break; 
+		case R.id.karelapanCode:
+			//startActivity(new Intent(getActivity(),Karelapan.class));
+			break;
 		case R.id.saveCode:
 			saveFile();
 			break;

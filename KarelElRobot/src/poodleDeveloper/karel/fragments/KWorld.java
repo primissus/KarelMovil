@@ -1,21 +1,23 @@
-package poodleDeveloper.karel;
+package poodleDeveloper.karel.fragments;
 
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.PrintWriter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
 
+import poodleDeveloper.karel.R;
+import poodleDeveloper.karel.Activities.KThread;
 import poodleDeveloper.karel.data.karelmovil.KCasilla;
 import poodleDeveloper.karel.data.karelmovil.KPosition;
 import poodleDeveloper.karel.data.karelmovil.KRunner;
+import poodleDeveloper.tools.Exchanger;
+import poodleDeveloper.tools.FilePickerActivity;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;

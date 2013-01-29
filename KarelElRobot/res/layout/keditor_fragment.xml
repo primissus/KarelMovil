@@ -21,6 +21,12 @@
             android:src="@drawable/open_code"
             android:padding="5dp"/>
         <ImageView 
+            android:id="@+id/karelapanCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/open_code"
+            android:padding="5dp"/>
+        <ImageView 
             android:id="@+id/saveCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

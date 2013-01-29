@@ -1,9 +1,12 @@
-package poodleDeveloper.karel;
+package poodleDeveloper.karel.Activities;
 
 import java.io.File;
 import java.io.IOException;
 
+import poodleDeveloper.karel.R;
 import poodleDeveloper.karel.fragments.KEditorFragment;
+import poodleDeveloper.tools.Exchanger;
+import poodleDeveloper.tools.FilePickerActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;

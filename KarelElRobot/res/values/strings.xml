@@ -7,5 +7,6 @@
     <string name="Abrir">Abrir</string>
     <string name="Guardar">Guardar</string>
     <string name="Run">Ejecutar</string>
+    <string name="desc">Content Description</string>
 
 </resources>

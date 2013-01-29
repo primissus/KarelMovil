@@ -1,10 +1,15 @@
-package poodleDeveloper.karel;
+package poodleDeveloper.karel.Activities;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
 import org.json.JSONObject;
+
+import poodleDeveloper.karel.R;
+import poodleDeveloper.karel.fragments.KWorld;
+import poodleDeveloper.tools.Exchanger;
+import poodleDeveloper.tools.FilePickerActivity;
 
 import android.app.Dialog;
 import android.content.Intent;

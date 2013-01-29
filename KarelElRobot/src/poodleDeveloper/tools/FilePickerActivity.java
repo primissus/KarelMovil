@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package poodleDeveloper.karel;
+package poodleDeveloper.tools;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -21,6 +21,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import poodleDeveloper.karel.R;
 
 import android.app.ListActivity;
 import android.content.Context;
@@ -133,11 +135,11 @@ public class FilePickerActivity extends ListActivity {
 			mDirectory = newFile;
 			refreshFilesList();
 		}
-		
 		super.onListItemClick(l, v, position, id);
 	}
 	
-	private class FilePickerListAdapter extends ArrayAdapter<File> {
+	
+	public class FilePickerListAdapter extends ArrayAdapter<File> {
 		
 		private List<File> mObjects;
 		
@@ -179,7 +181,7 @@ public class FilePickerActivity extends ListActivity {
 
 	}
 	
-	private class FileComparator implements Comparator<File> {
+	public class FileComparator implements Comparator<File> {
 	    @Override
 	    public int compare(File f1, File f2) {
 	    	if(f1 == f2) {
@@ -198,7 +200,7 @@ public class FilePickerActivity extends ListActivity {
 	    }
 	}
 	
-	private class ExtensionFilenameFilter implements FilenameFilter {
+	public class ExtensionFilenameFilter implements FilenameFilter {
 		private String[] mExtensions;
 		
 		public ExtensionFilenameFilter(String[] extensions) {

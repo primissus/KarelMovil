@@ -1,4 +1,4 @@
-package poodleDeveloper.karel;
+package poodleDeveloper.karel.Activities;
 
 import java.io.File;
 
@@ -7,6 +7,7 @@ import com.actionbarsherlock.view.Window;
 
 import poodleDeveloper.karel.R;
 import poodleDeveloper.karel.data.karelmovil.KWorld;
+import poodleDeveloper.tools.Exchanger;
 import android.os.Bundle;
 import android.os.Environment;
 import android.content.Context;
@@ -54,6 +55,7 @@ public class Splash extends SherlockActivity {
                         File root_path = new File(Exchanger.ROOT_PATH);
                         File worlds_path = new File(Exchanger.WORLD_PATH);
                         File codes_path = new File(Exchanger.CODE_PATH);
+                        File karelapan_path = new File(Exchanger.KARELAPAN_PATH);
                         if(!root_path.exists()){
                         	showMessage("El directorio raíz de Karel fue eliminado, se creará nuevamente");
                         	root_path.mkdirs();
@@ -67,6 +69,10 @@ public class Splash extends SherlockActivity {
                         	if(!codes_path.exists()){
                         		codes_path.mkdirs();
                         		showMessage("El directorio de códigos de Karel fue eliminado, se creará nuevamente");
+                        	}
+                        	if(!karelapan_path.exists()){
+                        		karelapan_path.mkdirs();
+                        		showMessage("El directorio de Karelapan de Karel fue eliminado, se creará nuevamente");
                         	}
                         }
                     }
