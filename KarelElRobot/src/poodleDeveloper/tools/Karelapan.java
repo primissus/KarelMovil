@@ -17,6 +17,7 @@ import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -26,18 +27,15 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Karelapan extends ListActivity{
 	
 	private ArrayList<Problema> problemas;
-	private Context context;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.karelapan_activity);
 		setTitle("Karelapan.com");
-		context = this;
 		LoadProblemsTask task = new LoadProblemsTask();
 		task.execute();
 	}
@@ -52,11 +50,15 @@ public class Karelapan extends ListActivity{
 	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
+		final int x = position;
 		new AlertDialog.Builder(this).setTitle(problemas.get(position).title).setMessage(problemas.get(position).description)
 		.setPositiveButton("Descargar", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				Toast.makeText(context, "Descargando mundo", Toast.LENGTH_LONG).show();
+				Intent data = new Intent();
+				data.putExtra("WORLD", problemas.get(x).url_world);
+				setResult(RESULT_OK,data);
+				finish();
 			}
 		}).setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
 			@Override

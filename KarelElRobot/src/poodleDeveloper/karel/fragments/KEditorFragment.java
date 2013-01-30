@@ -10,6 +10,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.URI;
+import java.net.URL;
+import java.net.URLConnection;
+
+import org.json.JSONObject;
 
 import poodleDeveloper.karel.R;
 import poodleDeveloper.karel.Activities.KWorldGraphics;
@@ -45,6 +50,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 
 	private static final int REQUEST_PICK_FILE = 1;
 	private static final int KARELAPAN_PICK_FILE = 2;
+	private static final int KARELAPAN_DOWNLOAD_FILE = 3;
 	
 	private EditText textEdit;
 	private ImageView newCode, openCode, openKarelapanCode,saveCode, run , world;
@@ -115,7 +121,10 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 				textEdit.setEnabled(true);
 			break; 
 		case R.id.karelapanCode:
-			karelapanDialog();
+			if(newCodeOn)
+				Toast.makeText(getActivity(), "Guarda tus avances antes de descargar un nuevo mundo", Toast.LENGTH_SHORT).show();
+			else
+				karelapanDialog();
 			break;
 		case R.id.saveCode:
 			saveFile();
@@ -171,7 +180,8 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(getActivity(),Karelapan.class));
+				Intent intent = new Intent(getActivity(),Karelapan.class);
+				getActivity().startActivityForResult(intent, KARELAPAN_DOWNLOAD_FILE);
 				karelapan.dismiss();
 			}
 		});
@@ -185,6 +195,34 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		karelapan.setTitle("Mundos de Karelapan");
 		karelapan.show();
 	}
+	
+	public void loadFromKarelapan(String world_url){
+		final String url = world_url;
+		Thread trd = new Thread(new Runnable(){
+			  @Override
+			  public void run(){
+				  try{
+						URL uri = new URL(url);
+						BufferedReader br = new BufferedReader(new InputStreamReader(uri.openStream()));
+						StringBuilder sb = new StringBuilder();
+						String cad = "";
+						while((cad = br.readLine())!= null){
+							sb.append(cad);
+						}
+						JSONObject json = new JSONObject(new String(sb));
+						Exchanger.kworld.limpiar();
+						System.out.println(json.toString());
+						Exchanger.kworld.cargaJSON(json);
+						startActivity(new Intent(getActivity(),KWorldGraphics.class));
+					}catch(Exception e){
+						e.printStackTrace();
+					}
+			  }
+			});
+		trd.start();
+		
+	}
+	
 	public void newFile(){
 		if(!newCodeOn){
 			newCodeOn = true;

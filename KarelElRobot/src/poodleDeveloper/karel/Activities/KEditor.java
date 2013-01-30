@@ -21,6 +21,7 @@ public class KEditor extends SherlockFragmentActivity{
 
 	private static final int REQUEST_PICK_FILE = 1;
 	private static final int KARELAPAN_PICK_FILE = 2;
+	private static final int KARELAPAN_DOWNLOAD_FILE = 3;
 	
 	private KEditorFragment fragment;
 	@Override
@@ -91,6 +92,10 @@ public class KEditor extends SherlockFragmentActivity{
 						e.printStackTrace();
 					}
 				}
+				break;
+			case KARELAPAN_DOWNLOAD_FILE:
+				Toast.makeText(this, "Mundo descargado", Toast.LENGTH_SHORT).show();
+				fragment.loadFromKarelapan(data.getStringExtra("WORLD"));
 				break;
 			}
 		}
