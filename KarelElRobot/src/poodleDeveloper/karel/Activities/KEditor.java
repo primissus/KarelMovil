@@ -20,6 +20,8 @@ import com.actionbarsherlock.view.Window;
 public class KEditor extends SherlockFragmentActivity{
 
 	private static final int REQUEST_PICK_FILE = 1;
+	private static final int KARELAPAN_PICK_FILE = 2;
+	
 	private KEditorFragment fragment;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -78,6 +80,18 @@ public class KEditor extends SherlockFragmentActivity{
 						e.printStackTrace();
 					}
 				}
+				break;
+			case KARELAPAN_PICK_FILE:
+				if(data.hasExtra(FilePickerActivity.EXTRA_FILE_PATH)) {
+					Exchanger.code = new File(data.getStringExtra(FilePickerActivity.EXTRA_FILE_PATH));
+					try {
+						fragment.loadFile();
+						Exchanger.KARELAPAN_MODE_ACTIVATED = true;
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				break;
 			}
 		}
 	}

@@ -20,13 +20,18 @@ import poodleDeveloper.karel.data.karelmovil.KWorld;
 import poodleDeveloper.karel.data.karelmovil.KarelException;
 import poodleDeveloper.tools.Exchanger;
 import poodleDeveloper.tools.FilePickerActivity;
+import poodleDeveloper.tools.Karelapan;
+import android.animation.AnimatorSet.Builder;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,8 +44,8 @@ import com.actionbarsherlock.app.SherlockFragment;
 public class KEditorFragment extends SherlockFragment implements View.OnClickListener{
 
 	private static final int REQUEST_PICK_FILE = 1;
+	private static final int KARELAPAN_PICK_FILE = 2;
 	
-	//private String test = "iniciar-programa\ninicia-ejecucion\navanza;\navanza;\navanza;\nrepetir 3 veces gira-izquierda;\navanza;\navanza;\napagate;\ntermina-ejecucion\nfinalizar-programa";
 	private EditText textEdit;
 	private ImageView newCode, openCode, openKarelapanCode,saveCode, run , world;
 	private Button tab, semiColon, dash;
@@ -110,7 +115,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 				textEdit.setEnabled(true);
 			break; 
 		case R.id.karelapanCode:
-			//startActivity(new Intent(getActivity(),Karelapan.class));
+			karelapanDialog();
 			break;
 		case R.id.saveCode:
 			saveFile();
@@ -147,6 +152,39 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		}
 	}
 	
+	public void karelapanDialog(){
+		final Dialog karelapan = new Dialog(getActivity());
+		karelapan.setContentView(R.layout.karelapan_dialog);
+		ImageView pending = (ImageView)karelapan.findViewById(R.id.pending_karelapan);
+		pending.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getActivity(), FilePickerActivity.class);
+				intent.putExtra(FilePickerActivity.EXTRA_FILE_PATH, Exchanger.KARELAPAN_PATH);
+				getActivity().startActivityForResult(intent, KARELAPAN_PICK_FILE);
+				karelapan.dismiss();
+			}
+		});
+		ImageView download = (ImageView)karelapan.findViewById(R.id.new_karelapan);
+		download.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(getActivity(),Karelapan.class));
+				karelapan.dismiss();
+			}
+		});
+		karelapan.setOnCancelListener(new OnCancelListener() {
+			
+			@Override
+			public void onCancel(DialogInterface dialog) {
+				karelapan.dismiss();
+			}
+		});
+		karelapan.setTitle("Mundos de Karelapan");
+		karelapan.show();
+	}
 	public void newFile(){
 		if(!newCodeOn){
 			newCodeOn = true;
@@ -220,7 +258,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 	private String file_name = "";
 	
 	public void saveFile(){
-		if(!EXISTING_CODE){
+		if(!EXISTING_CODE && newCodeOn){
 			final EditText input = new EditText(getActivity());
 			new AlertDialog.Builder(getActivity()).setTitle("KarelTheRobot").setMessage("Escribe el nombre del archivo").setView(input)
 		    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -232,8 +270,10 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		         public void onClick(DialogInterface dialog, int whichButton) {}
 		    }).show();
 		}else{
-			file_name = Exchanger.code.toString();
-			perform();
+			if(Exchanger.code.toString()!=null){
+				file_name = Exchanger.code.toString();
+				perform();
+			}
 		}
 	}
 	

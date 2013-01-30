@@ -114,7 +114,7 @@ public class FilePickerActivity extends ListActivity {
 	@Override
 	public void onBackPressed() {
 		File f = new File(Exchanger.PARENT_ROOT_PATH);
-		if(mDirectory.getParentFile() != null && (!mDirectory.getParentFile().toString().equals(f.toString()))) {
+		if(mDirectory.getParentFile() != null && (!mDirectory.getParent().toString().equals(f.toString()))) {
 			mDirectory = mDirectory.getParentFile();
 			refreshFilesList();
 			return;

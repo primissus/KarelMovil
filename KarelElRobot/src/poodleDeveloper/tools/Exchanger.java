@@ -18,4 +18,5 @@ public class Exchanger {
 	public static File code;
 	public static File world;
 	public static boolean SUCESS_EXECUTED;
+	public static boolean KARELAPAN_MODE_ACTIVATED;
 }
