@@ -78,6 +78,8 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 	private static Button beeper, delB, delW, wall;
 	private static boolean newWorldOn = false, EXISTING_WORLD = false;
 	private static String file_name = "";
+	public static KPosition prevPosition = new KPosition(1, 1);
+	public static int prevOrientation = poodleDeveloper.karel.data.karelmovil.KWorld.NORTE;
 	
 	@SuppressWarnings("static-access")
 	public KWorld(Context context, AttributeSet attrs) {
@@ -318,6 +320,8 @@ public class KWorld extends SurfaceView implements SurfaceHolder.Callback{
 			JSONObject json = new JSONObject(new String(sb));
 			Exchanger.kworld.limpiar();
 			Exchanger.kworld.cargaJSON(json);
+			prevPosition = Exchanger.kworld.karel.posicion;
+			prevOrientation = Exchanger.kworld.karel.orientacion;
 			EXISTING_WORLD = true;
 		}catch(JSONException e){
 			e.getMessage();

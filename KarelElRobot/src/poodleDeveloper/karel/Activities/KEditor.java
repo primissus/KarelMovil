@@ -75,6 +75,7 @@ public class KEditor extends SherlockFragmentActivity{
 			case REQUEST_PICK_FILE:
 				if(data.hasExtra(FilePickerActivity.EXTRA_FILE_PATH)) {
 					Exchanger.code = new File(data.getStringExtra(FilePickerActivity.EXTRA_FILE_PATH));
+					Exchanger.world = new File(data.getStringExtra(FilePickerActivity.EXTRA_FILE_PATH));
 					try {
 						fragment.loadFile();
 					} catch (IOException e) {
@@ -95,7 +96,10 @@ public class KEditor extends SherlockFragmentActivity{
 				break;
 			case KARELAPAN_DOWNLOAD_FILE:
 				Toast.makeText(this, "Mundo descargado", Toast.LENGTH_SHORT).show();
+				Exchanger.code = new File(data.getStringExtra("NAME")+".karel");
+				Exchanger.world = new File(data.getStringExtra("NAME")+".mdo");
 				fragment.loadFromKarelapan(data.getStringExtra("WORLD"));
+				Exchanger.KARELAPAN_MODE_ACTIVATED = true;
 				break;
 			}
 		}

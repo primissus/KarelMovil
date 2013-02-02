@@ -57,6 +57,7 @@ public class Karelapan extends ListActivity{
 			public void onClick(DialogInterface dialog, int which) {
 				Intent data = new Intent();
 				data.putExtra("WORLD", problemas.get(x).url_world);
+				data.putExtra("NAME", problemas.get(x).title);
 				setResult(RESULT_OK,data);
 				finish();
 			}

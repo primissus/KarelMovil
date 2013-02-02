@@ -10,9 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.URI;
 import java.net.URL;
-import java.net.URLConnection;
 
 import org.json.JSONObject;
 
@@ -21,12 +19,10 @@ import poodleDeveloper.karel.Activities.KWorldGraphics;
 import poodleDeveloper.karel.data.grammar.Ejecutable;
 import poodleDeveloper.karel.data.karelmovil.KGrammar;
 import poodleDeveloper.karel.data.karelmovil.KRunner;
-import poodleDeveloper.karel.data.karelmovil.KWorld;
 import poodleDeveloper.karel.data.karelmovil.KarelException;
 import poodleDeveloper.tools.Exchanger;
 import poodleDeveloper.tools.FilePickerActivity;
 import poodleDeveloper.tools.Karelapan;
-import android.animation.AnimatorSet.Builder;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -53,7 +49,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 	private static final int KARELAPAN_DOWNLOAD_FILE = 3;
 	
 	private EditText textEdit;
-	private ImageView newCode, openCode, openKarelapanCode,saveCode, run , world;
+	private ImageView newCode, openCode,saveCode, run , world;
 	private Button tab, semiColon, dash;
 	private boolean newCodeOn = false, EXISTING_CODE = false;
 	
@@ -83,8 +79,8 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 		newCode.setOnClickListener(this);
 		openCode = (ImageView)view.findViewById(R.id.openCode); 
 		openCode.setOnClickListener(this);
-		openKarelapanCode = (ImageView)view.findViewById(R.id.karelapanCode); 
-		openKarelapanCode.setOnClickListener(this);
+		/*openKarelapanCode = (ImageView)view.findViewById(R.id.karelapanCode); 
+		openKarelapanCode.setOnClickListener(this);*/
 		saveCode = (ImageView)view.findViewById(R.id.saveCode);
 		saveCode.setOnClickListener(this);
 		run = (ImageView)view.findViewById(R.id.run);
@@ -120,12 +116,12 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			if(!textEdit.isEnabled())
 				textEdit.setEnabled(true);
 			break; 
-		case R.id.karelapanCode:
-			if(newCodeOn)
+		/*case R.id.karelapanCode:
+			if(newCodeOn || EXISTING_CODE)
 				Toast.makeText(getActivity(), "Guarda tus avances antes de descargar un nuevo mundo", Toast.LENGTH_SHORT).show();
 			else
 				karelapanDialog();
-			break;
+			break;*/
 		case R.id.saveCode:
 			saveFile();
 			break;
@@ -134,13 +130,13 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 			InputStream is = new ByteArrayInputStream(codigo.getBytes());
 			InputStreamReader isr = new InputStreamReader(is); 
 			try{
-				Exchanger.kworld.karel.posicion.fila = Exchanger.kworld.karel.posicion.columna = 1;
-				Exchanger.kworld.karel.orientacion = KWorld.NORTE;
 				KGrammar grammar = new KGrammar(new BufferedReader(isr), true, false);
 				grammar.verificar_sintaxis();
 				Ejecutable exe = grammar.expandir_arbol();
 				Exchanger.krunner = new KRunner(exe, Exchanger.kworld);
 				Exchanger.SUCESS_EXECUTED = false;
+				Exchanger.kworld.karel.posicion = poodleDeveloper.karel.fragments.KWorld.prevPosition;
+				Exchanger.kworld.karel.orientacion = poodleDeveloper.karel.fragments.KWorld.prevOrientation;
 				startActivity(new Intent(getActivity(),KWorldGraphics.class));
 			}catch(KarelException e){
 				Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -211,9 +207,9 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 						}
 						JSONObject json = new JSONObject(new String(sb));
 						Exchanger.kworld.limpiar();
-						System.out.println(json.toString());
 						Exchanger.kworld.cargaJSON(json);
 						startActivity(new Intent(getActivity(),KWorldGraphics.class));
+						EXISTING_CODE = true;
 					}catch(Exception e){
 						e.printStackTrace();
 					}
@@ -224,7 +220,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 	}
 	
 	public void newFile(){
-		if(!newCodeOn){
+		if(!newCodeOn && !Exchanger.KARELAPAN_MODE_ACTIVATED){
 			newCodeOn = true;
 			textEdit.setEnabled(true);
 			EXISTING_CODE = false;
@@ -250,7 +246,7 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 	}
 	
 	public void openFile(){
-		if(!newCodeOn && textEdit.getText().toString().equals("")){
+		if(!newCodeOn && textEdit.getText().toString().equals("") && !Exchanger.KARELAPAN_MODE_ACTIVATED){
 			Intent intent = new Intent(getActivity(), FilePickerActivity.class);
 			intent.putExtra(FilePickerActivity.EXTRA_FILE_PATH, Exchanger.CODE_PATH);
 			getActivity().startActivityForResult(intent, REQUEST_PICK_FILE);
@@ -296,7 +292,21 @@ public class KEditorFragment extends SherlockFragment implements View.OnClickLis
 	private String file_name = "";
 	
 	public void saveFile(){
-		if(!EXISTING_CODE && newCodeOn){
+		if(Exchanger.KARELAPAN_MODE_ACTIVATED){
+			file_name = Exchanger.code.toString();
+			perform();
+			try {
+				poodleDeveloper.karel.data.karelmovil.KWorld w = Exchanger.kworld;
+	        	JSONObject cosa = w.exporta_mundo();
+	        	String res = cosa.toString();
+	        	File f = new File(file_name);
+	        	FileWriter fw = new FileWriter(f);
+	        	fw.write(res);
+	        	fw.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else if(!EXISTING_CODE && newCodeOn){
 			final EditText input = new EditText(getActivity());
 			new AlertDialog.Builder(getActivity()).setTitle("KarelTheRobot").setMessage("Escribe el nombre del archivo").setView(input)
 		    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {

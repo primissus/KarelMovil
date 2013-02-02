@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Karel el Robot</string>
+    <string name="app_name">KarelTheRobot</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="Abrir">Abrir</string>
     <string name="Guardar">Guardar</string>
     <string name="Run">Ejecutar</string>
     <string name="desc">Content Description</string>
+    <string name="tried">Intentado:</string>
+    <string name="bestTime">Mejor tiempo:</string>
+    <string name="solved">Resuelto:</string>
+    <string name="tabtext">TAB</string>
+    <string name="semi_colon">;</string>
+    <string name="dash_">-</string>
 
 </resources>
