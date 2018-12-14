@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-xlarge-v4/values-xlarge-v4.xml",
+            "map": [
+                {
+                    "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/values-xlarge/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "180,243,312,382,448,515,578,640,709",
+                        "endColumns": "62,68,69,65,66,62,60,68,68",
+                        "endOffsets": "238,307,377,443,510,573,634,704,773"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,118,187,257,323,390,453,514,583",
+                        "endColumns": "62,68,69,65,66,62,60,68,68",
+                        "endOffsets": "113,182,252,318,385,448,509,578,647"
+                    }
+                }
+            ]
+        }
+    ]
+}

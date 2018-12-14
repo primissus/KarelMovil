@@ -1,0 +1,98 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:2:1-33:12
+MERGED from [com.actionbarsherlock:actionbarsherlock:4.4.0] /Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:2:1-33:12
+	package
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:3:5-36
+		INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:5:5-30
+		INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:4:5-28
+		INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:8:22-78
+application
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:9:5-31:19
+MERGED from [com.actionbarsherlock:actionbarsherlock:4.4.0] /Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/AndroidManifest.xml:4:3-17
+MERGED from [com.actionbarsherlock:actionbarsherlock:4.4.0] /Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/AndroidManifest.xml:4:3-17
+	android:label
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:12:9-41
+	android:icon
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:11:9-45
+	android:allowBackup
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:13:9-66
+activity#poodleDeveloper.karel.Activities.Splash
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:14:9-22:20
+	android:label
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:16:13-45
+	android:name
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:15:13-67
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:17:13-21:29
+action#android.intent.action.MAIN
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:18:17-69
+	android:name
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:18:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:20:17-77
+	android:name
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:20:27-74
+activity#poodleDeveloper.karel.Activities.KEditor
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:23:9-24:70
+	android:name
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:24:13-68
+activity#poodleDeveloper.tools.Karelapan
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:25:9-26:61
+	android:name
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:26:13-59
+activity#poodleDeveloper.tools.FilePickerActivity
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:27:9-28:70
+	android:name
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:28:13-68
+activity#poodleDeveloper.karel.Activities.KWorldGraphics
+ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:29:9-30:128
+	android:configChanges
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:30:76-126
+	android:name
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml:30:13-75
+uses-sdk
+INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+MERGED from [com.actionbarsherlock:actionbarsherlock:4.4.0] /Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/AndroidManifest.xml:3:3-70
+MERGED from [com.actionbarsherlock:actionbarsherlock:4.4.0] /Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/AndroidManifest.xml:3:3-70
+INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+		ADDED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/AndroidManifest.xml

@@ -1,0 +1,1518 @@
+[
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__btn_cab_done_focused_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__btn_cab_done_focused_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_voice_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_voice_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__cab_background_top_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__cab_background_top_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__progress_secondary_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__progress_secondary_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__list_menu_item_radio.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_share_pack_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_share_pack_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__tab_selected_pressed_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__tab_selected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__activated_background_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__activated_background_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__btn_cab_done_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__btn_cab_done_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__list_longpressed_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__search_dropdown_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__search_dropdown_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_menu_share_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_menu_share_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__ic_clear_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__ic_clear_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__action_menu_item_layout.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_ab_back_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_ab_back_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__cab_background_bottom_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__cab_background_bottom_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__action_menu_layout.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__tab_selected_focused_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__tab_selected_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/color_abs__primary_text_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/color/abs__primary_text_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_problem_item_dialog.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/problem_item_dialog.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_bottom_solid_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_bottom_solid_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__list_selector_background_transition_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__btn_cab_done_pressed_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__btn_cab_done_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__action_mode_bar.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__textfield_search_selected_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__textfield_search_selected_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_stacked_solid_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_stacked_solid_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__progress_bg_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__progress_bg_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__activated_background_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__activated_background_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__activity_chooser_view_list_item.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_clear_normal.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_clear_normal.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__progress_primary_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__progress_primary_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__cab_background_top_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__cab_background_top_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__menu_dropdown_panel_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__menu_dropdown_panel_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-ldpi_folder.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-ldpi/folder.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__progress_bg_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__progress_bg_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_keditor_layout.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/keditor_layout.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__search_dropdown_item_icons_2line.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_ab_back_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_ab_back_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_transparent_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__spinner_ab_disabled_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__spinner_ab_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_sherlock_spinner_dropdown_item.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/sherlock_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__btn_cab_done_pressed_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__btn_cab_done_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__spinner_ab_pressed_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__spinner_ab_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__textfield_search_right_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__textfield_search_right_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_kworld.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/kworld.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__action_bar_title_item.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_ab_back_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_ab_back_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_bottom_transparent_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_bottom_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__tab_indicator_ab_holo.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__tab_indicator_ab_holo.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_clear_disabled.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_clear_disabled.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__textfield_search_right_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__textfield_search_right_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_transparent_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_menu_share_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_menu_share_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout-xlarge_abs__screen_action_bar.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout-xlarge/abs__screen_action_bar.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__tab_unselected_pressed_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__tab_unselected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__cab_background_bottom_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__cab_background_bottom_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__btn_cab_done_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__btn_cab_done_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__list_selector_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_file.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-mdpi/file.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__spinner_ab_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__spinner_ab_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_stacked_transparent_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_stacked_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__textfield_search_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__textfield_search_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__textfield_search_right_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__textfield_search_right_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__btn_cab_done_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__btn_cab_done_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout-large_abs__action_mode_close_item.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout-large/abs__action_mode_close_item.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_ab_back_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_ab_back_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_go_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_go_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__tab_selected_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__tab_selected_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__spinner_ab_pressed_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__spinner_ab_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__action_bar_home.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__action_bar_home.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__spinner_ab_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__spinner_ab_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__textfield_searchview_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__textfield_searchview_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__btn_cab_done_focused_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__btn_cab_done_focused_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_solid_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__textfield_search_selected_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__textfield_search_selected_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_new_world.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/new_world.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_code.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/code.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__progress_primary_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__progress_primary_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__cab_background_top_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__cab_background_top_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__textfield_search_selected_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__textfield_search_selected_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_karelapan_dialog.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/karelapan_dialog.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__toast_frame.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__toast_frame.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__search_dropdown_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__search_dropdown_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_world_new.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/world_new.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__list_selector_disabled_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__spinner_ab_focused_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__spinner_ab_focused_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_karelapan_activity.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/karelapan_activity.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_cab_done_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_cab_done_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__tab_selected_focused_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__tab_selected_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__menu_dropdown_panel_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__menu_dropdown_panel_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_menu_share_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_menu_share_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__list_divider_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__list_divider_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_menu_share_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_menu_share_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__textfield_search_right_selected_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__textfield_search_right_selected_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_solid_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-ldpi_beeper_add.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-ldpi/beeper_add.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__list_pressed_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_solid_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_solid_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_beeper_remove.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-mdpi/beeper_remove.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__list_longpressed_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__progress_secondary_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__progress_secondary_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_commit_search_api_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_commit_search_api_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__menu_dropdown_panel_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__menu_dropdown_panel_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_stacked_transparent_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_stacked_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_activity_splash.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/activity_splash.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__simple_dropdown_hint.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__simple_dropdown_hint.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_solid_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_solid_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__btn_cab_done_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__btn_cab_done_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__screen_simple.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__screen_simple.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__textfield_search_right_selected_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__textfield_search_right_selected_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_karel.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/karel.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_menu_moreoverflow_normal_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_menu_moreoverflow_normal_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__list_pressed_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__list_focused_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__progress_primary_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__progress_primary_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__spinner_48_inner_holo.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__spinner_48_inner_holo.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__toast_frame.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__toast_frame.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__list_focused_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_koeste.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/koeste.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_cab_done_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_cab_done_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout-xlarge_abs__screen_action_bar_overlay.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout-xlarge/abs__screen_action_bar_overlay.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_world.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/world.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-ldpi_wall_add.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-ldpi/wall_add.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__tab_unselected_pressed_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__tab_unselected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__spinner_ab_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__spinner_ab_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__list_selector_disabled_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_menu_share_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_menu_share_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_search.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_search.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__action_bar_tab.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__action_bar_tab.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__list_divider_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__list_divider_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__list_divider_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__list_divider_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/color_abs__primary_text_disable_only_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/color/abs__primary_text_disable_only_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_bkworld.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/bkworld.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__progress_bg_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__progress_bg_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__list_longpressed_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__action_mode_close_item.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__action_mode_close_item.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_clear_search_api_disabled_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_clear_search_api_disabled_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__list_selector_disabled_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__progress_horizontal_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__progress_horizontal_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_share_pack_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_share_pack_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_splash.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/splash.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_search.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_search.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__tab_selected_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__tab_selected_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__cab_background_top_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__cab_background_top_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__list_pressed_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__spinner_ab_disabled_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__spinner_ab_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_knorte.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/knorte.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__progress_primary_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__progress_primary_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_wall_add.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-hdpi/wall_add.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-ldpi_wall_remove.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-ldpi/wall_remove.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__spinner_ab_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__spinner_ab_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__list_selector_disabled_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__list_selector_background_transition_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__textfield_searchview_right_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__textfield_searchview_right_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__list_pressed_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__item_background_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__item_background_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_transparent_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_clear_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_clear_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_transparent_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_voice_search.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_voice_search.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_file_picker_list_item.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/file_picker_list_item.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_wall_add.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-xhdpi/wall_add.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_launcher.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-ldpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__tab_selected_pressed_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__tab_selected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__spinner_ab_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__spinner_ab_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_run.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/run.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_go.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_go.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/color_abs__primary_text_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/color/abs__primary_text_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_cab_done_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_cab_done_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_voice_search.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_voice_search.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__textfield_search_selected_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__textfield_search_selected_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__spinner_ab_disabled_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__spinner_ab_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__toast_frame.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__toast_frame.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_wall_remove.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-hdpi/wall_remove.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_menu_share_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_menu_share_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_commit_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_commit_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__btn_cab_done_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__btn_cab_done_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__textfield_search_right_selected_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__textfield_search_right_selected_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__textfield_search_right_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__textfield_search_right_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__spinner_ab_pressed_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__spinner_ab_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_new_code.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/new_code.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__spinner_ab_focused_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__spinner_ab_focused_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__spinner_48_outer_holo.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__spinner_48_outer_holo.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_clear_disabled.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_clear_disabled.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__spinner_ab_focused_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__spinner_ab_focused_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-ldpi_beeper_remove.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-ldpi/beeper_remove.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_solid_shadow_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_solid_shadow_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_transparent_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_about_layout.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/about_layout.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__btn_cab_done_focused_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__btn_cab_done_focused_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_clear_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_clear_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_wall_remove.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-mdpi/wall_remove.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_logo.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/logo.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__textfield_search_right_selected_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__textfield_search_right_selected_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__textfield_search_right_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__textfield_search_right_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__progress_medium_holo.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__progress_medium_holo.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__screen_action_bar.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__screen_action_bar.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__spinner_ab_focused_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__spinner_ab_focused_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_stacked_transparent_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_stacked_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_cab_done_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_cab_done_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__progress_secondary_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__progress_secondary_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__textfield_search_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__textfield_search_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__ic_menu_moreoverflow_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__ic_menu_moreoverflow_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_stacked_solid_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_stacked_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__btn_cab_done_focused_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__btn_cab_done_focused_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__btn_cab_done_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__btn_cab_done_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__screen_action_bar_overlay.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__screen_action_bar_overlay.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_bottom_solid_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_bottom_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__textfield_searchview_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__textfield_searchview_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_dialog_open.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/dialog_open.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__spinner_ab_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__spinner_ab_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_keditor_fragment.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/keditor_fragment.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__tab_selected_pressed_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__tab_selected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/color_abs__primary_text_disable_only_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/color/abs__primary_text_disable_only_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_wall_remove.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-xhdpi/wall_remove.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__textfield_search_selected_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__textfield_search_selected_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_commit_search_api_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_commit_search_api_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_cab_done_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_cab_done_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_commit_search_api_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_commit_search_api_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_stacked_transparent_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_stacked_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__spinner_48_inner_holo.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__spinner_48_inner_holo.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/raw_mundo.json.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/raw/mundo.json"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_folder.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-mdpi/folder.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_menu_moreoverflow_normal_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_menu_moreoverflow_normal_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_beeper_add.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-xhdpi/beeper_add.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__spinner_48_outer_holo.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__spinner_48_outer_holo.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_share_pack_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_share_pack_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__btn_cab_done_focused_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__btn_cab_done_focused_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_clear_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_clear_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_transparent_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_save_code.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/save_code.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__tab_unselected_pressed_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__tab_unselected_pressed_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_bottom_transparent_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_bottom_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout-v14_sherlock_spinner_item.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout-v14/sherlock_spinner_item.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__textfield_searchview_right_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__textfield_searchview_right_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__list_activated_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__list_activated_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_bottom_transparent_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_bottom_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-v11_abs__progress_medium_holo.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-v11/abs__progress_medium_holo.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__spinner_48_inner_holo.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__spinner_48_inner_holo.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_beeper_remove.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-hdpi/beeper_remove.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_file.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-hdpi/file.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__progress_secondary_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__progress_secondary_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__spinner_ab_focused_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__spinner_ab_focused_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__btn_cab_done_focused_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__btn_cab_done_focused_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_solid_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__spinner_ab_disabled_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__spinner_ab_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_bottom_solid_inverse_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_bottom_solid_inverse_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_commit_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_commit_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__spinner_ab_pressed_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__spinner_ab_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_go_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_go_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__btn_cab_done_pressed_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__btn_cab_done_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/menu_editor_menu.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/menu/editor_menu.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__menu_dropdown_panel_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__menu_dropdown_panel_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_go.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_go.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__list_activated_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__list_activated_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__item_background_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__list_divider_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__list_divider_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_go.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_go.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__textfield_search_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__textfield_search_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_share_pack_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_share_pack_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__textfield_search_right_selected_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__textfield_search_right_selected_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__btn_cab_done_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__btn_cab_done_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__list_menu_item_icon.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__activity_chooser_view.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__cab_background_bottom_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__cab_background_bottom_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__spinner_48_outer_holo.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__spinner_48_outer_holo.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__screen_simple_overlay_action_mode.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__textfield_search_right_selected_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__textfield_search_right_selected_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_clear_disabled.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_clear_disabled.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__tab_selected_focused_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__tab_selected_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__list_focused_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__cab_background_top_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__cab_background_top_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_bottom_solid_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_bottom_solid_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_problem_item.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/problem_item.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_stacked_solid_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_stacked_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_bottom_solid_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_bottom_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__list_menu_item_checkbox.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_row.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/row.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_sherlock_spinner_item.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/sherlock_spinner_item.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__list_divider_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__list_divider_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__textfield_search_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__textfield_search_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_keste.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/keste.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_stacked_transparent_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_stacked_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_clear_search_api_disabled_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_clear_search_api_disabled_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_menu_moreoverflow_normal_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_menu_moreoverflow_normal_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__list_pressed_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_share_pack_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_share_pack_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__progress_horizontal_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__progress_horizontal_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_bottom_solid_inverse_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_bottom_solid_inverse_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__btn_cab_done_pressed_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__btn_cab_done_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_cab_done_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_cab_done_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_wall_add.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-mdpi/wall_add.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__menu_dropdown_panel_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__menu_dropdown_panel_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_menu_moreoverflow_normal_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_menu_moreoverflow_normal_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_commit_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_commit_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_solid_shadow_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_solid_shadow_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__progress_bg_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__progress_bg_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__spinner_ab_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__spinner_ab_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__spinner_ab_focused_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__spinner_ab_focused_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_bottom_solid_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_bottom_solid_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_voice_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_voice_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__btn_cab_done_pressed_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__btn_cab_done_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__spinner_ab_disabled_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__spinner_ab_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__progress_bg_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__progress_bg_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_clear_normal.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_clear_normal.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_menu_moreoverflow_normal_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_menu_moreoverflow_normal_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_kworld_layout.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/kworld_layout.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_solid_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_solid_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_open_code.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/open_code.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_ab_back_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_ab_back_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_go_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_go_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__tab_selected_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__tab_selected_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__list_selector_disabled_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_ab_back_holo_dark.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_ab_back_holo_dark.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_share_pack_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_share_pack_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__progress_bg_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__progress_bg_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_open_world.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/open_world.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__list_pressed_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__list_divider_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__list_divider_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_stacked_transparent_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_stacked_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__popup_menu_item_layout.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__textfield_search_selected_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__textfield_search_selected_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ic_voice_search_api_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ic_voice_search_api_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__textfield_search_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__textfield_search_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_stacked_solid_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_stacked_solid_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__cab_background_top_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__cab_background_top_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_stacked_solid_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_stacked_solid_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_bottom_solid_inverse_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_bottom_solid_inverse_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__list_selector_holo_light.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__textfield_search_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__textfield_search_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_voice_search.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_voice_search.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__ic_menu_moreoverflow_holo_dark.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__ic_menu_moreoverflow_holo_dark.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__spinner_ab_pressed_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__spinner_ab_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__menu_dropdown_panel_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__menu_dropdown_panel_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__progress_primary_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__progress_primary_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__list_selector_disabled_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout-v14_sherlock_spinner_dropdown_item.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout-v14/sherlock_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_beeper_add.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-hdpi/beeper_add.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_bottom_solid_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_bottom_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_clear_search_api_disabled_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_clear_search_api_disabled_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_listitem_row_textview.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/listitem_row_textview.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__ab_bottom_transparent_light_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__ab_bottom_transparent_light_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_folder.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-hdpi/folder.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__progress_primary_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__progress_primary_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ic_search.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ic_search.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__btn_cab_done_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__btn_cab_done_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__spinner_ab_pressed_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__spinner_ab_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__progress_secondary_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__progress_secondary_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__action_bar_tab_bar_view.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__action_bar_tab_bar_view.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_world_save.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/world_save.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_beeper_add.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-mdpi/beeper_add.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ic_menu_moreoverflow_normal_holo_light.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ic_menu_moreoverflow_normal_holo_light.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__cab_background_bottom_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__cab_background_bottom_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_abs__search_view.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/layout/abs__search_view.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__list_activated_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__list_activated_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__progress_secondary_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__progress_secondary_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__spinner_ab_disabled_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__spinner_ab_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-ldpi_file.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-ldpi/file.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_world_open.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/world_open.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__btn_cab_done_pressed_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__btn_cab_done_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_beeper_remove.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable-xhdpi/beeper_remove.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_ksur.png.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/drawable/ksur.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_bottom_transparent_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_bottom_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__textfield_search_right_default_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__textfield_search_right_default_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_stacked_solid_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_stacked_solid_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/layout_file_picker_empty_view.xml.flat",
+        "source": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/src/main/res/layout/file_picker_empty_view.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__cab_background_bottom_holo_light.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__cab_background_bottom_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__cab_background_bottom_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__cab_background_bottom_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable_abs__ic_clear.xml.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable/abs__ic_clear.xml"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-hdpi_abs__ab_bottom_transparent_dark_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-hdpi/abs__ab_bottom_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-mdpi_abs__spinner_ab_default_holo_dark.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-mdpi/abs__spinner_ab_default_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/manuelruiz/Documents/Projects/KarelMovil/KarelElRobot1/app/build/intermediates/res/merged/debug/drawable-xhdpi_abs__ab_solid_shadow_holo.9.png.flat",
+        "source": "/Users/manuelruiz/.gradle/caches/transforms-1/files-1.1/actionbarsherlock-4.4.0.aar/4729ba71e6399f6d8fa52eca1ccc3d23/res/drawable-xhdpi/abs__ab_solid_shadow_holo.9.png"
+    }
+]
